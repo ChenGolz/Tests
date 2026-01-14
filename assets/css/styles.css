@@ -66,16 +66,17 @@ h3{ font-size: 18px; margin:0 0 8px; }
 
 .nav{
   display:flex;
-  flex-wrap:nowrap;
-  gap:10px 14px;
+  flex-wrap:wrap;
+  gap:6px 8px;
   justify-content:flex-start;
-  white-space:nowrap;
-  overflow-x:auto;
+  white-space:normal;
+  overflow-x:visible;
   -webkit-overflow-scrolling:touch;
   scrollbar-width: thin;
 }
 .nav a{
-  padding: 7px 10px;
+  font-size: 14px;
+  padding: 6px 10px;
   border-radius: 999px;
   font-weight: 800;
   color: rgba(17,24,39,.78);
@@ -430,7 +431,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .toolbar{
   display:grid;
   grid-template-columns: 1.3fr .7fr .7fr .6fr auto;
-  gap: 10px;
+  gap: 6px;
   align-items:center;
   margin: 10px 0;
 }
@@ -546,7 +547,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 .toggles-row{
   display:flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 6px;
   align-items:center;
   justify-content:flex-start;
   direction: rtl;
@@ -645,7 +646,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 }
 
 /* RTL: keep the checkbox visually on the left for readability */
-html[dir="rtl"] .check-pill{ flex-direction: row-reverse; }
+html[dir="rtl"] .check-pill{ flex-direction: row; }
 
 /* Status bar (count + clear button) */
 .status-bar{
@@ -1092,7 +1093,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 /* Mobile: keep side-by-side but smaller */
 @media (max-width: 640px){
   .hero.product-hero{
-    gap: 10px;
+    gap: 6px;
     padding: 10px 12px;
     margin: 10px auto 12px;
     border-radius: 16px;
@@ -1269,7 +1270,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .search-btn{ position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.15rem; opacity: .75; cursor: default; }
 
 /* Selects row */
-.select-group{ display:flex; gap: 10px; flex-wrap: wrap; }
+.select-group{ display:flex; gap: 6px; flex-wrap: wrap; }
 .select.minimal{
   border: 1px solid rgba(31,41,55,.14);
   padding: 9px 12px;
@@ -1284,7 +1285,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .toggles-row{
   display:flex;
   flex-wrap:wrap;
-  gap: 10px;
+  gap: 6px;
   align-items:center;
   justify-content: flex-start;
   direction: rtl;
@@ -1308,7 +1309,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .check-pill.highlight{ background: rgba(42,91,154,.10); border-color: rgba(42,91,154,.24); }
 
 /* In RTL the checkbox should visually sit on the left for readability */
-html[dir="rtl"] .check-pill{ flex-direction: row-reverse; }
+html[dir="rtl"] .check-pill{ flex-direction: row; }
 
 /* Count + clear */
 .status-bar{
@@ -1418,7 +1419,7 @@ body{ overflow-x: hidden; }
     padding: 0 12px 14px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateX(105%);
@@ -1441,7 +1442,7 @@ body{ overflow-x: hidden; }
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap: 10px;
+    gap: 6px;
     /* Sit flush at the very top; include safe-area inset for notched phones */
     padding: calc(10px + env(safe-area-inset-top, 0px)) 6px 12px;
     margin: 0 0 6px;
@@ -1487,7 +1488,7 @@ body{ overflow-x: hidden; }
     background: rgba(42,91,154,.06);
     border: 1px solid rgba(42,91,154,.12);
     text-align: right;
-    padding: 12px 14px;
+    padding: 6px 10px;
     border-radius: 14px;
   }
 
@@ -1495,7 +1496,7 @@ body{ overflow-x: hidden; }
     background: rgba(42,91,154,.08);
     border: 1px solid rgba(42,91,154,.12);
     text-align: center;
-    padding: 10px 12px;
+    padding: 6px 10px;
   }
 
   .navOverlay{
@@ -1681,11 +1682,11 @@ body{ overflow-x: hidden; }
   opacity: .75;
 }
 
-.pContent{ min-width: 0; display: grid; gap: 10px; }
+.pContent{ min-width: 0; display: grid; gap: 6px; }
 .pHeader{
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 6px;
   align-items: flex-start;
 }
 .pTitleWrap{ min-width: 0; }
@@ -2909,7 +2910,7 @@ body{ overflow-x: hidden; }
   .wrap{ width: calc(100% - 24px); }
 
   /* Header: keep it compact and avoid awkward wrapping */
-  .headerRow{ padding: 10px 0; gap: 10px; }
+  .headerRow{ padding: 10px 0; gap: 6px; }
   .logo{ gap: 8px; }
   .logoImg{ width: 32px; height: 32px; border-radius: 10px; }
   .logoTag{ display: none; }
@@ -2938,7 +2939,7 @@ body{ overflow-x: hidden; }
   .center-text p{ font-size: .95rem; }
 
   /* Product & brand grids: keep 2-per-row even on tiny phones (reduce scrolling) */
-  .page-products .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+  .page-products .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px; }
   .brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .brandTop{ flex-direction: column; align-items: stretch; }
   .page-recommended-brands #brandGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
@@ -3502,8 +3503,8 @@ html, body{ overflow-x: hidden; }
 :root { --he-font: 'Heebo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
 html[dir="rtl"] body { direction: rtl; text-align: right; font-family: var(--he-font); }
 html[dir="rtl"] input, html[dir="rtl"] textarea, html[dir="rtl"] select { font-family: var(--he-font); }
-html[dir="rtl"] .nav, html[dir="rtl"] nav ul { flex-direction: row-reverse; }
-html[dir="rtl"] .menu, html[dir="rtl"] .topMenu, html[dir="rtl"] .navbar, html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+html[dir="rtl"] .nav, html[dir="rtl"] nav ul { flex-direction: row; }
+html[dir="rtl"] .menu, html[dir="rtl"] .topMenu, html[dir="rtl"] .navbar, html[dir="rtl"] .nav-links { flex-direction: row; }
 html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, html[dir="rtl"] .brandCard { text-align: right; }
 html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
 

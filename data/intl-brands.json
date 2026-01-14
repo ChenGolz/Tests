@@ -836,7 +836,8 @@
     "name": "Baylis & Harding",
     "categories": [
       "body-care",
-      "personal-care"
+      "personal-care",
+      "mens-care"
     ],
     "website": null,
     "amazonUs": "https://amzn.to/3LLQX6G",
@@ -845,7 +846,10 @@
       "PETA approved"
     ],
     "vegan": true,
-    "priceTier": 2
+    "priceTier": 2,
+    "tags": [
+      "Men"
+    ]
   },
   {
     "name": "grace & stella",

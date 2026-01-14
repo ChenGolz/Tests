@@ -1996,7 +1996,8 @@
     "affiliateLink": "https://amzn.to/3LLQX6G",
     "tags": [
       "Vegan",
-      "PETA"
+      "PETA",
+      "Men"
     ],
     "priceMin": 55,
     "priceMax": 75,
@@ -2009,6 +2010,10 @@
         "price": 65,
         "freeShipOver": 170
       }
+    ],
+    "categories": [
+      "body",
+      "mens-care"
     ]
   },
   {

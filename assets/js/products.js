@@ -205,7 +205,8 @@ function normalizeProduct(p) {
     hair: "שיער",
     body: "גוף",
     makeup: "איפור",
-    fragrance: "בישום"
+    fragrance: "בישום",
+    "mens-care": "גברים"
   };
 
   function getPrimaryCategoryKey(p) {
