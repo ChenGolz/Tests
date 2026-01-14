@@ -1,4 +1,4 @@
-// Products page logic (RTL-friendly, data-normalized, performant)
+// מוצרים page logic (RTL-friendly, data-normalized, performant)
 (function () {
   const qs = (s) => document.querySelector(s);
 
@@ -653,7 +653,7 @@ function normalizeProduct(p) {
   }
 
   function buildSelects() {
-    // Brand dropdown
+    // מותג dropdown
     if (brandSelect) {
       unique(data.map((p) => p.brand)).forEach((b) => {
         const o = document.createElement("option");
@@ -742,7 +742,7 @@ function normalizeProduct(p) {
       // פילטר קטגוריות עליונות (chips)
       () => currentCat === "all" || getCats(p).includes(normCat(currentCat)),
 
-      // Brand
+      // מותג
       () => !brand || p.brand === brand,
 
       // Store
@@ -777,7 +777,7 @@ function normalizeProduct(p) {
         return best != null;
       },
 
-      // Price range
+      // מחיר range
       () => {
         if (!priceMinInput && !priceMaxInput) return true;
 
@@ -1072,7 +1072,7 @@ function bind() {
     }
   });
 
-  // Price inputs: change min/max, then click "עדכון טווח" or just blur to refresh
+  // מחיר inputs: change min/max, then click "עדכון טווח" or just blur to refresh
   if (priceMinInput) {
     ["change"].forEach((evt) => {
       priceMinInput.addEventListener(evt, () => {

@@ -495,7 +495,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 
 
 /* ------------------------------------------------------------------
-   Products page (v3) – compatibility styles
+   מוצרים page (v3) – compatibility styles
    Fixes: mixed checkboxes (RTL), missing pill styling, cleaner spacing
    ------------------------------------------------------------------ */
 
@@ -508,7 +508,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   box-shadow: 0 14px 28px rgba(20,35,60,.06);
 }
 
-/* Products search */
+/* מוצרים search */
 .search-wrapper{ position: relative; max-width: 640px; margin: 0 auto 16px; }
 .search-wrapper input{
   width:100%;
@@ -1240,7 +1240,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
 .hero.heroCompact .heroShell{ z-index: 2; position: relative; }
 
 /* ------------------------------------------------------------------
-   Products page toolbar (new layout) – make filters look clean in RTL
+   מוצרים page toolbar (new layout) – make filters look clean in RTL
    ------------------------------------------------------------------ */
 
 /* When products.html uses the "filter-panel" layout, keep it consistent */
@@ -1255,7 +1255,7 @@ body{font-family:"Heebo","Assistant",system-ui,-apple-system,Segoe UI,Roboto,Ari
   margin-bottom: 22px;
 }
 
-/* Search */
+/* חיפוש */
 .search-wrapper{ position: relative; max-width: 720px; margin: 0 auto 18px; }
 .search-wrapper input{
   width: 100%;
@@ -1339,7 +1339,7 @@ html[dir="rtl"] .check-pill{ flex-direction: row-reverse; }
 }
 .btn-link:hover{ background: rgba(42,91,154,.08); }
 
-/* Products list spacing under filters */
+/* מוצרים list spacing under filters */
 .product-grid{ margin-top: 18px; }
 
 @media (max-width: 768px){
@@ -1516,7 +1516,7 @@ body{ overflow-x: hidden; }
 }
 
 
-/* Products filters: force clean stacking on phones */
+/* מוצרים filters: force clean stacking on phones */
 @media (max-width: 820px){
   .filters-actions{
     flex-direction: column;
@@ -1626,7 +1626,7 @@ body{ overflow-x: hidden; }
 
 
 /* =========================================================
-   Products page layout (desktop sidebar + mobile stack)
+   מוצרים page layout (desktop sidebar + mobile stack)
    - Does NOT affect the hero section
    ========================================================= */
 .productsLayout{
@@ -1727,10 +1727,10 @@ body{ overflow-x: hidden; }
 
 
 /* =========================================================
-   Products page quick polish (2025-12-31)
+   מוצרים page quick polish (2025-12-31)
    - Smaller text on cards
    - Tiny image/placeholder until you have real images
-   - Search bar aligned to the right (RTL)
+   - חיפוש bar aligned to the right (RTL)
    - Logical positioning for RTL/LTR safety
    ========================================================= */
 
@@ -1814,7 +1814,7 @@ body{ overflow-x: hidden; }
 .brandLinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;}
 .brandLinks a{font-weight:900;}
 
-/* Products page – premium font + subtle wow, without touching header/hero */
+/* מוצרים page – premium font + subtle wow, without touching header/hero */
 .page-products main{font-family:"Assistant",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:400;}
 .page-products main p,.page-products main li,.page-products main .muted{font-weight:300;}
 .page-products main h1,.page-products main h2,.page-products main h3{font-weight:500;}
@@ -2008,7 +2008,7 @@ body{ overflow-x: hidden; }
 }
 
 
-/* Products page: collapsible Amazon info heading */
+/* מוצרים page: collapsible Amazon info heading */
 .amazon-short-intro .amazon-toggle {
   background: none;
   border: 0;
@@ -2426,7 +2426,7 @@ body{ overflow-x: hidden; }
 .page-recommended-brands .brandCard:nth-child(4n+3){ --rb-accent: linear-gradient(90deg, rgba(245,158,11,.92), rgba(236,72,153,.80)); }
 .page-recommended-brands .brandCard:nth-child(4n){   --rb-accent: linear-gradient(90deg, rgba(20,184,166,.92), rgba(59,130,246,.82)); }
 
-/* Brand name bigger */
+/* מותג name bigger */
 .page-recommended-brands .brandName{
   font-size: 1.65rem !important;
 }
@@ -2946,7 +2946,7 @@ body{ overflow-x: hidden; }
   .brandLinks a.btn,
   .brandLinks a.btn.small{ flex: 1 1 calc(50% - 8px); justify-content: center; }
 
-  /* Products page: the intro card heading was made too small in a previous patch */
+  /* מוצרים page: the intro card heading was made too small in a previous patch */
   .panel.filter-panel .contentCard h2{ font-size: 1.05rem; }
   .panel.filter-panel .contentCard p{ font-size: .95rem; }
 
@@ -3112,7 +3112,7 @@ table{ width: 100%; border-collapse: collapse; }
 
 /* =========================================================
    v44: Compact density (reduce scrolling)
-   - Keep 2 cards per row on Products + Brands pages
+   - Keep 2 cards per row on מוצרים + Brands pages
    - Tighten card padding + typography on small screens
    ========================================================= */
 
@@ -3123,7 +3123,7 @@ table{ width: 100%; border-collapse: collapse; }
   .contentCard{ margin-bottom: 12px; }
   .panel{ margin-top: 12px; }
 
-  /* Products: always show 2 cards per row on phones */
+  /* מוצרים: always show 2 cards per row on phones */
   .page-products .product-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 10px !important;
@@ -3186,7 +3186,7 @@ table{ width: 100%; border-collapse: collapse; }
 }
 
 
-/* Mobile-only Home link in hamburger menu */
+/* Mobile-only דף הבית link in hamburger menu */
 .navHomeMobile{ display:none; }
 @media (max-width: 900px){
   .navHomeMobile{ display:block; }
@@ -3237,7 +3237,7 @@ table{ width: 100%; border-collapse: collapse; }
 
 
 /* =========================================================
-   v12: Products page — mobile alignment + collapsible filters
+   v12: מוצרים page — mobile alignment + collapsible filters
    Match the Intl brands UX on mobile:
    - Filters/search collapsed by default (uses existing mobileFilterToggle JS)
    - Cards align to start (RTL) like Intl brand cards
@@ -3288,7 +3288,7 @@ table{ width: 100%; border-collapse: collapse; }
 }
 
 
-/* Price tier: renders $$$$$ with inactive $ in gray */
+/* מחיר tier: renders $$$$$ with inactive $ in gray */
 .price-tier{display:inline-flex;gap:.08em;font-weight:700;letter-spacing:.02em;font-family:inherit;user-select:none;}
 .price-tier .dollar{opacity:.9;}
 .price-tier .dollar.inactive{opacity:.25;filter:grayscale(1);}
@@ -3300,7 +3300,7 @@ table{ width: 100%; border-collapse: collapse; }
 /* Fix LTR word order inside RTL nav (helps Weglot /en pages) */
 .nav a{ unicode-bidi: plaintext; }
 
-/* Products filter panel: prevent overlap + horizontal scroll */
+/* מוצרים filter panel: prevent overlap + horizontal scroll */
 .page-products .productsFilters{ overflow-x: hidden; }
 .page-products .toolbar-container{ overflow-x: hidden; }
 .page-products .more-filters-inner{ padding-bottom: 12px; }
@@ -3316,7 +3316,7 @@ table{ width: 100%; border-collapse: collapse; }
 .page-shopping-calendar .hero .muted,
 .page-shopping-calendar .hero p.muted{ color: rgba(255,255,255,.90) !important; }
 
-/* International brands: better mobile cards (single column + auto height) */
+/* מותגי intl: better mobile cards (single column + auto height) */
 @media (max-width: 560px){
   .page-recommended-brands #brandGrid{ grid-template-columns: 1fr !important; }
   .page-recommended-brands .brandCard{ height: auto !important; min-height: 0 !important; }
@@ -3344,7 +3344,7 @@ html, body{ overflow-x: hidden; }
 
 .calendarHero .muted{ color: rgba(255,255,255,.86); }
 
-/* Products: prevent the price-range hint from being visually cut by the next row */
+/* מוצרים: prevent the price-range hint from being visually cut by the next row */
 .page-products .price-range-hint{ display:block; margin-top: 6px; margin-bottom: 14px; }
 .page-products .price-range-row{ padding-bottom: 10px; border-bottom: 1px dashed rgba(15,23,42,.10); }
 
@@ -3373,7 +3373,7 @@ html, body{ overflow-x: hidden; }
    - Footer quote pills aligned
    ========================================================= */
 
-/* Products: prevent the free-shipping pill from overlapping the price hint */
+/* מוצרים: prevent the free-shipping pill from overlapping the price hint */
 .price-range-hint{
   margin-top: 4px;
   margin-bottom: 10px;
@@ -3449,7 +3449,7 @@ html, body{ overflow-x: hidden; }
 }
 
 
-/* --- Price tier color mapping (same tier = same color) --- */
+/* --- מחיר tier color mapping (same tier = same color) --- */
 :root{
   --tier1:#16a34a;
   --tier2:#0ea5a4;
@@ -3465,7 +3465,7 @@ html, body{ overflow-x: hidden; }
 .price-tier--t4 .dollar:not(.inactive){color:var(--tier4);}
 .price-tier--t5 .dollar:not(.inactive){color:var(--tier5);}
 
-/* --- Brand logo fallback (initials) --- */
+/* --- מותג logo fallback (initials) --- */
 .brandLogo{
   width:44px;height:44px;flex:0 0 44px;
   border-radius:14px;
@@ -3483,7 +3483,7 @@ html, body{ overflow-x: hidden; }
 .brandCard[role="link"] .brandName{cursor:pointer;text-decoration:none;}
 .brandCard[role="link"] .brandName:hover{text-decoration:underline;}
 
-/* --- Deals page --- */
+/* --- מבצעים page --- */
 .page-deals .dealsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px;}
 .page-deals .dealCard{padding:16px;border-radius:var(--radius);border:1px solid var(--stroke);background:rgba(255,255,255,.86);box-shadow:var(--shadow);transition:transform .18s, box-shadow .18s, border-color .18s;}
 .page-deals .dealCard:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(20,35,60,.10);border-color:rgba(42,91,154,.22);}
@@ -3496,3 +3496,14 @@ html, body{ overflow-x: hidden; }
 .page-deals .dealPrice{font-weight:1000;}
 .page-deals .dealBtn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;border:1px solid rgba(42,91,154,.22);background:rgba(157,195,230,.22);color:#0f172a;font-weight:1000;text-decoration:none;}
 .page-deals .dealBtn:hover{background:rgba(157,195,230,.32);}
+
+
+/* --- Hebrew RTL enhancements --- */
+:root { --he-font: 'Heebo', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; }
+html[dir="rtl"] body { direction: rtl; text-align: right; font-family: var(--he-font); }
+html[dir="rtl"] input, html[dir="rtl"] textarea, html[dir="rtl"] select { font-family: var(--he-font); }
+html[dir="rtl"] .nav, html[dir="rtl"] nav ul { flex-direction: row-reverse; }
+html[dir="rtl"] .menu, html[dir="rtl"] .topMenu, html[dir="rtl"] .navbar, html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, html[dir="rtl"] .brandCard { text-align: right; }
+html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
+

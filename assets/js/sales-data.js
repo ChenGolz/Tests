@@ -212,7 +212,7 @@ window.SALES_DATA = [
     title: "Singles’ Day / 11.11 (גלובלי)",
     when: "11.11",
     tag: "סייל גדול",
-    description: "אחד הסיילים הגדולים ברשת – חזק במיוחד ב־K‑Beauty ובמותגים בינלאומיים.",
+    description: "אחד הסיילים הגדולים ברשת – חזק במיוחד ב־K‑Beauty ובמותגי intl.",
     focus: ["K‑Beauty", "ביוטי", "טכנולוגיה", "אופנה"]
   },
   {

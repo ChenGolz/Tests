@@ -66,7 +66,7 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
   }
 
   function setHelpfulEmptyStateMessage() {
-    // Products page uses #emptyState for "no results".
+    // מוצרים page uses #emptyState for "no results".
     var el = document.getElementById('emptyState');
     if (!el) return;
 

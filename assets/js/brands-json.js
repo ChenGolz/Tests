@@ -214,7 +214,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
   function buildPriceSelect(selectEl) {
     if (!selectEl) return;
 
-    // Price filter UX: selecting $$ should show brands up to that tier (<=),
+    // מחיר filter UX: selecting $$ should show brands up to that tier (<=),
     // not only the exact tier.
     var prev = String(selectEl.value || '');
 
@@ -311,7 +311,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       });
     }
 
-    // Brand top wrapper
+    // מותג top wrapper
     var top = document.createElement('div');
     top.className = 'brandTop';
 
@@ -344,7 +344,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     header.appendChild(logo);
     header.appendChild(titleBlock);
 
-    // Price tier UI
+    // מחיר tier UI
     if (PT && typeof PT.renderPriceTier === 'function') {
       var tierEl = PT.renderPriceTier(tier, { size: 'sm' });
       tierEl.classList.add('brandPriceTier');
@@ -398,7 +398,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
     article.appendChild(top);
 
-    // Search haystack for filtering
+    // חיפוש haystack for filtering
     var hay = [brand.name, labelForCategories(pageKind, cats)].concat(badges).join(' ');
     article.setAttribute('data-search', hay);
 
@@ -516,7 +516,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
         // Build category select (israel)
         buildCategorySelectIfEmpty(categorySelect, brands, pageKind);
 
-        // Sort default: cheapest tier first (then name)
+        // מיון default: cheapest tier first (then name)
         if (PT && typeof PT.sortBrandsCheapestFirst === 'function') {
           brands = PT.sortBrandsCheapestFirst(brands);
         } else {

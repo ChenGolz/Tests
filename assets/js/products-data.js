@@ -1685,7 +1685,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-smudge-set-gel-liner-49",
   brand: "stila",
-  name: "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner",
+  name: "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
@@ -1747,7 +1747,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-sheer-shimmer-liquid-lip",
   brand: "stila",
-  name: "שפתון נוזלי מבריק Stay All Day Sheer & Shimmer Liquid Lip",
+  name: "שפתון נוזלי מבריק Stay הכל Day Sheer & Shimmer Liquid Lip",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
@@ -1809,7 +1809,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-liquid-lipstick",
   brand: "stila",
-  name: "שפתון נוזלי Matt Stay All Day® Liquid Lipstick",
+  name: "שפתון נוזלי Matt Stay הכל Day® Liquid Lipstick",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
@@ -1840,7 +1840,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-waterproof-liquid-eye-liner",
   brand: "stila",
-  name: "אייליינר נוזלי עמיד Stay All Day Waterproof Liquid Eye Liner",
+  name: "אייליינר נוזלי עמיד Stay הכל Day Waterproof Liquid Eye Liner",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
@@ -1871,7 +1871,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-smudge-set-gel-liner-52",
   brand: "stila",
-  name: "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner (וריאציה)",
+  name: "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner (וריאציה)",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
@@ -1933,7 +1933,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-smudge-set-gel-liner-54",
   brand: "stila",
-  name: "אייליינר ג׳ל עמיד Stay All Day® Smudge & Set Waterproof Gel Liner (וריאציה נוספת)",
+  name: "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner (וריאציה נוספת)",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
@@ -1995,7 +1995,7 @@ window.PRODUCTS = [
 {
   id: "stila-stay-all-day-foundation-concealer",
   brand: "stila",
-  name: "מייקאפ + קונסילר Stay All Day Foundation & Concealer",
+  name: "מייקאפ + קונסילר Stay הכל Day Foundation & Concealer",
   category: "makeup",
   categoryLabel: "איפור",
   isVegan: false,
