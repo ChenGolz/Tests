@@ -1,0 +1,111 @@
+[
+  {
+    "name": "תל אביב גלואו",
+    "categories": [
+      "טיפוח פנים"
+    ],
+    "website": null,
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "🌿 Vegan",
+      "🐰 Cruelty‑Free",
+      "🧾 הצהרת מדיניות",
+      "🇮🇱 ייצור מקומי",
+      "🔎 שקיפות ספקים"
+    ],
+    "vegan": true,
+    "description": "סרומים ומסכות במרקמים קלילים. מדגישים שקיפות רכיבים ומדיניות “ללא ניסויים” באתר המותג (דוגמה).",
+    "priceTier": 3
+  },
+  {
+    "name": "נוגה בוטניקה",
+    "categories": [
+      "שיער"
+    ],
+    "website": null,
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "🐰 Cruelty‑Free",
+      "🌿 Vegan (רוב המוצרים)",
+      "🧴 ללא סולפטים",
+      "📦 משלוח בישראל"
+    ],
+    "vegan": true,
+    "description": "שמפו ללא סולפטים, מסכות הזנה וסרומי קצוות. מתאימים לתלתלים ולקרקפת רגישה (דוגמה).",
+    "priceTier": 3
+  },
+  {
+    "name": "סבון יער",
+    "categories": [
+      "גוף ורחצה"
+    ],
+    "website": null,
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "🐰 Cruelty‑Free",
+      "♻️ אריזות ממוחזרות",
+      "🌿 Vegan (חלק מהמוצרים)",
+      "🧼 Handmade"
+    ],
+    "vegan": true,
+    "description": "סבונים מוצקים, פילינגים ושמנים לגוף. דגש על רכיבים טבעיים ואריזות ידידותיות לסביבה (דוגמה).",
+    "priceTier": 3
+  },
+  {
+    "name": "אודם העיר",
+    "categories": [
+      "איפור"
+    ],
+    "website": null,
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "🐰 Cruelty‑Free",
+      "🎨 פיגמנטים",
+      "🌿 Vegan (רוב המוצרים)",
+      "✅ בדיקות דרמטולוגיות"
+    ],
+    "vegan": true,
+    "description": "קו איפור קטן וממוקד עם שפתונים, סומק וצלליות. מתאים למראה יומיומי עם גימור אלגנטי (דוגמה).",
+    "priceTier": 3
+  },
+  {
+    "name": "ניחוחות מדבר",
+    "categories": [
+      "בישום"
+    ],
+    "website": null,
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "🐰 Cruelty‑Free",
+      "🌸 ניחוחות נקיים",
+      "🧪 ללא ניסויים",
+      "🧴 בושם מוצק"
+    ],
+    "vegan": false,
+    "description": "בשמים ומבשמי גוף בהשראת תווי מדבר – ענבר, וניל, פרחי בר. ללא אלכוהול בחלק מהגרסאות (דוגמה).",
+    "priceTier": 4
+  },
+  {
+    "name": "קטנטנים רכים",
+    "categories": [
+      "תינוקות"
+    ],
+    "website": null,
+    "amazonUs": null,
+    "amazonUk": null,
+    "badges": [
+      "🐰 Cruelty‑Free",
+      "👶 מתאים לעור עדין",
+      "🩺 היפואלרגני (דוגמה)",
+      "📦 זמין בבתי מרקחת"
+    ],
+    "vegan": false,
+    "description": "מוצרי תינוקות מינימליסטיים עם רכיבים עדינים: שמפו‑סבון, קרם החתלה ושמן אמבט (דוגמה).",
+    "priceTier": 2
+  }
+]
