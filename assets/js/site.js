@@ -30,10 +30,10 @@
 
   // Hero quote rotator (rotates through the 5 quotes)
   const QUOTES = [
-    "Be kind to all kinds.",
-    "Compassion is the best fashion.",
-    "Live and let live.",
-    "Kindness is my religion."
+    "היו טובים לכל היצורים.",
+    "חמלה היא האופנה הכי יפה.",
+    "חיה ותן לחיות.",
+    "חמלה היא דרך חיים."
   ];
 
   const el = document.querySelector('[data-quote]');
