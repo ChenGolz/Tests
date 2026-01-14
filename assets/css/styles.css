@@ -3591,3 +3591,71 @@ body.menuOpen .navOverlay{
   }
 }
 
+
+/* ==== Top menu typography + layout improvements (v17) ==== */
+.siteHeader{
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+/* Desktop nav */
+@media (min-width: 921px){
+  .siteHeader .headerRow{
+    gap: 12px;
+  }
+
+  .siteHeader .nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px 10px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.55);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+  }
+
+  .siteHeader .nav a{
+    font-size: clamp(13px, 0.95vw, 15px);
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: rgba(15,23,42,.86);
+    padding: 8px 12px;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+
+  .siteHeader .nav a:hover{
+    background: rgba(15, 23, 42, 0.06);
+    color: rgba(15,23,42,.96);
+  }
+
+  /* Active page highlight (works if links already get .active / aria-current) */
+  .siteHeader .nav a[aria-current="page"],
+  .siteHeader .nav a.active{
+    background: rgba(15, 23, 42, 0.10);
+    color: rgba(15,23,42,.98);
+  }
+
+  /* CTA pill (the "לקנות בלי לפגוע" button) */
+  .siteHeader .ctaPill{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 999px;
+  }
+}
+
+/* Medium screens: slightly tighter to avoid wrapping too much */
+@media (min-width: 921px) and (max-width: 1100px){
+  .siteHeader .nav{
+    gap: 6px 8px;
+    padding: 8px 8px;
+  }
+  .siteHeader .nav a{
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+}
+
