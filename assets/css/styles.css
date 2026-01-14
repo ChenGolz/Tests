@@ -1404,7 +1404,7 @@ body{ overflow-x: hidden; }
 
 @media (max-width: 900px){
   /* Ensure drawer is above overlay (header creates stacking context due to backdrop-filter) */
-  .siteHeader{ z-index: 10001; }
+  .siteHeader{ z-index: 10002; }
 
   /* Fix: allow fixed-position drawer to use viewport (avoid backdrop-filter containing block) */
   .siteHeader{ backdrop-filter: none; -webkit-backdrop-filter: none; }
@@ -1433,8 +1433,9 @@ body{ overflow-x: hidden; }
     flex-direction: column;
     gap: 6px;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    transform: translateX(105%);
+    transform: translateX(100%);
     opacity: 1;
     pointer-events: none;
     transition: transform .22s ease;
@@ -1442,7 +1443,7 @@ body{ overflow-x: hidden; }
   }
   .siteHeader.navOpen .nav,
   .siteHeader.navopen .nav{
-    transform: translateX(0);
+    transform: translateX(0) !important;
     pointer-events: auto;
   }
 
@@ -1520,10 +1521,9 @@ body{ overflow-x: hidden; }
     opacity: 0;
     pointer-events: none;
     transition: opacity .2s ease;
-    z-index: 10000;
+    z-index: 10002;
   }
-  body.menuOpen .navOverlay,
-body.menuopen .navOverlay{
+  body.menuOpen .navOverlay{
     opacity: 1;
     pointer-events: auto;
   }
@@ -3523,7 +3523,13 @@ html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, 
 html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
 
 
-/* Mobile nav overlay */
+body.menuOpen .navOverlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Mobile nav overlay (v9) */
 .navOverlay{
   position: fixed;
   inset: 0;
@@ -3531,7 +3537,7 @@ html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bi
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s ease;
-  z-index: 10000;
+  z-index: 10002;
 }
 body.menuOpen .navOverlay,
 body.menuopen .navOverlay{
