@@ -3592,10 +3592,6 @@ body.menuOpen .navOverlay{
 }
 
 
-/* ==== Top menu typography + layout improvements (v17) ==== */
-.siteHeader{
-  backdrop-filter: saturate(120%) blur(6px);
-}
 
 /* Desktop nav */
 @media (min-width: 921px){
@@ -3657,5 +3653,64 @@ body.menuOpen .navOverlay{
     padding: 7px 10px;
     font-size: 13px;
   }
+}
+
+
+/* ==== Top menu: keep in ONE ROW on desktop (v18) ==== */
+@media (min-width: 921px){
+  /* Keep header compact */
+  .siteHeader .headerRow{ gap: 12px; }
+
+  /* One-line nav */
+  .siteHeader .nav{
+    display: flex;
+    flex-wrap: nowrap;          /* IMPORTANT: one row */
+    white-space: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    overflow-x: auto;           /* fallback if screen is narrow */
+    scrollbar-width: none;      /* Firefox */
+  }
+  .siteHeader .nav::-webkit-scrollbar{ display: none; }
+
+  .siteHeader .nav a{
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: rgba(15,23,42,.86);
+    padding: 6px 10px;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background .15s ease, color .15s ease;
+  }
+  .siteHeader .nav a:hover{
+    background: rgba(15, 23, 42, 0.06);
+    color: rgba(15,23,42,.96);
+  }
+  .siteHeader .nav a[aria-current="page"],
+  .siteHeader .nav a.active{
+    background: rgba(15, 23, 42, 0.10);
+    color: rgba(15,23,42,.98);
+  }
+
+  /* CTA pill */
+  .siteHeader .ctaPill{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}
+
+/* Slightly tighter on mid-size desktops */
+@media (min-width: 921px) and (max-width: 1100px){
+  .siteHeader .nav{ gap: 6px; }
+  .siteHeader .nav a{ font-size: 13px; padding: 6px 9px; }
 }
 
