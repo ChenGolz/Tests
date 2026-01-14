@@ -56,6 +56,18 @@ h3{ font-size: 18px; margin:0 0 8px; }
 
 /* Prevent desktop nav from dropping to a second line */
 .siteHeader .nav{ flex: 1 1 auto; }
+
+  /* Mobile drawer: keep list clean (no wrapping into columns) */
+  .siteHeader .nav{
+    flex-wrap: nowrap;
+    white-space: normal;
+    overflow-x: hidden;
+  }
+  .siteHeader .nav a{
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
 .siteHeader .logo{ flex: 0 0 auto; }
 
 .logo{
@@ -3507,4 +3519,20 @@ html[dir="rtl"] .nav, html[dir="rtl"] nav ul { flex-direction: row; }
 html[dir="rtl"] .menu, html[dir="rtl"] .topMenu, html[dir="rtl"] .navbar, html[dir="rtl"] .nav-links { flex-direction: row; }
 html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, html[dir="rtl"] .brandCard { text-align: right; }
 html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
+
+
+/* Mobile nav overlay */
+.navOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 10000;
+}
+body.menuOpen .navOverlay{
+  opacity: 1;
+  pointer-events: auto;
+}
 
