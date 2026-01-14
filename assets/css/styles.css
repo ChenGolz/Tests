@@ -1404,7 +1404,7 @@ body{ overflow-x: hidden; }
 
 @media (max-width: 900px){
   /* Ensure drawer is above overlay (header creates stacking context due to backdrop-filter) */
-  .siteHeader{ z-index: 10002; }
+  .siteHeader{ z-index: 10001; }
 
   /* Fix: allow fixed-position drawer to use viewport (avoid backdrop-filter containing block) */
   .siteHeader{ backdrop-filter: none; -webkit-backdrop-filter: none; }
@@ -1433,17 +1433,15 @@ body{ overflow-x: hidden; }
     flex-direction: column;
     gap: 6px;
     overflow-y: auto;
-    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    transform: translateX(100%);
+    transform: translateX(105%);
     opacity: 1;
     pointer-events: none;
     transition: transform .22s ease;
     z-index: 10002;
   }
-  .siteHeader.navOpen .nav,
-  .siteHeader.navopen .nav{
-    transform: translateX(0) !important;
+  .siteHeader.navOpen .nav{
+    transform: translateX(0);
     pointer-events: auto;
   }
 
@@ -1521,7 +1519,7 @@ body{ overflow-x: hidden; }
     opacity: 0;
     pointer-events: none;
     transition: opacity .2s ease;
-    z-index: 10002;
+    z-index: 10000;
   }
   body.menuOpen .navOverlay{
     opacity: 1;
@@ -3523,13 +3521,7 @@ html[dir="rtl"] .card, html[dir="rtl"] .productCard, html[dir="rtl"] .dealCard, 
 html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bidi: embed; } /* keep numbers readable */
 
 
-body.menuOpen .navOverlay{
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
-/* Mobile nav overlay (v9) */
+/* Mobile nav overlay */
 .navOverlay{
   position: fixed;
   inset: 0;
@@ -3537,11 +3529,84 @@ body.menuOpen .navOverlay{
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s ease;
-  z-index: 10002;
+  z-index: 10000;
 }
-body.menuOpen .navOverlay,
-body.menuopen .navOverlay{
+body.menuOpen .navOverlay{
   opacity: 1;
   pointer-events: auto;
+}
+
+
+/* ===== Mobile drawer hard-fix (v11) =====
+   Reason: some devices/browsers ended up with a "corrupted" thin-strip drawer due to
+   conflicting RTL transforms and class-casing. This block overrides earlier rules.
+*/
+@media (max-width: 920px){
+  /* Drawer container (nav) */
+  .siteHeader .nav{
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;      /* open from LEFT to avoid RTL transform issues */
+    right: auto !important;
+    width: min(320px, 86vw) !important;
+    max-width: 86vw !important;
+    background: #fff !important;
+    border-right: 1px solid rgba(15, 23, 42, 0.10) !important;
+    border-left: 0 !important;
+    box-shadow: 18px 0 40px rgba(0,0,0,.14) !important;
+    padding: 0 12px 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    transform: translate3d(-105%,0,0) !important; /* fully hidden off-screen */
+    pointer-events: none !important;
+    opacity: 1 !important;
+    z-index: 10002 !important;
+    will-change: transform !important;
+    transition: transform .22s ease !important;
+  }
+
+  /* Drawer OPEN (support both class casings) */
+  .siteHeader.navOpen .nav,
+  .siteHeader.navopen .nav{
+    transform: translate3d(0,0,0) !important;
+    pointer-events: auto !important;
+  }
+
+  /* Drawer links */
+  .siteHeader .nav a{
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 10px 12px !important;
+    white-space: normal !important;
+  }
+
+  /* Overlay (support both class casings) */
+  .navOverlay{
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.28) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity .2s ease !important;
+    z-index: 10000 !important;
+  }
+  body.menuOpen .navOverlay,
+  body.menuopen .navOverlay{
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Avoid layout shifts in header when drawer is open */
+  body.menuOpen,
+  body.menuopen{
+    overflow: hidden;
+    touch-action: none;
+  }
 }
 
