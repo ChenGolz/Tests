@@ -3537,65 +3537,57 @@ body.menuOpen .navOverlay{
 }
 
 
-/* ==== FINAL MOBILE DRAWER FIX ==== */
+/* ==== FINAL MOBILE DRAWER FIX (v12) ==== */
 @media (max-width: 920px){
-
-  /* reset any earlier transforms */
-  .siteHeader .nav{
-    transform: none !important;
-  }
-
-  /* closed state */
+  /* Drawer */
   .siteHeader .nav{
     position: fixed !important;
-    top: 0;
-    bottom: 0;
-    right: 0;     /* open from RIGHT for RTL */
-    left: auto;
-    width: min(320px, 85vw);
-    background: #fff;
-    box-shadow: -18px 0 40px rgba(0,0,0,.15);
-    border-left: 1px solid rgba(15,23,42,.08);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 10px 12px;
-    transform: translateX(105%) !important; /* fully hidden */
-    transition: transform .25s ease;
-    z-index: 10002;
-    pointer-events: none;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    width: min(320px, 85vw) !important;
+    background: #fff !important;
+    box-shadow: -18px 0 40px rgba(0,0,0,.15) !important;
+    border-left: 1px solid rgba(15,23,42,.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 10px 12px !important;
+    transform: translateX(105%) !important;
+    transition: transform .25s ease !important;
+    z-index: 10002 !important;
+    pointer-events: none !important;
   }
 
-  /* open state (both class casings supported) */
   .siteHeader.navOpen .nav,
   .siteHeader.navopen .nav{
     transform: translateX(0) !important;
-    pointer-events: auto;
+    pointer-events: auto !important;
   }
 
-  /* overlay */
+  .siteHeader .nav a{
+    width: 100% !important;
+    padding: 10px 12px !important;
+    text-align: right !important;
+    white-space: normal !important;
+  }
+
   .navOverlay{
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.28);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s ease;
-    z-index: 10000;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.28) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity .2s ease !important;
+    z-index: 10000 !important;
   }
   body.menuOpen .navOverlay,
   body.menuopen .navOverlay{
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* drawer links */
-  .siteHeader .nav a{
-    width: 100%;
-    padding: 10px 12px;
-    text-align: right;
-    white-space: normal;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 }
 
