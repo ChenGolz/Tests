@@ -1440,7 +1440,8 @@ body{ overflow-x: hidden; }
     transition: transform .22s ease;
     z-index: 10002;
   }
-  .siteHeader.navOpen .nav{
+  .siteHeader.navOpen .nav,
+  .siteHeader.navopen .nav{
     transform: translateX(0);
     pointer-events: auto;
   }
@@ -1521,7 +1522,8 @@ body{ overflow-x: hidden; }
     transition: opacity .2s ease;
     z-index: 10000;
   }
-  body.menuOpen .navOverlay{
+  body.menuOpen .navOverlay,
+body.menuopen .navOverlay{
     opacity: 1;
     pointer-events: auto;
   }
@@ -3531,7 +3533,8 @@ html[dir="rtl"] .price, html[dir="rtl"] .priceLabel { direction: ltr; unicode-bi
   transition: opacity .2s ease;
   z-index: 10000;
 }
-body.menuOpen .navOverlay{
+body.menuOpen .navOverlay,
+body.menuopen .navOverlay{
   opacity: 1;
   pointer-events: auto;
 }

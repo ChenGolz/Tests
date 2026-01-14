@@ -95,13 +95,13 @@
 
 
       const close = () => {
-        header.classList.remove('navOpen');
-        document.body.classList.remove('menuOpen');
+        header.classList.remove('navOpen'); header.classList.remove('navopen');
+        document.body.classList.remove('menuOpen'); document.body.classList.remove('menuopen');
         btn.setAttribute('aria-expanded', 'false');
       };
       const open = () => {
-        header.classList.add('navOpen');
-        document.body.classList.add('menuOpen');
+        header.classList.add('navOpen'); header.classList.add('navopen');
+        document.body.classList.add('menuOpen'); document.body.classList.add('menuopen');
         btn.setAttribute('aria-expanded', 'true');
       };
 
