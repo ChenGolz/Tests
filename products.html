@@ -41,7 +41,6 @@
 <div class="wrap heroInner">
 <div class="heroCopy center-text">
 <h1>לקנות בלי לפגוע</h1>
-<div class="pageNotice">במאגר מוצגים רק מוצרים 100% טבעוניים עם אישור קרואלטי-פרי מוכר (PETA / Leaping Bunny). המחירים באמזון עשויים להשתנות — טווח המחירים מוצג לצרכי השוואה.</div>
 <p>גלי מוצרים ללא ניסויים בבעלי חיים, סנני לפי העדפותייך ורכשי ישירות מהחנויות המובילות</p>
 <div class="badgeRow center-badges">
 <div class="trust-badge" data-wg-notranslate="true"><span aria-hidden="true" class="icon">🐰</span> PETA</div>
@@ -106,16 +105,38 @@
 <input aria-label="חיפוש מוצרים" autocomplete="off" id="q" placeholder="מה בא לך לחפש היום? (מותג, מוצר...)" type="search"/>
 <button aria-hidden="true" class="search-btn" type="button">🔍</button>
 </div>
-
+<div aria-label="קטגוריות" class="chips-scroll-container">
+<div class="chipsRow">
+<button class="chip active" data-cat="all" type="button">הכל</button>
+<button class="chip" data-cat="face" type="button">טיפוח פנים</button>
+<button class="chip" data-cat="hair" type="button">שיער</button>
+<button class="chip" data-cat="body" type="button">גוף ורחצה</button>
+<button class="chip" data-cat="makeup" type="button">איפור</button>
+<button class="chip" data-cat="fragrance" type="button">בישום</button>
+        <button class="chip" data-cat="mens-care">גברים</button>
+<button class="chip" data-cat="baby" type="button">תינוקות</button>
+<button class="chip" data-cat="health" type="button">בריאות</button>
+<button class="chip" data-cat="home" type="button">בית</button>
+<button class="chip" data-cat="pets" type="button">חיות</button>
+<button class="chip" data-cat="office" type="button">משרד</button>
+<button class="chip" data-cat="art" type="button">אמנות</button>
+<button class="chip" data-cat="tech" type="button">טק</button>
+</div>
+</div>
 <div class="filters-actions">
 <!-- שורת כפתורי סינון מהיר (תמיד גלויה) -->
 <div aria-label="מסננים מהירים" class="toggles-row">
 <label class="check-pill" data-wg-notranslate="true"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
 <label class="check-pill" data-wg-notranslate="true"><input id="onlyPeta" type="checkbox"/> PETA</label>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
 <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
 <label class="check-pill"><input id="onlyMen" type="checkbox"/> טיפוח לגבר</label>
+<label class="check-pill"><input id="onlyCFNotVegan" type="checkbox"/> קרואלטי-פרי בלבד (לא טבעוני)</label>
+<label class="check-pill"><input id="onlyIndependent" type="checkbox"/> בעלות עצמאית</label>
 </div>
 <!-- סינונים מתקדמים בקולפס -->
+<details aria-label="סינונים נוספים" class="more-filters">
+<summary>סינונים נוספים</summary>
 <div class="more-filters-inner">
 <div class="select-group">
 <select class="select minimal" id="brandSelect">
@@ -164,7 +185,7 @@
 </div>
 
 </div>
-
+</details>
 <div class="status-bar">
 <span class="count-tag" id="liveCount">0 מוצרים</span>
 <button class="btn-link" id="clearFilters" type="button">ניקוי הכל</button>

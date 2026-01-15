@@ -3741,97 +3741,99 @@ body.menuOpen .navOverlay{
   .siteHeader .nav a{ font-size: 13px; padding: 6px 9px; }
 }
 
-
-
-/* --- Nav spacing (desktop) --- */
-.siteHeader nav ul{ gap: 8px !important; flex-wrap: wrap; }
-.siteHeader nav a{ padding: 8px 10px !important; }
-
-/* --- Products card spacing fine-tuning --- */
-.product-card .price-range{ margin-bottom: 2px !important; }
-.product-card .store-name{ margin-top: 0 !important; }
-.product-card .offers{ margin-top: 6px !important; }
-.product-card .offers .offer{ padding-top: 8px !important; }
-
-/* Mixed Hebrew + Brand name rendering */
-.brand-name{ direction:ltr; unicode-bidi:isolate; font-weight:600; }
-
-/* Products page notice */
-.pageNotice{
-  background: rgba(76, 175, 80, 0.10);
-  border: 1px solid rgba(76, 175, 80, 0.25);
-  padding: 10px 12px;
-  border-radius: 12px;
-  margin: 10px 0 14px;
-  font-size: 0.95rem;
+/* Container adjustments for centering */
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* --- Bundles page --- */
-.bundleGrid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top: 18px; }
-.bundleCard{
-  border: 1px solid var(--stroke);
-  border-radius: 18px;
-  padding: 16px;
-  text-align: right;
-  background: linear-gradient(135deg, rgba(76,175,80,.14), rgba(33,150,243,.10));
-  box-shadow: 0 6px 22px rgba(0,0,0,.06);
-  cursor: pointer;
-}
-.bundleCard:hover{ transform: translateY(-1px); }
-.bundleTitle{ font-weight: 800; font-size: 1.05rem; }
-.bundleMeta{ margin-top: 6px; color: rgba(0,0,0,.70); font-size: .95rem; }
-.bundleNote{
-  margin-top: 16px;
-  background: rgba(0,0,0,.04);
-  border: 1px dashed rgba(0,0,0,.15);
-  padding: 10px 12px;
-  border-radius: 12px;
-  color: rgba(0,0,0,.72);
+.dealsGrid {
+    display: grid;
+    /* Desktop: 4 per row */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    justify-content: center;
 }
 
-.modalBackdrop{
-  position: fixed; inset:0; background: rgba(0,0,0,.55);
-  display:none; align-items: center; justify-content: center;
-  padding: 18px; z-index: 999;
+/* Mobile: 2 per row */
+@media (max-width: 768px) {
+    .dealsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 }
-.modalBackdrop.open{ display:flex; }
-.modalCard{
-  width: min(720px, 100%);
-  background: #fff;
-  border-radius: 20px;
-  padding: 16px 16px 14px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+
+/* Image Sprite Logic */
+.dealPhoto {
+    width: 100%;
+    height: 160px; /* Adjusted for smaller cards */
+    background-image: url('See much more on our site NoCrueltyIL.com.jpg');
+    background-size: 1100px auto; /* Scaled to fit the 4x4 grid */
+    background-repeat: no-repeat;
+    border-radius: 8px 8px 0 0;
+    background-color: #f3efe6;
 }
-.modalClose{
-  border: 0; background: transparent; font-size: 26px; cursor: pointer;
-  position: absolute; margin-inline-start: -6px;
-}
-.bundleItems{ margin-top: 12px; display: grid; gap: 10px; }
-.bundleRow{
-  border: 1px solid rgba(0,0,0,.10);
-  border-radius: 14px;
-  padding: 10px 12px;
-  background: rgba(0,0,0,.02);
-}
-.bundleRow.active{
-  border-color: rgba(76,175,80,.55);
-  box-shadow: 0 0 0 4px rgba(76,175,80,.10);
-  background: rgba(76,175,80,.06);
-}
-.rowLabel{ font-weight: 700; margin-bottom: 8px; }
-.rowSelect{
-  width:100%; padding: 10px 12px; border-radius: 12px;
-  border: 1px solid rgba(0,0,0,.15);
-}
-.swapSection{ margin-top: 14px; }
-.swapPills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
-.swapPill{
-  border: 1px solid rgba(33,150,243,.30);
-  background: rgba(33,150,243,.08);
-  border-radius: 999px;
-  padding: 8px 12px;
-  cursor:pointer;
-}
-.swapPill:hover{ background: rgba(33,150,243,.14); }
-.modalActions{ margin-top: 14px; display:flex; justify-content: flex-end; }
-.small{ font-size: .9rem; }
+
+/* Individual Product Mapping */
+.p1 { background-position: -15px -10px; }    /* e.l.f. Wand */
+.p2 { background-position: -535px -10px; }   /* e.l.f. Blush */
+.p3 { background-position: -810px -10px; }   /* Milk Primer */
+.p4 { background-position: -15px -270px; }   /* Kitsch Charcoal */
+.p5 { background-position: -275px -270px; }  /* Kitsch Argan */
+.p6 { background-position: -540px -270px; }  /* Kitsch 2-in-1 */
+.p7 { background-position: -810px -270px; }  /* Kitsch Rosemary */
+.p8 { background-position: -15px -535px; }   /* Kitsch Coconut */
+.p9 { background-position: -275px -535px; }  /* Kitsch Rice */
+.p10 { background-position: -540px -535px; } /* Kitsch Purple */
+.p11 { background-position: -810px -535px; } /* Kitsch Bonding */
+.p12 { background-position: -15px -800px; }   /* Coco & Eve Mask */
+.p13 { background-position: -275px -800px; }  /* Coco & Eve Bronze */
+.p14 { background-position: -540px -800px; }  /* Baylis & Harding */
+.p15 { background-position: -810px -800px; }  /* PÜR Powder */
+
+
+<style>
+    .dealsGrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 per row web */
+        gap: 15px;
+        max-width: 1000px; /* Centers and keeps cards smaller */
+        margin: 40px auto;
+    }
+
+    @media (max-width: 768px) {
+        .dealsGrid {
+            grid-template-columns: repeat(2, 1fr); /* 2 per row mobile */
+            gap: 10px;
+        }
+    }
+
+    .dealPhoto {
+        width: 100%;
+        height: 140px; /* Smaller height for a cleaner look */
+        background-image: url('See much more on our site NoCrueltyIL.com.jpg');
+        /* Increased size to 1400px to "zoom in" on just the product photos */
+        background-size: 1400px auto; 
+        background-repeat: no-repeat;
+        border-radius: 8px 8px 0 0;
+        background-color: #f9f9f9;
+    }
+
+    /* Recalculated Positions to show ONLY the product image area */
+    .p1 { background-position: -12px -10px; }    .p2 { background-position: -635px -10px; }   .p3 { background-position: -945px -10px; }
+    .p4 { background-position: -12px -335px; }   .p5 { background-position: -325px -335px; }  .p6 { background-position: -635px -335px; } .p7 { background-position: -945px -335px; }
+    .p8 { background-position: -12px -655px; }   .p9 { background-position: -325px -655px; }  .p10 { background-position: -635px -655px; }.p11 { background-position: -945px -655px; }
+    .p12 { background-position: -12px -970px; }  .p13 { background-position: -325px -970px; } .p14 { background-position: -635px -970px; }.p15 { background-position: -945px -970px; }
+
+    /* Clean Card Styling */
+    .dealCard {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        text-align: center;
+        background: #fff;
+        padding-bottom: 10px;
+    }
+    .dealName { font-size: 0.85rem; font-weight: 600; margin: 5px; height: 35px; overflow: hidden; }
+    .dealPrice { font-weight: bold; color: #333; margin-bottom: 8px; }
+</style>

@@ -1,203 +1,275 @@
 <!DOCTYPE html>
-
 <html lang="he" dir="rtl">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>מומלצי היום | Cruelty Free</title>
-<meta name="description" content="המבצעים החמים של היום (דירוג אמזון 4.4 ומעלה), עודכן ב־14.01.26.">
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<!-- Page-only typography (does not change header/site-wide typography) -->
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.css?v=2026-01-14-v12" rel="stylesheet"/>
-<link href="assets/img/logo.png" rel="icon" type="image/png"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>המבצעים החמים של היום | Cruelty Free</title>
+    <link href="assets/css/styles.css?v=2026-01-15" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap" rel="stylesheet"/>
+    
+    <style>
+        :root {
+            --primary-blue: #2a5b9a;
+            --border-color: #e2e8f0;
+            --text-main: #1e293b;
+        }
+
+        body { font-family: 'Assistant', sans-serif; background-color: #f6f7f4; margin: 0; padding-top: 80px; }
+
+        .deals-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .header-area { text-align: center; margin-bottom: 50px; }
+        .header-area h1 { font-size: 36px; font-weight: 800; color: var(--text-main); margin-bottom: 10px; }
+
+        .deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .deal-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .deal-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .card-info { padding: 15px; text-align: center; flex-grow: 1; }
+        .brand { font-size: 11px; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-bottom: 5px; }
+        .title { font-size: 15px; font-weight: 700; color: var(--text-main); height: 42px; overflow: hidden; margin: 8px 0; line-height: 1.4; }
+        .price { font-size: 22px; font-weight: 800; color: var(--primary-blue); }
+        .shipping { font-size: 12px; color: #10b981; font-weight: 700; margin-top: 5px; }
+
+        .btn-amazon {
+            display: block;
+            background: var(--primary-blue);
+            color: #fff !important;
+            text-decoration: none !important;
+            padding: 14px;
+            margin: 0 20px 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 14px;
+            text-align: center;
+        }
+        .btn-amazon:hover { opacity: 0.9; }
+    </style>
 </head>
 <body class="page-products page-deals">
-<header class="siteHeader" id="siteHeader">
-<div class="wrap headerRow">
-<a aria-label="בית" class="logo" href="index.html">
-<img alt="Cruelty Free" class="logoImg" height="40" src="assets/img/logo.png" width="40"/>
-<span class="logoText">Cruelty Free</span>
-</a>
-<nav aria-label="ניווט ראשי" class="nav">
-<a class="" href="todays-top-deals.html">מומלצי היום</a>
-<a class="" href="swaps.html">החלפות</a>
-<a class="" href="vegan-pharmacy.html">בית מרקחת טבעוני</a>
-<a class="" href="products.html">מוצרים</a>
-<a class="" href="shopping-calendar.html">סיילים</a>
-<a class="" href="israeli-brands.html">תוצרת הארץ</a>
-<a class="" href="recommended-brands.html">מותגים בינלאומים</a>
-<a class="" href="ingredient-detective.html">רכיבים</a>
-<a class="" href="learn.html">מידע</a>
-<a class="" href="about.html">אודות</a>
-<a class="" href="contact.html">צור קשר</a>
-</nav>
-</div>
-</header>
-<main id="main">
-<section class="hero product-hero heroSmall">
-<img alt="" aria-hidden="true" class="decorPhoto decorCL" src="assets/img/photos/dogs-cuddle.jpg"/>
-<div class="wrap heroInner">
-  <div class="heroCopy center-text">
-    <h1>המבצעים החמים של היום — 14.01.26</h1>
-    <p>דירוג אמזון 4.4+ • ללא ניסויים בבעלי חיים + טבעוני (לפי התיוג) • קישורי שותפים</p>
-    <div class="badgeRow center-badges">
-      <div class="trust-badge"><span class="icon">🐇</span> Leaping Bunny</div>
-      <div class="trust-badge"><span class="icon">🌿</span> Vegan</div>
-      <div class="trust-badge"><span class="icon">🐰</span> PETA</div>
+
+<header class="siteHeader">
+    <div class="wrap headerRow">
+        <a class="logo" href="index.html">
+            <img src="assets/img/logo.png" class="logoImg" alt="Logo" width="40" height="40">
+            <span class="logoText">Cruelty Free</span>
+        </a>
     </div>
-  </div>
-</div>
-</section>
-<section class="wrap">
-<div class="dealsGrid">
-<article class="dealCard">
-<div class="dealTop">
-<div class="dealBrandRow">
-<div class="brandLogo">BH</div>
-<div>
-<div class="dealBrand">Baylis &amp; Harding</div>
-<div class="dealName">מארז מתנה יוקרתי לגבר הכולל תיק רחצה בניחוח ברגמוט, המפ ואלגום</div>
-</div>
-</div>
-<span aria-label="רמת מחיר: 2 מתוך 5" class="price-tier price-tier--t2 price-tier--sm"><span class="dollar">$</span><span class="dollar">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span></span>
-</div>
-<div class="dealMeta"><span class="tag">מאושר PETA</span><span class="tag">טבעוני</span></div>
-<div class="dealCta">
-<div class="dealPrice">$17.40</div>
-<a class="dealBtn" href="https://amzn.to/3LLQX6G" rel="noopener" target="_blank">קנו באמזון</a>
-</div>
-</article>
+</header>
 
-<article class="dealCard">
-<div class="dealTop">
-<div class="dealBrandRow">
-<div class="brandLogo">GS</div>
-<div>
-<div class="dealBrand">grace &amp; stella</div>
-<div class="dealName">פדים לפנים לטונר, תמציות ומסכות ביתיות (100 יח׳) – רכים וללא סיבים לניקוי וטיפוח</div>
-</div>
-</div>
-<span aria-label="רמת מחיר: 2 מתוך 5" class="price-tier price-tier--t2 price-tier--sm"><span class="dollar">$</span><span class="dollar">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span></span>
-</div>
-<div class="dealMeta"><span class="tag">Leaping Bunny</span><span class="tag">טבעוני</span></div>
-<div class="dealCta">
-<div class="dealPrice">$8.96</div>
-<a class="dealBtn" href="https://amzn.to/3Zan3vU" rel="noopener" target="_blank">קנו באמזון</a>
-</div>
-</article>
+<main class="deals-wrapper">
+    <div class="header-area">
+        <h1>המבצעים החמים של היום</h1>
+        <p>דירוג אמזון 4.4+ • מעודכן ל-15.01.2026</p>
+    </div>
 
-<article class="dealCard">
-<div class="dealTop">
-<div class="dealBrandRow">
-<div class="brandLogo">TH</div>
-<div>
-<div class="dealBrand">The Humble Co</div>
-<div class="dealName">קיסמי פלוס דנטליים בטעם מנטה (200 יח׳) – חוט כפול לשמירה על בריאות החניכיים</div>
-</div>
-</div>
-<span aria-label="רמת מחיר: 1 מתוך 5" class="price-tier price-tier--t1 price-tier--sm"><span class="dollar">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span></span>
-</div>
-<div class="dealMeta"><span class="tag">מאושר PETA</span><span class="tag">טבעוני</span></div>
-<div class="dealCta">
-<div class="dealPrice">$14.31</div>
-<a class="dealBtn" href="https://amzn.to/4qQPGdt" rel="noopener" target="_blank">קנו באמזון</a>
-</div>
-</article>
+    <div class="deals-grid">
+        
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/51H6B-6RjDL.jpg" alt="e.l.f. Halo Glow"></div>
+            <div class="card-info">
+                <div class="brand">e.l.f.</div>
+                <div class="title">Halo Glow Highlight Beauty Wand</div>
+                <div class="price">$8.50</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/l-f-Highlight-Highlighter-Cruelty-free-Starstruck/dp/B0F3J7LTQM?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
 
-<article class="dealCard">
-<div class="dealTop">
-<div class="dealBrandRow">
-<div class="brandLogo">RC</div>
-<div>
-<div class="dealBrand">R+Co</div>
-<div class="dealName">סט שמפו ומרכך Atlantis B5 ללחות עמוקה ושיקום שיער יבש | 250 מ&quot;ל (מארז של 2)</div>
-</div>
-</div>
-<span aria-label="רמת מחיר: 4 מתוך 5" class="price-tier price-tier--t4 price-tier--sm"><span class="dollar">$</span><span class="dollar">$</span><span class="dollar">$</span><span class="dollar">$</span><span class="dollar inactive">$</span></span>
-</div>
-<div class="dealMeta"><span class="tag">Leaping Bunny</span><span class="tag">טבעוני</span></div>
-<div class="dealCta">
-<div class="dealPrice">$57.79</div>
-<a class="dealBtn" href="https://amzn.to/4swvT4G" rel="noopener" target="_blank">קנו באמזון</a>
-</div>
-</article>
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/61K-3vS5C9L.jpg" alt="e.l.f. Blush"></div>
+            <div class="card-info">
+                <div class="brand">e.l.f.</div>
+                <div class="title">Luminous Putty Blush</div>
+                <div class="price">$6.70</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/l-f-Luminous-Buildable-Pigmented-Cruelty-Free/dp/B0B5MH7PYQ?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
 
-<article class="dealCard">
-<div class="dealTop">
-<div class="dealBrandRow">
-<div class="brandLogo">I</div>
-<div>
-<div class="dealBrand">IGK</div>
-<div class="dealName">מרכך Dream Hair LEGENDARY – למראה שיער בריא, רווי בלחות ומבריק</div>
-</div>
-</div>
-<span aria-label="רמת מחיר: 5 מתוך 5" class="price-tier price-tier--t5 price-tier--sm"><span class="dollar">$</span><span class="dollar">$</span><span class="dollar">$</span><span class="dollar">$</span><span class="dollar">$</span></span>
-</div>
-<div class="dealMeta"><span class="tag">Leaping Bunny</span><span class="tag">טבעוני</span></div>
-<div class="dealCta">
-<div class="dealPrice">$72.00</div>
-<a class="dealBtn" href="https://amzn.to/4jL2kbQ" rel="noopener" target="_blank">קנו באמזון</a>
-</div>
-</article>
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/61qY2B5-lQL.jpg" alt="Milk Makeup"></div>
+            <div class="card-info">
+                <div class="brand">Milk Makeup</div>
+                <div class="title">Hydro Grip Primer (12H Grip)</div>
+                <div class="price">$15.00</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Milk-Makeup-12HR-Hydro-Primer/dp/B0FHQRCQ4D?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
 
-<article class="dealCard">
-<div class="dealTop">
-<div class="dealBrandRow">
-<div class="brandLogo">PM</div>
-<div>
-<div class="dealBrand">PÜR MINERALS</div>
-<div class="dealName">קרם לחות 4-ב-1 Cloud Cream – מעניק לחות, מרגיע, מחליק ומכין את העור לאיפור</div>
-</div>
-</div>
-<span aria-label="רמת מחיר: 3 מתוך 5" class="price-tier price-tier--t3 price-tier--sm"><span class="dollar">$</span><span class="dollar">$</span><span class="dollar">$</span><span class="dollar inactive">$</span><span class="dollar inactive">$</span></span>
-</div>
-<div class="dealMeta"><span class="tag">מאושר PETA</span><span class="tag">טבעוני</span></div>
-<div class="dealCta">
-<div class="dealPrice">$28.00</div>
-<a class="dealBtn" href="https://amzn.to/3YErOOm" rel="noopener" target="_blank">קנו באמזון</a>
-</div>
-</article>
-</div>
-</section>
-<section class="wrap">
-<p class="muted"></p>
-</section>
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71u9SreA9uL.jpg" alt="Kitsch Charcoal"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Detoxifying Charcoal Body Wash Bar</div>
+                <div class="price">$9.56</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Detoxifying-Charcoal-Body-Wash/dp/B09F9YGWJK?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/719F9S3vUWL.jpg" alt="Kitsch Argan"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Argan Oil Strengthening Shampoo Bar</div>
+                <div class="price">$11.19</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Argan-Oil-Shampoo-Strengthening/dp/B0DW9JD5X7?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71rIe7oW6XL.jpg" alt="Kitsch 2-in-1"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Shampoo & Body Wash Bar</div>
+                <div class="price">$11.13</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Shampoo-Body-Wash-Bar/dp/B0BTK41544?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71z73I9l+1L.jpg" alt="Kitsch Rosemary"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Rosemary & Biotin Shampoo Set</div>
+                <div class="price">$22.39</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Shampoo-Conditioner-Strengthens-Paraben/dp/B0D5BX9H9K?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71X8k4jFHSL.jpg" alt="Kitsch Coconut"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Coconut Oil Moisturizing Shampoo Bar</div>
+                <div class="price">$11.14</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Coconut-Shampoo-Moisturizing-Ingredients/dp/B0D7NWDS29?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/81S65-E5pDL.jpg" alt="Kitsch Rice Water"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Rice Water Protein Shampoo Bar</div>
+                <div class="price">$11.19</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Shampoo-Hydrating-Moisturizing-Strengthens/dp/B08HQN3HV6?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71e067Diz0L.jpg" alt="Kitsch Purple"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Purple Toning Conditioner Bar</div>
+                <div class="price">$11.19</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Purple-Conditioner-Blonde-Hair/dp/B0BT5SLYN2?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/7123oB8S3TL.jpg" alt="Kitsch Bonding"></div>
+            <div class="card-info">
+                <div class="brand">Kitsch</div>
+                <div class="title">Bonding Shampoo & Conditioner Set</div>
+                <div class="price">$22.36</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Kitsch-Shampoo-Conditioner-Ingredients-Paraben/dp/B0CZSCJZWR?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71C79X27XhL.jpg" alt="Coco & Eve Mask"></div>
+            <div class="card-info">
+                <div class="brand">Coco & Eve</div>
+                <div class="title">Like A Virgin Hair Mask</div>
+                <div class="price">$25.60</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Coco-Eve-Virgin-Nourishing-Coconut/dp/B07B8JN5NP?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71Lh5N1F6GL.jpg" alt="Coco & Eve Tanner"></div>
+            <div class="card-info">
+                <div class="brand">Coco & Eve</div>
+                <div class="title">Sunny Honey Bronzing Foam</div>
+                <div class="price">$28.50</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Coco-Eve-Bronzing-Natural-Cellulite/dp/B07Z53CNBS?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/71r5E3M8YcL.jpg" alt="Baylis & Harding"></div>
+            <div class="card-info">
+                <div class="brand">Baylis & Harding</div>
+                <div class="title">Bergamot & Sandalwood Luxury Wash</div>
+                <div class="price">$17.40</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/Baylis-Harding-Bergamot-Sandalwood-Luxury/dp/B0C7CG6GBJ?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+        <div class="deal-card">
+            <div class="image-container"><img src="https://m.media-amazon.com/images/I/61S-rO2+WRL.jpg" alt="PÜR Powder"></div>
+            <div class="card-info">
+                <div class="brand">PÜR</div>
+                <div class="title">4-in-1 Pressed Mineral Powder</div>
+                <div class="price">$22.40</div>
+                <div class="shipping">משלוח חינם מעל $49</div>
+            </div>
+            <a href="https://www.amazon.com/PUR-Makeup-Powder-Foundation-Concealer-Mineral-Pressed-SPF-15/dp/B005O8XYYM?tag=nocrueltyil-20" class="btn-amazon" target="_blank">קנו באמזון</a>
+        </div>
+
+    </div>
 </main>
-<footer class="siteFooter">
-<div class="wrap">
-<div aria-label="ציטוטים" class="footerQuotes">
-<span class="quotePill">חמלה היא דרך חיים</span><span class="quotePill">חיה ותן לחיות</span><span class="quotePill">חמלה היא האופנה הכי יפה</span><span class="quotePill">היו טובים לכל היצורים</span>
-</div>
-<p class="muted">גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך. התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים. איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע. אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.</p>
-</div>
-</footer>
-<script defer="" src="assets/js/site.js?v=2026-01-14-v12"></script>
-
-<!-- Weglot helper: refresh translations after dynamic content renders -->
-<script>
-(function(){
-  function wgRefresh(){
-    try{
-      if (window.Weglot && typeof Weglot.refresh === 'function') Weglot.refresh();
-    }catch(e){}
-  }
-  // initial
-  document.addEventListener('DOMContentLoaded', function(){ setTimeout(wgRefresh, 80); });
-
-  // optional: if your JS triggers this after rendering cards/lists
-  window.addEventListener('kbwg:content-rendered', function(){ setTimeout(wgRefresh, 80); });
-
-  // watch for DOM changes (debounced)
-  var t=null;
-  var mo=new MutationObserver(function(){
-    clearTimeout(t);
-    t=setTimeout(wgRefresh, 250);
-  });
-  mo.observe(document.documentElement, { childList:true, subtree:true });
-})();
-</script>
 
 </body>
 </html>

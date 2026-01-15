@@ -23,8 +23,10 @@
   const onlyFreeShip = qs("#onlyFreeShip");
   const onlyCFNotVegan = qs("#onlyCFNotVegan");
   const onlyIndependent = qs("#onlyIndependent");
-  const avoidNonCFParent = null;
-let currentCat = "all";
+  const avoidNonCFParent = qs("#avoidNonCFParent");
+
+  const chips = Array.from(document.querySelectorAll(".chip"));
+  let currentCat = "all";
 
   function escapeHtml(str) {
     return String(str ?? "")
@@ -178,7 +180,684 @@ function normalizeProduct(p) {
   const PARENT_MAP = (window.PARENT_MAP && typeof window.PARENT_MAP === 'object') ? window.PARENT_MAP : {};
   const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct)).map(function(p){
     var parentInfo = PARENT_MAP[p.brand] || null;
-          // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
+    // Normalize parent info into each product so render() can stay simple.
+    var status = parentInfo && parentInfo.status ? String(parentInfo.status) : 'unknown';
+    if (status !== 'independent' && status !== 'subsidiary') status = 'unknown';
+    return Object.assign({}, p, {
+      parentStatus: status,
+      parentCompany: parentInfo && parentInfo.parent ? String(parentInfo.parent) : null,
+      parentCrueltyFree: (parentInfo && typeof parentInfo.parentCrueltyFree === 'boolean') ? parentInfo.parentCrueltyFree : null,
+      parentNotes: parentInfo && parentInfo.notes ? String(parentInfo.notes) : ''
+    });
+  });
+
+  function unique(arr) {
+    return Array.from(new Set(arr))
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "he"));
+  }
+
+  // --- קטגוריות לוגיות בסיסיות (JS) ---
+  const CAT_ALIASES = {
+    fragrances: "fragrance",
+    perfume: "fragrance",
+    perfumes: "fragrance",
+    frag: "fragrance"
+  };
+  function normCat(v) {
+    const s = String(v ?? "").trim().toLowerCase();
+    return CAT_ALIASES[s] || s;
+  }
+  function getCatsRaw(p) {
+    if (Array.isArray(p?.categories)) return p.categories.map(normCat).filter(Boolean);
+    if (p?.category != null) return [normCat(p.category)].filter(Boolean);
+    if (p?.cat != null) return [normCat(p.cat)].filter(Boolean);
+    return [];
+  }
+
+  const CATEGORY_LABELS = {
+    face: "פנים",
+    hair: "שיער",
+    body: "גוף",
+    makeup: "איפור",
+    fragrance: "בישום",
+    "mens-care": "גברים",
+    baby: "תינוקות",
+    health: "בריאות",
+    home: "בית",
+    pets: "חיות",
+    office: "משרד",
+    art: "אמנות",
+    tech: "טכנולוגיה"
+  };
+
+  function getPrimaryCategoryKey(p) {
+    const cats = getCatsRaw(p);
+    return cats[0] || "";
+  }
+
+  function getCategoryLabelFromProduct(p) {
+    if (p.categoryLabel) return p.categoryLabel;
+    const key = getPrimaryCategoryKey(p);
+    return CATEGORY_LABELS[key] || "אחר";
+  }
+
+  // Helper לבדיקת מילים בשם/תיאור
+  function containsAny(haystackLower, words) {
+    return words.some((w) => haystackLower.includes(w.toLowerCase()));
+  }
+
+  // ✅ קביעת "קבוצת סוג" לפי קטגוריה + מילים בשם
+  // קבוצות: מוצרי איפור, טיפוח לפנים, טיפוח לגוף, עיצוב שיער, הגנה מהשמש,
+  // בשמים, הלבנה וטיפוח השיניים, טיפוח לגבר, אחר.
+
+  // Helper: האם המוצר ממוקד/מותאם לגברים (לפי שם ומילות מפתח)
+  function isMenTargetedProduct(p) {
+    if (!p) return false;
+    // אפשרות לסמן מפורשות בדאטה בעתיד
+    if (p.isMen) return true;
+
+    const name = p.name || "";
+    const lower = name.toLowerCase();
+
+    const hebMenRegex = /גבר|גברים/;
+    const enMenRegex = /(men's|for men|for him|pour homme)/i;
+
+    return hebMenRegex.test(name) || enMenRegex.test(lower);
+  }
+
+  function getTypeGroupLabel(p) {
+    const catKey = getPrimaryCategoryKey(p); // face / hair / body / makeup / fragrance / ...
+    const nameLower = (p.productTypeLabel || p.name || "").toLowerCase();
+
+    const isTeeth = containsAny(nameLower, [
+      "tooth",
+      "teeth",
+      "שן",
+      "שיניים",
+      "toothpaste",
+      "whitening"
+    ]);
+
+    if (isTeeth) {
+      return "הלבנה וטיפוח השיניים";
+    }
+
+    const isMen =
+      /גבר|גברים|men's|for men|for him|pour homme/i.test(nameLower);
+
+    if (catKey === "makeup") return "מוצרי איפור";
+
+    if (catKey === "face") {
+      if (isMen) return "טיפוח לגבר";
+      return "טיפוח לפנים";
+    }
+
+    if (catKey === "body") {
+      if (isMen) return "טיפוח לגבר";
+      return "טיפוח לגוף";
+    }
+
+    if (catKey === "hair") {
+      if (isMen) return "טיפוח לגבר";
+      return "עיצוב שיער";
+    }
+
+    if (catKey === "fragrance") {
+      return "בשמים";
+    }
+
+    if (catKey === "sun" || catKey === "suncare" || catKey === "spf") {
+      return "הגנה מהשמש";
+    }
+
+    if (isMen) return "טיפוח לגבר";
+
+    return "אחר";
+  }
+
+  // ✅ קביעת "תת-סוג" לפי הקבוצה + מילים בשם
+  // (למשל "קרם פנים", "סרום", "מסכה לשיער", "שפתיים", "עיניים" וכו׳)
+  function getTypeDisplayLabel(p) {
+    const group = getTypeGroupLabel(p);
+    const name = (p.productTypeLabel || p.name || "").trim();
+    if (!name) return "";
+    const lower = name.toLowerCase();
+
+    // מוצרי איפור
+    if (group === "מוצרי איפור") {
+      if (containsAny(lower, ["lip", "שפתיים", "שפתון", "gloss"])) {
+        return "שפתיים";
+      }
+      if (
+        containsAny(lower, [
+          "eye",
+          "eyes",
+          "עיניים",
+          "ריסים",
+          "מסקרה",
+          "eyeliner",
+          "brow"
+        ])
+      ) {
+        return "עיניים";
+      }
+      if (containsAny(lower, ["nail", "ציפורניים", "לק"])) {
+        return "ציפורניים";
+      }
+      if (
+        containsAny(lower, [
+          "brush",
+          "מברשת",
+          "sponge",
+          "applicator",
+          "tools",
+          "אביזר"
+        ])
+      ) {
+        return "אביזרי איפור";
+      }
+      // סטים אמיתיים – קיטים/סטים/מארזים, אבל לא פלטות
+      if (
+        containsAny(lower, [
+          "kit",
+          "מארז",
+          "ערכת"
+        ])
+      ) {
+        return "סטים ומארזים";
+      }
+      // פלטות – ברירת מחדל כפנים
+      if (containsAny(lower, ["palette", "פלטה"])) {
+        return "פנים";
+      }
+      // כל השאר – סומק/פודרה/מייקאפ וכו׳
+      return "פנים";
+    }
+
+    // טיפוח לפנים
+    if (group === "טיפוח לפנים") {
+      if (
+        containsAny(lower, [
+          "eye",
+          "eyes",
+          "עיניים",
+          "אזור העיניים",
+          "שפתיים",
+          "lip"
+        ])
+      ) {
+        return "עיניים ושפתיים";
+      }
+      if (
+        containsAny(lower, [
+          "mask",
+          "מסכה",
+          "peel",
+          "פילינג",
+          "exfoli",
+          "scrub"
+        ])
+      ) {
+        return "פילינג ומסכות";
+      }
+      if (containsAny(lower, ["serum", "סרום", "אמפול"])) {
+        return "סרום";
+      }
+      if (
+        containsAny(lower, [
+          "cream",
+          "קרם",
+          "moisturizer",
+          "לחות",
+          "ג'ל לחות",
+          "gel-cream"
+        ])
+      ) {
+        return "קרם פנים";
+      }
+      if (
+        containsAny(lower, [
+          "cleanser",
+          "ניקוי",
+          "wash",
+          "face wash",
+          "מי פנים",
+          "טונר",
+          "toner",
+          "micellar",
+          "מים מיסלריים",
+          "balance",
+          "איזון"
+        ])
+      ) {
+        return "ניקוי ואיזון";
+      }
+      if (
+        containsAny(lower, [
+          "palette",
+          "kit",
+          "מארז",
+          "ערכת",
+          "collection"
+        ])
+      ) {
+        return "סטים ומארזים";
+      }
+      return "ניקוי ואיזון";
+    }
+
+    // טיפוח לגוף
+    if (group === "טיפוח לגוף") {
+      if (containsAny(lower, ["יד", "ידיים", "hands", "hand"])) {
+        return "קרמי ידיים";
+      }
+      if (
+        containsAny(lower, ["רגל", "רגליים", "feet", "foot", "heels", "heel"])
+      ) {
+        return "קרמי רגליים";
+      }
+      if (containsAny(lower, ["פילינג", "scrub", "exfoli"])) {
+        return "פילינגים";
+      }
+      if (
+        containsAny(lower, [
+          "deo",
+          "deodorant",
+          "דאודורנט",
+          "soap",
+          "סבון",
+          "wash",
+          "shower",
+          "gel douche",
+          "body wash"
+        ])
+      ) {
+        return "סבונים ודאודורנטים";
+      }
+      if (
+        containsAny(lower, [
+          "palette",
+          "kit",
+          "מארז",
+          "ערכת",
+          "collection"
+        ])
+      ) {
+        return "סטים ומארזים";
+      }
+      // כל השאר: קרמי גוף למיניהם
+      return "קרמי גוף";
+    }
+
+    // עיצוב שיער
+    if (group === "עיצוב שיער") {
+      if (containsAny(lower, ["shampoo", "שמפו"])) {
+        return "שמפו";
+      }
+      if (containsAny(lower, ["conditioner", "מרכך"])) {
+        return "מרכך";
+      }
+      if (containsAny(lower, ["mask", "מסכה"])) {
+        return "מסכה לשיער";
+      }
+      // מוס, ספריי, קרם תלתלים וכו׳
+      return "טיפוח ועיצוב שיער";
+    }
+
+    // הגנה מהשמש
+    if (group === "הגנה מהשמש") {
+      if (
+        containsAny(lower, ["self tan", "self-tan", "שיזוף עצמי", "bronzing"])
+      ) {
+        return "שיזוף עצמי";
+      }
+      if (containsAny(lower, ["face", "פנים"])) {
+        return "הגנה לפנים";
+      }
+      if (containsAny(lower, ["body", "גוף", "ידיים", "רגליים"])) {
+        return "הגנה לגוף";
+      }
+      return "הגנה לפנים";
+    }
+
+    // בשמים
+    if (group === "בשמים") {
+      const isMen =
+        /גבר|גברים|men's|for men|for him|pour homme/i.test(lower);
+      if (isMen) return "בושם לגבר";
+      return "בשמים לנשים";
+    }
+
+    // הלבנה וטיפוח השיניים
+    if (group === "הלבנה וטיפוח השיניים") {
+      return "הלבנה וטיפוח השיניים";
+    }
+
+    // טיפוח לגבר
+    if (group === "טיפוח לגבר") {
+      return "טיפוח לגבר";
+    }
+
+    return "אחר";
+  }
+
+  function getCats(p) {
+    return getCatsRaw(p);
+  }
+
+  // Free shipping helpers
+  function getOfferWithMinFreeShip(p) {
+    if (!Array.isArray(p?.offers)) return null;
+    let bestOffer = null;
+    p.offers.forEach((o) => {
+      const v = typeof o.freeShipOver === "number" ? o.freeShipOver : null;
+      if (v != null && !Number.isNaN(v)) {
+        if (!bestOffer || v < bestOffer.freeShipOver) {
+          bestOffer = o;
+        }
+      }
+    });
+    return bestOffer;
+  }
+
+  function getProductMinFreeShip(p) {
+    const bestOffer = getOfferWithMinFreeShip(p);
+    return bestOffer ? bestOffer.freeShipOver : null;
+  }
+
+  function formatFreeShipText(o) {
+    if (!o || o.freeShipOver == null || Number.isNaN(o.freeShipOver)) return "";
+    const amount = o.freeShipOver;
+    const currency = "₪";
+    return `משלוח חינם מעל ${currency}${amount}`;
+  }
+
+  function formatSizeForIsrael(rawSize) {
+    const original = String(rawSize || "").trim();
+    if (!original) return "";
+
+    const lower = original.toLowerCase();
+
+    if (
+      lower.includes("ml") ||
+      lower.includes('מ"ל') ||
+      lower.includes("מ״ל") ||
+      lower.includes("גרם") ||
+      lower.includes("g")
+    ) {
+      return original;
+    }
+
+    const ozMatch = lower.match(/(\d+(?:\.\d+)?)\s*(fl\.?\s*)?oz/);
+    if (ozMatch) {
+      const qty = parseFloat(ozMatch[1]);
+      if (!Number.isNaN(qty)) {
+        const ml = qty * 29.5735;
+        const rounded = Math.round(ml / 5) * 5;
+        return `${rounded} מ״ל`;
+      }
+    }
+
+    return original;
+  }
+
+  // Price-per-unit transparency
+  // Supports: 120 גרם, 500ml, 12 fl oz, 4oz, 1 ליטר
+  function parseSizeToUnit(rawSize) {
+    const s = String(rawSize || '').trim();
+    if (!s) return null;
+    const lower = s.toLowerCase().replace(/,/g, '.');
+
+    // grams
+    const gMatch = lower.match(/(\d+(?:\.\d+)?)\s*(g|גרם)/);
+    if (gMatch) {
+      const v = parseFloat(gMatch[1]);
+      if (Number.isFinite(v) && v > 0) return { kind: 'g', value: v };
+    }
+
+    // milliliters
+    const mlMatch = lower.match(/(\d+(?:\.\d+)?)\s*(ml|מ\"ל|מ״ל)/);
+    if (mlMatch) {
+      const v = parseFloat(mlMatch[1]);
+      if (Number.isFinite(v) && v > 0) return { kind: 'ml', value: v };
+    }
+
+    // liters
+    const lMatch = lower.match(/(\d+(?:\.\d+)?)\s*(l|liter|litre|ליטר)/);
+    if (lMatch) {
+      const v = parseFloat(lMatch[1]);
+      if (Number.isFinite(v) && v > 0) return { kind: 'ml', value: v * 1000 };
+    }
+
+    // fluid ounces / ounces
+    const ozMatch = lower.match(/(\d+(?:\.\d+)?)\s*(fl\.?\s*)?oz/);
+    if (ozMatch) {
+      const v = parseFloat(ozMatch[1]);
+      if (Number.isFinite(v) && v > 0) return { kind: 'ml', value: v * 29.5735 };
+    }
+
+    return null;
+  }
+
+  function formatPricePer100(p) {
+    const unit = parseSizeToUnit(p.size);
+    const range = getProductPriceRange(p);
+    if (!unit || !range) return '';
+    const minPrice = range[0];
+    if (!Number.isFinite(minPrice) || minPrice <= 0) return '';
+
+    if (unit.kind === 'ml') {
+      const per100 = (minPrice / unit.value) * 100;
+      if (!Number.isFinite(per100)) return '';
+      return `₪${Math.round(per100)} ל-100 מ״ל`;
+    }
+    if (unit.kind === 'g') {
+      const per100 = (minPrice / unit.value) * 100;
+      if (!Number.isFinite(per100)) return '';
+      return `₪${Math.round(per100)} ל-100 גרם`;
+    }
+    return '';
+  }
+
+  function getProductPriceRange(p) {
+    // Collect all numeric price hints: explicit range + offer prices
+    const prices = [];
+
+    if (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) {
+      prices.push(p.priceMin);
+    }
+    if (typeof p?.priceMax === "number" && !Number.isNaN(p.priceMax)) {
+      prices.push(p.priceMax);
+    }
+
+    if (Array.isArray(p?.offers)) {
+      p.offers.forEach((o) => {
+        const v = typeof o.price === "number" ? o.price : null;
+        if (v != null && !Number.isNaN(v)) {
+          prices.push(v);
+        }
+      });
+    }
+
+    if (!prices.length) return null;
+
+    // Use priceMin when available (more stable for bucketing); fallback to avg of hints
+    const avg = prices.reduce((sum, v) => sum + v, 0) / prices.length;
+    const hint = (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) ? p.priceMin : avg;
+    const basePrice = Math.max(0, Math.round(hint));
+
+    let bucketMin;
+    let bucketMax;
+
+    // Buckets:
+    // 0–50, 50–100, 100–200, 200–300, 300–400, 400–500, ...
+    if (basePrice <= 50) {
+      bucketMin = 0;
+      bucketMax = 50;
+    } else if (basePrice <= 100) {
+      bucketMin = 50;
+      bucketMax = 100;
+    } else {
+      const span = 100;
+      const idx = Math.floor((basePrice - 100) / span);
+      bucketMin = 100 + idx * span;
+      bucketMax = bucketMin + span;
+    }
+
+    return [bucketMin, bucketMax];
+  }
+
+  function getStoreDisplayName(p, o) {
+    const rawStore = String(o?.store || p?.storeName || "").trim();
+    const region = String(o?.region || "").toLowerCase();
+    const isAmazon = rawStore.toLowerCase().includes("amazon");
+
+    if (!isAmazon) {
+      return rawStore || "חנות";
+    }
+
+    switch (region) {
+      case "uk":
+        return "אמזון אנגליה (Amazon UK)";
+      case "us":
+        return "אמזון ארה״ב (Amazon US)";
+      case "de":
+        return "אמזון גרמניה (Amazon DE)";
+      case "fr":
+        return "אמזון צרפת (Amazon FR)";
+      case "il":
+        return "אמזון ישראל";
+      default:
+        return "אמזון בינלאומי (Amazon)";
+    }
+  }
+
+  function buildSelects() {
+    // מותג dropdown
+    if (brandSelect) {
+      unique(data.map((p) => p.brand)).forEach((b) => {
+        const o = document.createElement("option");
+        o.value = b;
+        o.textContent = b;
+        brandSelect.appendChild(o);
+      });
+    }
+
+    // Store dropdown (separate Amazon US / Amazon UK וכו׳)
+    if (storeSelect) {
+      unique(
+        data.flatMap((p) =>
+          (p.offers || [])
+            .map((o) => getStoreDisplayName(p, o))
+            .filter(Boolean)
+        )
+      ).forEach((label) => {
+        const opt = document.createElement("option");
+        opt.value = label;
+        opt.textContent = label;
+        storeSelect.appendChild(opt);
+      });
+    }
+
+    // ✅ Type dropdown – optgroups לפי הקבוצות, ו-options לפי תתי-הקטגוריה
+    if (typeSelect) {
+      typeSelect.innerHTML = "";
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = "כל סוגי המוצרים";
+      typeSelect.appendChild(placeholder);
+
+      const groupsByType = new Map(); // groupLabel -> Set(subTypeLabel)
+
+      data.forEach((p) => {
+        const groupLabel = getTypeGroupLabel(p);
+        const typeLabel = getTypeDisplayLabel(p);
+        if (!groupLabel || !typeLabel) return;
+        if (!groupsByType.has(groupLabel)) {
+          groupsByType.set(groupLabel, new Set());
+        }
+        groupsByType.get(groupLabel).add(typeLabel);
+      });
+
+      const groupOrder = [
+        "מוצרי איפור",
+        "טיפוח לפנים",
+        "הלבנה וטיפוח השיניים",
+        "טיפוח לגוף",
+        "עיצוב שיער",
+        "הגנה מהשמש",
+        "בשמים",
+        "טיפוח לגבר",
+        "אחר"
+      ];
+
+      groupOrder.forEach((groupLabel) => {
+        const set = groupsByType.get(groupLabel);
+        if (!set || set.size === 0) return;
+
+        const optGroup = document.createElement("optgroup");
+        optGroup.label = groupLabel;
+
+        Array.from(set)
+          .sort((a, b) => a.localeCompare(b, "he"))
+          .forEach((typeLabel) => {
+            const o = document.createElement("option");
+            o.value = `${groupLabel}::${typeLabel}`;
+            o.textContent = typeLabel;
+            optGroup.appendChild(o);
+          });
+
+        typeSelect.appendChild(optGroup);
+      });
+    }
+  }
+
+  function matches(p) {
+    const text = (q?.value || "").trim().toLowerCase();
+    const brand = brandSelect?.value || "";
+    const store = storeSelect?.value || "";
+    const typeVal = typeSelect?.value || ""; // "קבוצה::תת-קטגוריה"
+
+    const predicates = [
+      // פילטר קטגוריות עליונות (chips)
+      () => currentCat === "all" || getCats(p).includes(normCat(currentCat)),
+
+      // מותג
+      () => !brand || p.brand === brand,
+
+      // Store
+      () => !store || (p.offers || []).some((o) => getStoreDisplayName(p, o) === store),
+
+      // ✅ Type לפי קבוצה + תת-קטגוריה
+      () => {
+        if (!typeVal) return true;
+        const [groupSel, typeSel] = typeVal.split("::");
+        const group = getTypeGroupLabel(p);
+        if (group !== groupSel) return false;
+        const typeLabel = getTypeDisplayLabel(p);
+        return typeLabel === typeSel;
+      },
+
+      // Approvals
+      () => !onlyLB?.checked || p.isLB,
+      () => !onlyPeta?.checked || p.isPeta,
+      () => !onlyVegan?.checked || p.isVegan,
+      // "Cruelty-free only" = show items that are CF but NOT vegan
+      () => !onlyCFNotVegan?.checked || !p.isVegan,
+      () => !onlyIsrael?.checked || p.isIsrael,
+
+      // Parent-company transparency
+      () => !onlyIndependent?.checked || p.parentStatus === 'independent',
+      () => {
+        if (!avoidNonCFParent?.checked) return true;
+        // Keep independent brands, and brands whose parent is known to be cruelty-free.
+        if (p.parentStatus === 'independent') return true;
+        if (p.parentStatus === 'subsidiary') return p.parentCrueltyFree === true;
+        // unknown parent: exclude when strict toggle is on
+        return false;
+      },
+      // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
       () => {
         if (!onlyMen?.checked) return true;
         if (currentCat === "makeup") return true;
@@ -408,9 +1087,11 @@ function normalizeProduct(p) {
 
       // Parent-company badge (transparency)
       if (p.parentStatus === 'independent') {
+        const t = tag("בעלות עצמאית");
         t.classList.add('tag--parent');
         tags.appendChild(t);
       } else if (p.parentStatus === 'subsidiary') {
+        const label = p.parentCompany ? `חברת בת של ${p.parentCompany}` : "חברת בת";
         const t = tag(label);
         t.classList.add('tag--parent');
         tags.appendChild(t);
@@ -476,7 +1157,7 @@ function normalizeProduct(p) {
       if (ppu) {
         const u = document.createElement('div');
         u.className = 'pUnitPrice';
-        u.textContent = `: ${ppu}`;
+        u.textContent = `שקיפות ערך: ${ppu}`;
         content.appendChild(u);
       }
 
@@ -485,6 +1166,7 @@ function normalizeProduct(p) {
       // Price volatility note (until API integration)
       const pv = document.createElement('div');
       pv.className = 'pPriceNote';
+      pv.textContent = 'המחירים באמזון עשויים להשתנות. המחיר הסופי נקבע בעמוד התשלום.';
       content.appendChild(pv);
 
       // Real-world performance testing (optional per product)
@@ -577,24 +1259,26 @@ function bind() {
     const cat = btn.dataset.cat;
     if (!cat) return;
     currentCat = cat;
-        chips.forEach((c) => c.classList.toggle("active", c === btn));
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    chips.forEach((c) => c.classList.toggle("active", c === btn));
     scheduleRender();
   });
 
   // Clear-all filters
   clearBtn?.addEventListener("click", () => {
-        q.value = "";
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    q.value = "";
     brandSelect.value = "";
     storeSelect.value = "";
     sortSel.value = "price-low";
     typeSelect.value = "";
     onlyLB.checked = false;
     onlyPeta.checked = false;
-    (onlyVegan && onlyVegan.checked) = false;
-    if (onlyCFNotVegan) (onlyCFNotVegan && onlyCFNotVegan.checked) = false;
+    onlyVegan.checked = false;
+    if (onlyCFNotVegan) onlyCFNotVegan.checked = false;
     onlyIsrael.checked = false;
     onlyFreeShip.checked = false;
-    if (onlyIndependent) (onlyIndependent && onlyIndependent.checked) = false;
+    if (onlyIndependent) onlyIndependent.checked = false;
     if (avoidNonCFParent) avoidNonCFParent.checked = false;
     if (priceMinInput) priceMinInput.value = "";
     if (priceMaxInput) priceMaxInput.value = "";
@@ -610,6 +1294,3 @@ buildSelects();
   bind();
   render();
 })();
-
-
-function weglotRefresh(){ try{ if(window.Weglot && typeof Weglot.refresh==='function'){ Weglot.refresh(); } }catch(e){} }
