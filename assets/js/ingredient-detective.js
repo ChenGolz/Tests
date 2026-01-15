@@ -302,3 +302,7 @@
   renderHint('הזינו שתי אותיות לפחות להתחיל');
   if (ingList) renderInciAlerts('');
 })();
+
+function weglotRefresh(){try{if(window.Weglot&&typeof Weglot.refresh==='function'){Weglot.refresh();}}catch(e){}}
+
+window.addEventListener('load', weglotRefresh);

@@ -3742,32 +3742,96 @@ body.menuOpen .navOverlay{
 }
 
 
-/* Product card spacing fine-tuning */
-.product-card { padding: 12px !important; }
-.product-card .price-range { margin-bottom: 4px !important; }
-.product-card .store-name { margin-top: 0 !important; }
-.product-card .card-body { gap: 4px !important; }
 
-/* Ensure brand names display LTR inside Hebrew text */
-.brand-name {
-  direction: ltr;
-  unicode-bidi: isolate;
-  font-weight: 600;
+/* --- Nav spacing (desktop) --- */
+.siteHeader nav ul{ gap: 8px !important; flex-wrap: wrap; }
+.siteHeader nav a{ padding: 8px 10px !important; }
+
+/* --- Products card spacing fine-tuning --- */
+.product-card .price-range{ margin-bottom: 2px !important; }
+.product-card .store-name{ margin-top: 0 !important; }
+.product-card .offers{ margin-top: 6px !important; }
+.product-card .offers .offer{ padding-top: 8px !important; }
+
+/* Mixed Hebrew + Brand name rendering */
+.brand-name{ direction:ltr; unicode-bidi:isolate; font-weight:600; }
+
+/* Products page notice */
+.pageNotice{
+  background: rgba(76, 175, 80, 0.10);
+  border: 1px solid rgba(76, 175, 80, 0.25);
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 10px 0 14px;
+  font-size: 0.95rem;
 }
 
-/* Bundle cards design */
-.bundle-grid { display:flex; gap:20px; flex-wrap:wrap; }
-.bundle-card {
-  background: linear-gradient(135deg,#6be585,#4caf50);
-  color:white; padding:20px; border-radius:12px;
-  cursor:pointer; width:260px; box-shadow:0 4px 10px rgba(0,0,0,0.15);
+/* --- Bundles page --- */
+.bundleGrid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top: 18px; }
+.bundleCard{
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: right;
+  background: linear-gradient(135deg, rgba(76,175,80,.14), rgba(33,150,243,.10));
+  box-shadow: 0 6px 22px rgba(0,0,0,.06);
+  cursor: pointer;
 }
-.bundle-modal {
-  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.6); z-index:999;
+.bundleCard:hover{ transform: translateY(-1px); }
+.bundleTitle{ font-weight: 800; font-size: 1.05rem; }
+.bundleMeta{ margin-top: 6px; color: rgba(0,0,0,.70); font-size: .95rem; }
+.bundleNote{
+  margin-top: 16px;
+  background: rgba(0,0,0,.04);
+  border: 1px dashed rgba(0,0,0,.15);
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: rgba(0,0,0,.72);
 }
-.bundle-modal-content {
-  background:white; margin:8% auto; padding:20px; border-radius:12px; width:80%; max-width:500px;
+
+.modalBackdrop{
+  position: fixed; inset:0; background: rgba(0,0,0,.55);
+  display:none; align-items: center; justify-content: center;
+  padding: 18px; z-index: 999;
 }
-.bundle-close { float:left; cursor:pointer; font-size:22px; }
-.bundle-item { padding:6px 0; border-bottom:1px solid #eee; }
+.modalBackdrop.open{ display:flex; }
+.modalCard{
+  width: min(720px, 100%);
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.modalClose{
+  border: 0; background: transparent; font-size: 26px; cursor: pointer;
+  position: absolute; margin-inline-start: -6px;
+}
+.bundleItems{ margin-top: 12px; display: grid; gap: 10px; }
+.bundleRow{
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(0,0,0,.02);
+}
+.bundleRow.active{
+  border-color: rgba(76,175,80,.55);
+  box-shadow: 0 0 0 4px rgba(76,175,80,.10);
+  background: rgba(76,175,80,.06);
+}
+.rowLabel{ font-weight: 700; margin-bottom: 8px; }
+.rowSelect{
+  width:100%; padding: 10px 12px; border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.15);
+}
+.swapSection{ margin-top: 14px; }
+.swapPills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
+.swapPill{
+  border: 1px solid rgba(33,150,243,.30);
+  background: rgba(33,150,243,.08);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor:pointer;
+}
+.swapPill:hover{ background: rgba(33,150,243,.14); }
+.modalActions{ margin-top: 14px; display:flex; justify-content: flex-end; }
+.small{ font-size: .9rem; }
