@@ -1,5 +1,191 @@
 [
   {
+    "id": "lavido-natural-soap-jasmine",
+    "brand": "Lavido",
+    "name": "סבון מוצק טבעי בניחוח יסמין. מנקה בעדינות, טבעוני ושומר על לחות העור. טיפוח נקי ואיכותי.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "soap-bar",
+    "productTypeLabel": "סבון מוצק",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "120 גרם",
+    "storeRegion": "us",
+    "priceMin": 30,
+    "priceMax": 40,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3LNY5zv",
+        "meta": "אמזון ארה״ב",
+        "price": 33,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-aromatic-body-lotion-mandarin",
+    "brand": "Lavido",
+    "name": "תחליב גוף ארומטי טבעי בניחוח מנדרינה, תפוז וברגמוט. מעניק לחות עמוקה, נספג במהירות וללא רעלים.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "250 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 120,
+    "priceMax": 140,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4sHDFZu",
+        "meta": "אמזון ארה״ב",
+        "price": 126,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-gel-facial-cleanser-100ml",
+    "brand": "Lavido",
+    "name": "ג'ל ניקוי פנים מעניק לחות. מנקה, מרענן ומשקם את עור הפנים ללא ייבוש.",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-wash",
+    "productTypeLabel": "סבון פנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "100 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 120,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4sHDn4Q",
+        "meta": "אמזון ארה״ב",
+        "price": 107,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-body-lotion-musk-coconut",
+    "brand": "Lavido",
+    "name": "תחליב גוף ארומטי טבעי בניחוח מאסק וקוקוס. פורמולה נקייה להזנת עור יבש בניחוח משכר.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "120 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 65,
+    "priceMax": 80,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49Cbfay",
+        "meta": "אמזון ארה״ב",
+        "price": 70,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-body-wash-patchouli-vanilla",
+    "brand": "Lavido",
+    "name": "סבון גוף טבעי בניחוח פצ'ולי ווניל. מנקה, מרענן ומעניק לחות מוגברת לעור במהלך הרחצה.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-wash",
+    "productTypeLabel": "סבון נוזלי",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "400 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 80,
+    "priceMax": 100,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49HPQgr",
+        "meta": "אמזון ארה״ב",
+        "price": 89,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-body-lotion-mandarin-120ml",
+    "brand": "Lavido",
+    "name": "תחליב גוף ארומטי טבעי בניחוח מנדרינה, תפוז וברגמוט. אריזה בינונית ללחות יומיומית.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "120 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 65,
+    "priceMax": 80,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4byqJ20",
+        "meta": "אמזון ארה״ב",
+        "price": 70,
+        "freeShipOver": 180
+     }
+    ]
+  },
+  {
     "id": "axisy-mugwort-pack",
     "brand": "AXIS-Y",
     "name": "מסכת חימר לפנים לשטיפה, המסייעת לניקוי והבהרת נקבוביות, מטפלת בנקבוביות סתומות, ראשים שחורים ולבנים.\nטיפוח עור קוריאני טבעוני למראה עור חלק וזוהר (Glass Skin).",

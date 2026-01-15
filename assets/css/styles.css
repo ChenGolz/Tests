@@ -495,6 +495,33 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   font-weight: 900;
   font-size: 12px;
 }
+
+/* Parent-company transparency */
+.tag--parent{ background: rgba(99,102,241,.10); }
+.tag--parent-unknown{ background: rgba(245,158,11,.14); }
+
+/* Vegan alerts / education */
+.pAlert{ margin-top: 10px; padding: 10px 12px; border-radius: 16px; border: 1px solid var(--stroke); font-weight: 800; }
+.pAlert--animal{ background: rgba(245,158,11,.14); }
+
+/* Price-per-unit + volatility note */
+.pUnitPrice{ margin-top: 10px; font-size: 12px; font-weight: 900; color: rgba(17,24,39,.72); }
+.pPriceNote{ margin-top: 8px; font-size: 12px; color: var(--muted); }
+
+/* Real-world test results */
+.pTests{ margin-top: 10px; border: 1px solid rgba(20,40,80,.12); border-radius: 16px; background: rgba(255,255,255,.78); padding: 8px 12px; }
+.pTests summary{ cursor: pointer; font-weight: 900; }
+.pTestsBody{ margin-top: 6px; color: rgba(17,24,39,.78); font-weight: 600; font-size: 13px; }
+
+/* Ingredient Detective - list alerts */
+.pillDemo{ display:inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(20,40,80,.12); font-weight: 900; font-size: 12px; }
+.pillDemo.orange{ background: rgba(245,158,11,.18); }
+.pillDemo.red{ background: rgba(239,68,68,.14); }
+.ingAlerts{ margin-top: 10px; display:flex; flex-direction:column; gap:8px; }
+.ingAlertItem{ padding: 10px 12px; border-radius: 16px; border: 1px solid rgba(20,40,80,.12); background: rgba(255,255,255,.78); }
+.ingAlertItem strong{ font-weight: 900; }
+.ingAlertItem.orange{ background: rgba(245,158,11,.14); }
+.ingAlertItem.red{ background: rgba(239,68,68,.12); }
 .offerList{ display:flex; flex-direction:column; gap:10px; margin-top: 12px; }
 .offer{
   display:flex; justify-content:space-between; gap:12px; align-items:center;

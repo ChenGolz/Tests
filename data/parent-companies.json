@@ -1,0 +1,9 @@
+{
+  "_schema": {
+    "status": "independent | subsidiary | unknown",
+    "parent": "string | null",
+    "parentCrueltyFree": "true | false | null (unknown)",
+    "notes": "optional string"
+  },
+  "Lavido": {"status": "independent", "parent": null, "parentCrueltyFree": true, "notes": "Fill/verify as needed"}
+}

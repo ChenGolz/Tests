@@ -19,15 +19,15 @@
 <a aria-label="בית" class="logo" href="index.html">
 <img alt="Cruelty Free" class="logoImg" height="40" src="assets/img/logo.png" width="40"/>
 <span class="logoText">Cruelty Free</span>
-<span class="logoTag">לקנות בלי לפגוע</span>
 </a>
 <nav aria-label="ניווט ראשי" class="nav">
-<a class="navHomeMobile" href="index.html">בית</a>
 <a class="" href="todays-top-deals.html">מומלצי היום</a>
+<a class="" href="swaps.html">החלפות</a>
+<a class="" href="vegan-pharmacy.html">בית מרקחת טבעוני</a>
 <a class="" href="products.html">מוצרים</a>
-<a class="" href="shopping-calendar.html">סיילים חשובים</a>
-<a class="" href="israeli-brands.html">מותגים ישראליים</a>
-<a class="" href="recommended-brands.html">מותגים בינלאומיים</a>
+<a class="" href="shopping-calendar.html">סיילים</a>
+<a class="" href="israeli-brands.html">תוצרת הארץ</a>
+<a class="" href="recommended-brands.html">מותגים בינלאומים</a>
 <a class="" href="ingredient-detective.html">רכיבים</a>
 <a class="" href="learn.html">מידע</a>
 <a class="" href="about.html">אודות</a>
@@ -78,6 +78,24 @@
     </p>
 </div>
 </section>
+
+<div class="contentCard" style="margin-top:12px">
+  <p class="muted" style="margin:0">
+    <strong>שקיפות מחירים:</strong> המחירים כאן הם הערכה לפי מידע שהיה זמין בעת עדכון המאגר.
+    <span data-wg-notranslate="true" class="wg-notranslate">מחיר נבדק בתאריך: <span id="priceCheckedOn">—</span></span>.
+    המחירים באמזון יכולים להשתנות בכל רגע (כולל קופונים/מסים/משלוח) והמחיר הסופי מופיע רק ב־Checkout.
+  </p>
+</div>
+
+<div class="noticeRow" id="priceNotice" aria-label="הבהרת מחירים">
+  <div class="noticeCard">
+    <strong>שקיפות מחירים:</strong>
+    המחירים המוצגים הם אינדיקציה בלבד.
+    <span class="muted">מחיר נבדק באתר בתאריך <span id="priceCheckedOn">—</span></span>.
+    <br/>
+    באמזון מחירים יכולים להשתנות, והמחיר הסופי (כולל משלוח ומיסים) יופיע תמיד בעמוד התשלום.
+  </div>
+</div>
 </div>
 <div class="productsLayout">
 <div class="filterPanel__collapseArea">
@@ -98,6 +116,11 @@
         <button class="chip" data-cat="mens-care">גברים</button>
 <button class="chip" data-cat="baby" type="button">תינוקות</button>
 <button class="chip" data-cat="health" type="button">בריאות</button>
+<button class="chip" data-cat="home" type="button">בית</button>
+<button class="chip" data-cat="pets" type="button">חיות</button>
+<button class="chip" data-cat="office" type="button">משרד</button>
+<button class="chip" data-cat="art" type="button">אמנות</button>
+<button class="chip" data-cat="tech" type="button">טק</button>
 </div>
 </div>
 <div class="filters-actions">
@@ -108,6 +131,8 @@
 <label class="check-pill" data-wg-notranslate="true"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
 <label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
 <label class="check-pill"><input id="onlyMen" type="checkbox"/> טיפוח לגבר</label>
+<label class="check-pill"><input id="onlyCFNotVegan" type="checkbox"/> קרואלטי-פרי בלבד (לא טבעוני)</label>
+<label class="check-pill"><input id="onlyIndependent" type="checkbox"/> בעלות עצמאית</label>
 </div>
 <!-- סינונים מתקדמים בקולפס -->
 <details aria-label="סינונים נוספים" class="more-filters">
@@ -150,6 +175,15 @@
                 רק מוצרים עם משלוח חינם מעל סכום מסוים
               </label>
 </div>
+
+<div class="free-ship-row">
+  <label class="check-pill">
+    <input id="avoidNonCFParent" type="checkbox"/>
+    להציג רק מותגים שאינם בבעלות חברת-אם שאינה קרואלטי-פרי
+  </label>
+  <div class="price-range-hint">שקיפות חברת-אם: משתמש במידע מאגר פנימי (ייתכן "לא ידוע" עד להשלמה).</div>
+</div>
+
 </div>
 </details>
 <div class="status-bar">
