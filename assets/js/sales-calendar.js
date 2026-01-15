@@ -131,3 +131,7 @@
 
   document.addEventListener('DOMContentLoaded', render);
 })();
+
+function weglotRefresh(){try{if(window.Weglot&&typeof Weglot.refresh==='function'){Weglot.refresh();}}catch(e){}}
+
+window.addEventListener('load', weglotRefresh);
