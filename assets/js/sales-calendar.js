@@ -1,3 +1,4 @@
+function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} } }
 /* Cruelty Free / KBWG – Shopping Calendar renderer (RTL) */
 (() => {
   const root = document.getElementById('agenda');
@@ -131,7 +132,3 @@
 
   document.addEventListener('DOMContentLoaded', render);
 })();
-
-function weglotRefresh(){try{if(window.Weglot&&typeof Weglot.refresh==='function'){Weglot.refresh();}}catch(e){}}
-
-window.addEventListener('load', weglotRefresh);

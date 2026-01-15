@@ -1,3 +1,4 @@
+function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} } }
 (function () {
   const input = document.getElementById('qIng');
   const out = document.getElementById('out');
@@ -302,7 +303,3 @@
   renderHint('הזינו שתי אותיות לפחות להתחיל');
   if (ingList) renderInciAlerts('');
 })();
-
-function weglotRefresh(){try{if(window.Weglot&&typeof Weglot.refresh==='function'){Weglot.refresh();}}catch(e){}}
-
-window.addEventListener('load', weglotRefresh);

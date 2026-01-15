@@ -31,7 +31,8 @@
         "meta": "אמזון ארה״ב",
         "price": 100
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "bareminerals-gen-nude-powder-blush",
@@ -62,7 +63,8 @@
         "price": 90,
         "freeShipOver": 170
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "bareminerals-original-matte-loose-foundation",
@@ -93,7 +95,8 @@
         "price": 135,
         "freeShipOver": 170
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "ahuranewyork-perfume-balm-rose",
@@ -129,7 +132,8 @@
         "price": 180,
         "freeShipOver": 160
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-unscented-beard-oil-2pack",
@@ -161,7 +165,8 @@
         "price": 70,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-beard-essentials-kit-sandalwood",
@@ -193,7 +198,8 @@
         "price": 130,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-mens-bath-body-gift-set-cedar-sage",
@@ -225,7 +231,8 @@
         "price": 130,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-cedar-redsage-deodorant-2pack",
@@ -257,7 +264,8 @@
         "price": 50,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-bodywash-variety-3pack",
@@ -289,7 +297,8 @@
         "price": 100,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-beard-face-wash-2pack",
@@ -321,7 +330,8 @@
         "price": 70,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-beard-grooming-tool-set",
@@ -353,7 +363,8 @@
         "price": 50,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "everymanjack-cold-processed-soap-3pack",
@@ -385,7 +396,8 @@
         "price": 80,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "rhode-peptide-lip-tints-set-4",
@@ -416,7 +428,8 @@
         "price": 430,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "rhode-pineapple-refresh-cleanser",
@@ -447,7 +460,8 @@
         "price": 170,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "herbivore-bakuchiol-retinol-alternative",
@@ -478,7 +492,8 @@
         "price": 120,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "herbivore-coco-rose-body-polish",
@@ -509,7 +524,8 @@
         "price": 90,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "herbivore-nova-serum-set",
@@ -540,7 +556,200 @@
         "price": 330,
         "freeShipOver": 180
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "aesop-exalted-eye-serum",
+    "brand": "Aesop",
+    "name": "Exalted – סרום עיניים קליל",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "eye-serum",
+    "productTypeLabel": "סרום לעיניים",
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "15 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 300,
+    "priceMax": 600,
+    "updated": "2026-01-04",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon US",
+        "url": "https://amzn.to/4jpJy9t",
+        "meta": "",
+        "price": 420,
+        "freeShipOver": 180
+      }
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "aesop-resurrection-hand-wash-500",
+    "brand": "Aesop",
+    "name": "Resurrection – סבון ידיים ארומטי",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "hand-wash",
+    "productTypeLabel": "סבון ידיים",
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "500 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 150,
+    "priceMax": 200,
+    "updated": "2026-01-04",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon US",
+        "url": "https://amzn.to/49mGE0C",
+        "meta": "",
+        "price": 170,
+        "freeShipOver": 180
+      }
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "aesop-perfect-facial-hydrating-cream",
+    "brand": "Aesop",
+    "name": "Perfect – קרם לחות עשיר לפנים",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-cream",
+    "productTypeLabel": "קרם פנים",
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "60 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 300,
+    "priceMax": 600,
+    "updated": "2026-01-04",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon US",
+        "url": "https://amzn.to/49gBxz3",
+        "meta": "",
+        "price": 470,
+        "freeShipOver": 180
+      }
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "aesop-reverence-duet-hand-set",
+    "brand": "Aesop",
+    "name": "Reverence Duet – סט סבון וקרם ידיים",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "hand-set",
+    "productTypeLabel": "סט לידיים",
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "500 מ״ל × 2",
+    "storeRegion": "us",
+    "priceMin": 300,
+    "priceMax": 600,
+    "updated": "2026-01-04",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon US",
+        "url": "https://amzn.to/4sGHUVx",
+        "meta": "",
+        "price": 500,
+        "freeShipOver": 180
+      }
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "aesop-resurrection-hand-wash-500-duplicate",
+    "brand": "Aesop",
+    "name": "Resurrection – סבון ידיים ארומטי",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "hand-wash",
+    "productTypeLabel": "סבון ידיים",
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "500 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 150,
+    "priceMax": 200,
+    "updated": "2026-01-04",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon US",
+        "url": "https://amzn.to/3YU3ojJ",
+        "meta": "",
+        "price": 170,
+        "freeShipOver": 180
+      }
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "aesop-resurrection-reverence-hand-wash-set",
+    "brand": "Aesop",
+    "name": "סט סבוני ידיים Resurrection & Reverence",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "hand-set",
+    "productTypeLabel": "סט לידיים",
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "500 מ״ל × 2",
+    "storeRegion": "us",
+    "priceMin": 300,
+    "priceMax": 400,
+    "updated": "2026-01-13",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon US",
+        "url": "https://amzn.to/4ppRqJM",
+        "meta": "",
+        "price": 380,
+        "freeShipOver": 180
+      }
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "levana-beauty-mascara-sample",
@@ -570,7 +779,8 @@
         "meta": "מותג ישראלי (דוגמה)",
         "price": 70
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "baylis-and-harding-men-body-set-the-fuzzy-duck-bergamot-hemp",
@@ -611,7 +821,45 @@
     "categories": [
       "body",
       "mens-care"
-    ]
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "grace-and-stella-face-accessory-face-pads-for-toner-essence",
+    "brand": "grace & stella",
+    "name": "פדים לפנים לטונר/אסנס ומסכות ביתיות (100 יח׳) – רכים וללא סיבים לניקוי וטיפוח",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-accessory",
+    "productTypeLabel": "אביזרי פנים",
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "isIsrael": false,
+    "size": "100 יח׳",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/3Zan3vU",
+    "tags": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "priceMin": 25,
+    "priceMax": 45,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3Zan3vU",
+        "meta": "אמזון ארה״ב",
+        "price": 35,
+        "freeShipOver": 170
+      }
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "the-humble-co-oral-care-dental-floss-picks-for-teeth",
@@ -647,7 +895,82 @@
         "price": 55,
         "freeShipOver": 170
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "r-co-shampoo-conditioner-set-atlantis-moisturizing-b5-shamp",
+    "brand": "R+Co",
+    "name": "סט שמפו ומרכך Atlantis עם B5 – לחות עמוקה ושיקום לשיער יבש (2×8.5oz)",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "shampoo-conditioner-set",
+    "productTypeLabel": "סט שמפו + מרכך",
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "isIsrael": false,
+    "size": "8.5oz x2",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/4swvT4G",
+    "tags": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "priceMin": 205,
+    "priceMax": 225,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4swvT4G",
+        "meta": "אמזון ארה״ב",
+        "price": 215,
+        "freeShipOver": 170
+      }
+    ],
+    "isCrueltyFreeCertified": true
+  },
+  {
+    "id": "igk-conditioner-legendary-dream-hair-condition",
+    "brand": "IGK",
+    "name": "מרכך Dream Hair LEGENDARY – שיער בריא, לח ומבריק",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "conditioner",
+    "productTypeLabel": "מרכך",
+    "vegan": true,
+    "peta": false,
+    "lb": true,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "image": "",
+    "affiliateLink": "https://amzn.to/4jL2kbQ",
+    "tags": [
+      "Vegan",
+      "Leaping Bunny"
+    ],
+    "priceMin": 255,
+    "priceMax": 275,
+    "updated": "2026-01-14",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4jL2kbQ",
+        "meta": "אמזון ארה״ב",
+        "price": 265,
+        "freeShipOver": 170
+      }
+    ],
+    "isCrueltyFreeCertified": true
   },
   {
     "id": "p-r-minerals-face-moisturizer-4-in-1-cloud-cream-hydrating",
@@ -683,6 +1006,7 @@
         "price": 105,
         "freeShipOver": 170
       }
-    ]
+    ],
+    "isCrueltyFreeCertified": true
   }
 ]

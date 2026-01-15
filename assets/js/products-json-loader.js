@@ -60,7 +60,7 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
   }
 
   var jsonPath = resolveFromBase('data/products.json');
-  var parentPath = resolveFromBase('data/parent-companies.json');
+  var parentPath = resolveFromBase('data/');
 
   function isFileProtocol() {
     try { return location && location.protocol === 'file:'; } catch (e) { return false; }

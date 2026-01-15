@@ -1,22 +1,8 @@
 [
   {
-    "name": "365 by Whole Foods Market",
-    "categories": [
-      "marketplace"
-    ],
-    "website": "https://wholefoodsmarket.co.uk/",
-    "amazonUs": "https://amzn.to/4qaXQh1",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "3INA",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://3ina.com/",
     "amazonUs": "https://amzn.to/45RlSVZ",
@@ -28,51 +14,9 @@
     "vegan": true
   },
   {
-    "name": "3rd + Fairfax Beauty",
-    "categories": [
-      "cosmetics"
-    ],
-    "website": "https://losangelesbrands.com/collections/3rd-fairfax-beauty",
-    "amazonUs": "https://amzn.to/4aLBUUL",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "5 SENS Inc.",
-    "categories": [
-      "fragrance"
-    ],
-    "website": "https://5sens.co/",
-    "amazonUs": "https://amzn.to/4qC2DHZ",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "7th Heaven",
-    "categories": [
-      "skincare"
-    ],
-    "website": "https://my7thheaven.com/",
-    "amazonUs": "https://amzn.to/3YX6YK1",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "82°E",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://82e.com/",
     "amazonUs": "https://www.amazon.com/s?k=82%C2%B0E+skincare",
@@ -84,37 +28,9 @@
     "vegan": true
   },
   {
-    "name": "aavrani",
-    "categories": [
-      "skincare"
-    ],
-    "website": "https://aavrani.com/",
-    "amazonUs": "https://amzn.to/3N3jIME",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Abbot Kinney Apothecary",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://www.abbotkinneyapothecary.com/",
-    "amazonUs": "https://amzn.to/44T9jJt",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "about-face",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://aboutface.com/",
     "amazonUs": "https://amzn.to/3NqbgqK",
@@ -128,7 +44,7 @@
   {
     "name": "abyssian",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://abyssianhaircare.com/",
     "amazonUs": "https://www.amazon.com/s?k=abyssian+hair",
@@ -140,38 +56,9 @@
     "vegan": true
   },
   {
-    "name": "ACURE",
-    "categories": [
-      "natural-care"
-    ],
-    "website": "https://acure.com/",
-    "amazonUs": "https://amzn.to/4ptacQv",
-    "amazonUk": "https://amzn.to/4sseGt0",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Aesop",
-    "categories": [
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/4bnJjtC",
-    "amazonUk": "https://amzn.to/4jwmpCw",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "After Inked",
     "categories": [
-      "tattoo-care",
-      "skincare"
+      "face"
     ],
     "website": "https://afterinked.com/",
     "amazonUs": "https://amzn.to/4qjNMCs",
@@ -185,7 +72,7 @@
   {
     "name": "Aimeili Gel Polish",
     "categories": [
-      "nails"
+      "makeup"
     ],
     "website": "https://www.aimeili.us/",
     "amazonUs": "https://amzn.to/4pEKEjt",
@@ -199,7 +86,7 @@
   {
     "name": "AKT London",
     "categories": [
-      "deodorant"
+      "body"
     ],
     "website": "https://www.aktlondon.com/",
     "amazonUs": "https://amzn.to/45DggP4",
@@ -213,7 +100,7 @@
   {
     "name": "Alamar Cosmetics",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://alamarcosmetics.com/",
     "amazonUs": "https://www.amazon.com/s?k=Alamar+Cosmetics",
@@ -225,23 +112,9 @@
     "vegan": true
   },
   {
-    "name": "Alba Botanica",
-    "categories": [
-      "natural-care"
-    ],
-    "website": "https://albabotanica.com/",
-    "amazonUs": "https://amzn.to/4qcRgXe",
-    "amazonUk": "https://amzn.to/4srQR4M",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "Alchimie Forever",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://alchimie-forever.com/",
     "amazonUs": "https://amzn.to/49zJu2z",
@@ -255,7 +128,7 @@
   {
     "name": "Alleyoop",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://meetalleyoop.com/",
     "amazonUs": "https://amzn.to/4pETgpX",
@@ -269,7 +142,7 @@
   {
     "name": "Alpine White",
     "categories": [
-      "wellness"
+      "body"
     ],
     "website": "https://alpinewhite.com/",
     "amazonUs": "https://www.amazon.com/s?k=Alpine+White",
@@ -281,23 +154,9 @@
     "vegan": true
   },
   {
-    "name": "Alucia Organics",
-    "categories": [
-      "natural-skin"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/3Nyh4hU",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "Alya Skin",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://www.alyaskin.com/",
     "amazonUs": "https://www.amazon.com/s?k=Alya+Skin",
@@ -311,7 +170,7 @@
   {
     "name": "Amara Beauty",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://amarabeauty.com/",
     "amazonUs": "https://amzn.to/4qO6YIf",
@@ -325,7 +184,7 @@
   {
     "name": "Andrew Fitzsimons",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://andrewfitzsimons.com/",
     "amazonUs": "https://www.amazon.com/s?k=Andrew+Fitzsimons+Hair",
@@ -339,7 +198,7 @@
   {
     "name": "Anomaly Haircare",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://www.anomalyhaircare.com/",
     "amazonUs": "https://www.amazon.com/s?k=Anomaly+Haircare",
@@ -353,7 +212,7 @@
   {
     "name": "Aqualogica",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://aqualogica.in/",
     "amazonUs": "https://www.amazon.com/s?k=Aqualogica",
@@ -367,8 +226,8 @@
   {
     "name": "Arbonne",
     "categories": [
-      "wellness",
-      "skincare"
+      "body",
+      "face"
     ],
     "website": "https://www.arbonne.com/",
     "amazonUs": "https://amzn.to/4qHmci0",
@@ -382,7 +241,7 @@
   {
     "name": "Arches & Halos",
     "categories": [
-      "eyes"
+      "makeup"
     ],
     "website": "https://archesandhalos.com/",
     "amazonUs": "https://amzn.to/4jBmO6B",
@@ -396,7 +255,7 @@
   {
     "name": "Arctic Fox",
     "categories": [
-      "hair-color"
+      "hair"
     ],
     "website": "https://arcticfoxhaircolor.com/",
     "amazonUs": "https://amzn.to/4bsLKLp",
@@ -408,38 +267,9 @@
     "vegan": true
   },
   {
-    "name": "ARKIVE",
-    "categories": [
-      "hair"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/44ZEqmF",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Aromatherapy Associates",
-    "categories": [
-      "fragrance",
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/45KeCv0",
-    "amazonUk": "https://amzn.to/49KbCkL",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "As I Am",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://asiamnaturally.com/",
     "amazonUs": "https://amzn.to/4jMFErx",
@@ -453,7 +283,7 @@
   {
     "name": "AspenClean",
     "categories": [
-      "cleaning"
+      "body"
     ],
     "website": "https://www.aspenclean.com/",
     "amazonUs": "https://amzn.to/4aWnmSq",
@@ -467,7 +297,7 @@
   {
     "name": "Astonish",
     "categories": [
-      "cleaning"
+      "body"
     ],
     "website": "https://astonish.co.uk/",
     "amazonUs": "https://amzn.to/3NGZMPJ",
@@ -479,25 +309,9 @@
     "vegan": true
   },
   {
-    "name": "Atelier Rebul",
-    "categories": [
-      "fragrance",
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/4bjzYmE",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "ATTITUDE",
     "categories": [
-      "cleaning",
-      "body-care"
+      "body"
     ],
     "website": "https://attitudeliving.com/",
     "amazonUs": "https://amzn.to/4sDjqMG",
@@ -511,7 +325,7 @@
   {
     "name": "Au Naturale",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://www.aunaturalecosmetics.com/",
     "amazonUs": "https://www.amazon.com/s?k=Au+Naturale+Cosmetics",
@@ -525,7 +339,7 @@
   {
     "name": "Aunt Fannie’s",
     "categories": [
-      "cleaning"
+      "body"
     ],
     "website": "https://auntfannies.com/",
     "amazonUs": "https://amzn.to/4qNlPTb",
@@ -537,24 +351,9 @@
     "vegan": true
   },
   {
-    "name": "Aurelia Probiotic Skincare",
-    "categories": [
-      "skincare",
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/49tc71g",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "Australian Glow",
     "categories": [
-      "tanning"
+      "face"
     ],
     "website": "https://australianglow.com/",
     "amazonUs": "https://www.amazon.com/s?k=Australian+Glow",
@@ -568,7 +367,7 @@
   {
     "name": "Avoskin",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://www.avoskinbeauty.com/",
     "amazonUs": "https://www.amazon.com/s?k=Avoskin",
@@ -582,7 +381,7 @@
   {
     "name": "AvryBeauty",
     "categories": [
-      "body-care"
+      "body"
     ],
     "website": "https://www.avrybeauty.com/",
     "amazonUs": "https://amzn.to/4pwAIrZ",
@@ -596,7 +395,7 @@
   {
     "name": "Axiology",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://axiologybeauty.com/",
     "amazonUs": "https://amzn.to/454L2jJ",
@@ -610,7 +409,7 @@
   {
     "name": "AZURE",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://azurecosmetics.com/",
     "amazonUs": "https://amzn.to/4bu7czG",
@@ -624,7 +423,7 @@
   {
     "name": "b.box for kids",
     "categories": [
-      "baby-child"
+      "body"
     ],
     "website": "https://bbox.com.au/",
     "amazonUs": "https://amzn.to/49OL69U",
@@ -636,23 +435,9 @@
     "vegan": true
   },
   {
-    "name": "Babo Botanicals",
-    "categories": [
-      "baby-child"
-    ],
-    "website": "https://babobotanicals.com/",
-    "amazonUs": "https://amzn.to/4ptF43g",
-    "amazonUk": "https://amzn.to/4qykUG8",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "Baby Magic",
     "categories": [
-      "baby-child"
+      "body"
     ],
     "website": "https://babymagic.com/",
     "amazonUs": "https://amzn.to/4pziW7u",
@@ -664,24 +449,9 @@
     "vegan": true
   },
   {
-    "name": "Badger",
-    "categories": [
-      "sun",
-      "natural-care"
-    ],
-    "website": "https://badgerbalm.com/",
-    "amazonUs": "https://amzn.to/4jro0cx",
-    "amazonUk": "https://amzn.to/4joyLfL",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "Bali Boo",
     "categories": [
-      "cleaning"
+      "body"
     ],
     "website": "https://bali-boo.com/",
     "amazonUs": "https://www.amazon.com/s?k=Bali+Boo",
@@ -695,7 +465,7 @@
   {
     "name": "Bare Anatomy",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://bareanatomy.in/",
     "amazonUs": "https://amzn.to/4sDFxm0",
@@ -709,7 +479,7 @@
   {
     "name": "BARRY M",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://barrym.com/",
     "amazonUs": "https://amzn.to/49j214h",
@@ -721,107 +491,9 @@
     "vegan": true
   },
   {
-    "name": "Desert Essence",
-    "categories": [
-      "personal-care"
-    ],
-    "website": "https://desertessence.com/",
-    "amazonUs": "https://amzn.to/4aKYm0m",
-    "amazonUk": "https://amzn.to/3L3L7gR",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Dr. Bronner's",
-    "categories": [
-      "soap"
-    ],
-    "website": "https://www.drbronner.com/",
-    "amazonUs": "https://amzn.to/3L48BCy",
-    "amazonUk": "https://amzn.to/4qDRpTd",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Hempz",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://hempz.com/",
-    "amazonUs": "https://amzn.to/4plbBIv",
-    "amazonUk": "https://amzn.to/4bkHmy7",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Maelys Cosmetics",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://www.maelyscosmetics.com/",
-    "amazonUs": "https://amzn.to/4pptuGo",
-    "amazonUk": "https://amzn.to/44Z6nLr",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Mrs. Meyer's Clean Day",
-    "categories": [
-      "cleaning"
-    ],
-    "website": "https://mrsmeyers.com/",
-    "amazonUs": "https://amzn.to/49m0wkt",
-    "amazonUk": "https://amzn.to/4q18DtW",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "ORLY",
-    "categories": [
-      "nails"
-    ],
-    "website": "https://orlybeauty.com/",
-    "amazonUs": "https://amzn.to/4swdrJC",
-    "amazonUk": "https://amzn.to/4jtdQrZ",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Pure and Natural Pet",
-    "categories": [
-      "pet-care"
-    ],
-    "website": "https://pureandnaturalpet.com/",
-    "amazonUs": "https://amzn.to/4jq77z3",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
     "name": "Technic",
     "categories": [
-      "cosmetics"
+      "makeup"
     ],
     "website": "https://techniccosmetics.com/",
     "amazonUs": "https://amzn.to/4buETkI",
@@ -835,9 +507,7 @@
   {
     "name": "Baylis & Harding",
     "categories": [
-      "body-care",
-      "personal-care",
-      "mens-care"
+      "body"
     ],
     "website": "https://baylisandharding.com/",
     "amazonUs": "https://amzn.to/4qTwHiu",
@@ -854,7 +524,7 @@
   {
     "name": "grace & stella",
     "categories": [
-      "skincare"
+      "face"
     ],
     "website": "https://www.graceandstella.com/",
     "amazonUs": "https://amzn.to/4pPQPkQ",
@@ -868,8 +538,7 @@
   {
     "name": "The Humble Co",
     "categories": [
-      "personal-care",
-      "wellness"
+      "body"
     ],
     "website": "https://www.thehumble.co/",
     "amazonUs": "https://amzn.to/3LHXG1w",
@@ -883,7 +552,7 @@
   {
     "name": "R+Co",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://www.randco.com/",
     "amazonUs": "https://amzn.to/4jHGw0G",
@@ -897,7 +566,7 @@
   {
     "name": "IGK",
     "categories": [
-      "haircare"
+      "hair"
     ],
     "website": "https://www.igkhair.com/",
     "amazonUs": "https://amzn.to/49KTSEW",
@@ -911,8 +580,8 @@
   {
     "name": "PÜR MINERALS",
     "categories": [
-      "cosmetics",
-      "skincare"
+      "face",
+      "makeup"
     ],
     "website": null,
     "amazonUs": "https://amzn.to/4sFb1bx",

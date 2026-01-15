@@ -11,211 +11,175 @@
   <link rel="stylesheet" href="assets/css/styles.css?v=2026-01-14-v12"/>
   <link rel="icon" type="image/png" href="assets/img/logo.png"/>
 </head>
-<body>
-<header class="siteHeader" id="siteHeader">
-  <div class="wrap headerRow">
-    <a class="logo" href="index.html" aria-label="בית">
-      <img class="logoImg" src="assets/img/logo.png" width="40" height="40" alt="Cruelty Free"/>
-      <span class="logoText">Cruelty Free</span>
-    </a>
-    <nav class="nav" aria-label="ניווט ראשי">
-      <a class="" href="todays-top-deals.html">מומלצי היום</a>
-      <a class="" href="swaps.html">החלפות</a>
-      <a class="" href="vegan-pharmacy.html">בית מרקחת טבעוני</a>
-      <a class="" href="products.html">מוצרים</a>
-      <a class="" href="shopping-calendar.html">סיילים</a>
-      <a class="" href="israeli-brands.html">תוצרת הארץ</a>
-      <a class="" href="recommended-brands.html">מותגים בינלאומים</a>
-      <a class="" href="ingredient-detective.html">רכיבים</a>
-      <a class="" href="learn.html">מידע</a>
-      <a class="" href="about.html">אודות</a>
-      <a class="" href="contact.html">צור קשר</a>
+
+<body dir="rtl">
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">KBWG</a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="products.html">מוצרים</a></li>
+        <li><a href="todays-top-deals.html">דילים</a></li>
+        <li><a href="vegan-pharmacy.html" aria-current="page">חבילות לישראל</a></li>
+        <li><a href="shopping-calendar.html">לוח מבצעים</a></li>
+        <li><a href="ingredient-detective.html">בודק רכיבים</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
-
 <main class="container">
   <h1>חבילות לישראל</h1>
-  <p class="muted">בחרי חבילה מוכנה. בתוך החלון אפשר להחליף כל מוצר בקלות, ולבנות סל שמתאים למשלוח חינם.</p>
+  <p class="muted">בחרי חבילה מוכנה — ואז החליפי כל מוצר בקלות בתוך חלון קופץ.</p>
 
-  <div class="bundleGrid">
-    <button class="bundleCard" type="button" data-bundle="home">
-      <div class="bundleTitle">ערכת בית טבעונית</div>
-      <div class="bundleMeta">כביסה • כלים • היגיינה</div>
+  <section class="bundle-grid" aria-label="חבילות מומלצות">
+    <button class="bundle-card" type="button" onclick="openBundle('home')">
+      <div class="bundle-card__title">ערכת בית טבעונית</div>
+      <div class="bundle-card__meta">כביסה • כלים • היגיינה</div>
+      <div class="bundle-card__cta">לצפייה והחלפה</div>
     </button>
 
-    <button class="bundleCard" type="button" data-bundle="care">
-      <div class="bundleTitle">ערכת טיפוח בסיסית</div>
-      <div class="bundleMeta">שיער • גוף • פנים</div>
+    <button class="bundle-card" type="button" onclick="openBundle('care')">
+      <div class="bundle-card__title">ערכת טיפוח בסיסית</div>
+      <div class="bundle-card__meta">שיער • גוף • פנים</div>
+      <div class="bundle-card__cta">לצפייה והחלפה</div>
     </button>
-
-    <button class="bundleCard" type="button" data-bundle="office">
-      <div class="bundleTitle">ערכת משרד נקייה</div>
-      <div class="bundleMeta">טושים • מחברת • אביזרים</div>
-    </button>
-  </div>
-
-  <div class="bundleNote">
-    המחירים באמזון עשויים להשתנות. הטווחים מוצגים לצרכי השוואה בלבד.
-  </div>
+  </section>
 </main>
 
-<div class="modalBackdrop" id="bundleModal" aria-hidden="true">
-  <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="bundleModalTitle">
-    <button class="modalClose" type="button" aria-label="סגירה" id="bundleClose">×</button>
-    <h2 id="bundleModalTitle"></h2>
+<div id="bundleModal" class="bundle-modal" role="dialog" aria-modal="true" aria-labelledby="bundleTitle" hidden>
+  <div class="bundle-modal__panel">
+    <button class="bundle-modal__close" type="button" onclick="closeBundle()" aria-label="סגירה">×</button>
+    <h2 id="bundleTitle"></h2>
 
-    <div class="bundleItems" id="bundleItems"></div>
+    <div id="bundleItems" class="bundle-items"></div>
 
-    <div class="swapSection">
-      <h3>אפשרויות נוספות</h3>
-      <div class="swapPills" id="swapPills"></div>
-      <p class="muted small">טיפ: לחצי על מוצר כדי להחליף אותו בפריט מסומן.</p>
-    </div>
-
-    <div class="modalActions">
-      <button class="btn primary" type="button" id="bundleDone">סיימתי</button>
+    <div class="bundle-swap">
+      <h3>החלפות מהירות</h3>
+      <p class="muted">בחרי פריט מהרשימה למטה כדי להחליף את הפריט שסימנת בחבילה.</p>
+      <div id="swapOptions" class="swap-options"></div>
     </div>
   </div>
 </div>
 
 <script>
-(function(){
-  const bundles = {
-    home: {
-      title: "ערכת בית טבעונית",
-      items: [
-        {label:"קפסולות כביסה טבעוניות", options:["קפסולות כביסה טבעוניות","אבקת כביסה טבעונית","נוזל כביסה טבעוני"]},
-        {label:"סבון כלים טבעוני", options:["סבון כלים טבעוני","טבליות למדיח טבעוניות","נוזל ניקוי רב-תכליתי"]},
-        {label:"משחת שיניים טבעונית", options:["משחת שיניים טבעונית","חוט דנטלי טבעוני","מי פה ללא רכיבים מן החי"]}
-      ],
-      swaps:["טבליות למדיח טבעוניות","מגבוני ניקוי אקולוגיים","נייר סופג ממוחזר"]
-    },
-    care: {
-      title: "ערכת טיפוח בסיסית",
-      items: [
-        {label:"שמפו טבעוני", options:["שמפו טבעוני","שמפו בר טבעוני","שמפו לשיער צבוע טבעוני"]},
-        {label:"מרכך טבעוני", options:["מרכך טבעוני","מסיכת שיער טבעונית","סרום קצוות טבעוני"]},
-        {label:"קרם פנים טבעוני", options:["קרם פנים טבעוני","סרום היאלורון טבעוני","קרם לחות קליל טבעוני"]}
-      ],
-      swaps:["דאודורנט טבעוני","קרם גוף טבעוני","קרם הגנה ללא רכיבים מן החי"]
-    },
-    office: {
-      title: "ערכת משרד נקייה",
-      items: [
-        {label:"טושים ללא רכיבים מן החי", options:["טושים ללא רכיבים מן החי","מרקרים על בסיס מים","עט ג'ל טבעוני"]},
-        {label:"מחברת/יומן דמוי עור", options:["מחברת דמוי עור","יומן טבעוני","קלסר ממוחזר"]},
-        {label:"נרתיק/כיסוי למחשב דמוי עור", options:["נרתיק דמוי עור למחשב","שרוול בד ממוחזר","תיק גב טבעוני"]}
-      ],
-      swaps:["מדבקות ארגון","סט עטים","מארז מחקים טבעוני"]
-    }
-  };
-
-  let activeSlot = 0;
-
-  const modal = document.getElementById("bundleModal");
-  const titleEl = document.getElementById("bundleModalTitle");
-  const itemsEl = document.getElementById("bundleItems");
-  const pillsEl = document.getElementById("swapPills");
-  const closeBtn = document.getElementById("bundleClose");
-  const doneBtn = document.getElementById("bundleDone");
-
-  function open(id){
-    const b = bundles[id];
-    titleEl.textContent = b.title;
-    itemsEl.innerHTML = "";
-    pillsEl.innerHTML = "";
-    activeSlot = 0;
-
-    b.items.forEach((it, idx) => {
-      const row = document.createElement("div");
-      row.className = "bundleRow" + (idx===0 ? " active" : "");
-      row.innerHTML = `
-        <div class="rowLabel">${it.label}</div>
-        <select class="rowSelect" data-idx="${idx}">
-          ${it.options.map(o => `<option value="${o}">${o}</option>`).join("")}
-        </select>
-      `;
-      itemsEl.appendChild(row);
-    });
-
-    b.swaps.forEach(txt => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "swapPill";
-      btn.textContent = txt;
-      btn.addEventListener("click", () => replaceActive(txt));
-      pillsEl.appendChild(btn);
-    });
-
-    itemsEl.querySelectorAll(".rowSelect").forEach(sel => {
-      sel.addEventListener("focus", (e) => setActive(parseInt(e.target.dataset.idx,10)));
-      sel.addEventListener("change", (e) => setActive(parseInt(e.target.dataset.idx,10)));
-    });
-
-    modal.setAttribute("aria-hidden","false");
-    modal.classList.add("open");
-    if(window.Weglot && Weglot.refresh) Weglot.refresh();
+const bundles = {
+  home: {
+    title: "ערכת בית טבעונית",
+    items: [
+      { id:"laundry", label:"קפסולות כביסה טבעוניות" },
+      { id:"dish", label:"סבון כלים טבעוני" },
+      { id:"tooth", label:"משחת שיניים טבעונית" }
+    ]
+  },
+  care: {
+    title: "ערכת טיפוח בסיסית",
+    items: [
+      { id:"shampoo", label:"שמפו טבעוני" },
+      { id:"conditioner", label:"מרכך טבעוני" },
+      { id:"facecream", label:"קרם פנים טבעוני" }
+    ]
   }
+};
 
-  function close(){
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden","true");
-  }
+const quickSwaps = [
+  "שמפו טבעוני",
+  "מרכך טבעוני",
+  "סבון גוף טבעוני",
+  "דאודורנט טבעוני",
+  "קרם פנים טבעוני",
+  "משחת שיניים טבעונית"
+];
 
-  function setActive(idx){
-    activeSlot = idx;
-    itemsEl.querySelectorAll(".bundleRow").forEach((r,i)=> r.classList.toggle("active", i===idx));
-  }
+let activeBundleId = null;
+let activeSlotIndex = 0;
 
-  function replaceActive(txt){
-    const sel = itemsEl.querySelector(`.rowSelect[data-idx="${activeSlot}"]`);
-    if(!sel) return;
-    // if option exists, select it; else add it
-    let opt = Array.from(sel.options).find(o => o.value===txt);
-    if(!opt){
-      opt = document.createElement("option");
-      opt.value = txt;
-      opt.textContent = txt;
-      sel.appendChild(opt);
-    }
-    sel.value = txt;
-    setActive(activeSlot);
-  }
-
-  document.querySelectorAll(".bundleCard").forEach(btn => {
-    btn.addEventListener("click", () => open(btn.dataset.bundle));
+function renderSwapOptions(){
+  const wrap = document.getElementById("swapOptions");
+  wrap.innerHTML = "";
+  quickSwaps.forEach(name=>{
+    const btn=document.createElement("button");
+    btn.type="button";
+    btn.className="swap-pill";
+    btn.textContent=name;
+    btn.onclick=()=>applySwap(name);
+    wrap.appendChild(btn);
   });
+}
 
-  closeBtn.addEventListener("click", close);
-  doneBtn.addEventListener("click", close);
-  modal.addEventListener("click", (e) => { if(e.target === modal) close(); });
-})();
+function openBundle(id){
+  activeBundleId=id;
+  activeSlotIndex=0;
+  const modal=document.getElementById("bundleModal");
+  const data=bundles[id];
+  document.getElementById("bundleTitle").textContent=data.title;
+  const itemsWrap=document.getElementById("bundleItems");
+  itemsWrap.innerHTML="";
+  data.items.forEach((it, idx)=>{
+    const row=document.createElement("div");
+    row.className="bundle-item";
+    row.onclick=()=>selectSlot(idx);
+    row.innerHTML = `
+      <div class="bundle-item__radio">${idx===0?"●":"○"}</div>
+      <div class="bundle-item__text">
+        <div class="bundle-item__label">${it.label}</div>
+        <div class="bundle-item__hint">לחצי כדי לבחור ואז החליפי למטה</div>
+      </div>
+    `;
+    itemsWrap.appendChild(row);
+  });
+  renderSwapOptions();
+  modal.hidden=false;
+  document.body.style.overflow="hidden";
+}
+
+function closeBundle(){
+  const modal=document.getElementById("bundleModal");
+  modal.hidden=true;
+  document.body.style.overflow="";
+}
+
+function selectSlot(idx){
+  activeSlotIndex=idx;
+  const rows=[...document.querySelectorAll(".bundle-item")];
+  rows.forEach((r,i)=>{
+    r.classList.toggle("is-active", i===idx);
+    const dot=r.querySelector(".bundle-item__radio");
+    if(dot) dot.textContent = i===idx ? "●" : "○";
+  });
+}
+
+function applySwap(newLabel){
+  const data=bundles[activeBundleId];
+  if(!data) return;
+  data.items[activeSlotIndex].label=newLabel;
+  // re-render items, keep selection
+  const itemsWrap=document.getElementById("bundleItems");
+  itemsWrap.innerHTML="";
+  data.items.forEach((it, idx)=>{
+    const row=document.createElement("div");
+    row.className="bundle-item" + (idx===activeSlotIndex ? " is-active":"");
+    row.onclick=()=>selectSlot(idx);
+    row.innerHTML = `
+      <div class="bundle-item__radio">${idx===activeSlotIndex?"●":"○"}</div>
+      <div class="bundle-item__text">
+        <div class="bundle-item__label">${it.label}</div>
+        <div class="bundle-item__hint">לחצי כדי לבחור ואז החליפי למטה</div>
+      </div>
+    `;
+    itemsWrap.appendChild(row);
+  });
+  if (window.Weglot) { try { Weglot.refresh(); } catch(e){} }
+}
+
+// close on backdrop click
+document.addEventListener("click",(e)=>{
+  const modal=document.getElementById("bundleModal");
+  if(modal.hidden) return;
+  if(e.target === modal) closeBundle();
+});
 </script>
-
-
-<footer class="siteFooter">
-  <div class="wrap">
-    <div aria-label="ציטוטים" class="footerQuotes">
-      <span class="quotePill">חמלה היא דרך חיים</span><span class="quotePill">חיה ותן לחיות</span><span class="quotePill">חמלה היא האופנה הכי יפה</span><span class="quotePill">היו טובים לכל היצורים</span>
-    </div>
-    <p class="muted">גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך. התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים. איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע. אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.</p>
-  </div>
-</footer>
-
-<script>
-  // Mirror the products page price-stamp logic without introducing another loader
-  (function(){
-    try{
-      var el = document.getElementById('priceCheckedOn');
-      if (!el) return;
-      var v = (window.PRICE_CHECKED_ON || '').toString();
-      if (!v) v = (new Date()).toISOString().slice(0,10);
-      el.textContent = v;
-    }catch(e){}
-  })();
-</script>
-<script defer src="assets/js/site.js?v=2026-01-14-v12"></script>
 </body>
+
 </html>
