@@ -17,16 +17,9 @@
 
   const onlyLB = qs("#onlyLB");
   const onlyPeta = qs("#onlyPeta");
-  const onlyVegan = qs("#onlyVegan");
-  const onlyIsrael = qs("#onlyIsrael");
+const onlyIsrael = qs("#onlyIsrael");
   const onlyMen = qs("#onlyMen");
   const onlyFreeShip = qs("#onlyFreeShip");
-  const onlyCFNotVegan = qs("#onlyCFNotVegan");
-  const onlyIndependent = qs("#onlyIndependent");
-  const avoidNonCFParent = qs("#avoidNonCFParent");
-
-  const chips = Array.from(document.querySelectorAll(".chip"));
-  let currentCat = "all";
 
   function escapeHtml(str) {
     return String(str ?? "")
@@ -174,21 +167,7 @@ function normalizeProduct(p) {
       console.warn("[products] Removed duplicates:", removed);
     }
     return out;
-  }
-
-
-  const PARENT_MAP = (window.PARENT_MAP && typeof window.PARENT_MAP === 'object') ? window.PARENT_MAP : {};
-  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct)).map(function(p){
-    var parentInfo = PARENT_MAP[p.brand] || null;
-    // Normalize parent info into each product so render() can stay simple.
-    var status = parentInfo && parentInfo.status ? String(parentInfo.status) : 'unknown';
-    if (status !== 'independent' && status !== 'subsidiary') status = 'unknown';
-    return Object.assign({}, p, {
-      parentStatus: status,
-      parentCompany: parentInfo && parentInfo.parent ? String(parentInfo.parent) : null,
-      parentCrueltyFree: (parentInfo && typeof parentInfo.parentCrueltyFree === 'boolean') ? parentInfo.parentCrueltyFree : null,
-      parentNotes: parentInfo && parentInfo.notes ? String(parentInfo.notes) : ''
-    });
+  } 
   });
 
   function unique(arr) {
@@ -821,7 +800,7 @@ function normalizeProduct(p) {
 
     const predicates = [
       // פילטר קטגוריות עליונות (chips)
-      () => currentCat === "all" || getCats(p).includes(normCat(currentCat)),
+      () =>  === "all" || getCats(p).includes(normCat()),
 
       // מותג
       () => !brand || p.brand === brand,
@@ -841,23 +820,13 @@ function normalizeProduct(p) {
 
       // Approvals
       () => !onlyLB?.checked || p.isLB,
-      () => !onlyPeta?.checked || p.isPeta,
-      () => !onlyVegan?.checked || p.isVegan,
-      // "Cruelty-free only" = show items that are CF but NOT vegan
-      () => !onlyCFNotVegan?.checked || !p.isVegan,
-      () => !onlyIsrael?.checked || p.isIsrael,
-
-      // Parent-company transparency
-      () => {
-        if (!avoidNonCFParent?.checked) return true;
-        // Keep independent brands, and brands whose parent is known to be cruelty-free.
-        // unknown parent: exclude when strict toggle is on
-        return false;
-      },
+      () => !onlyPeta?.checked || p.isPeta, 
+      () => !onlyIsrael?.checked || p.isIsrael, 
       // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
       () => {
         if (!onlyMen?.checked) return true;
-        if (currentCat === "makeup") return true;
+        // באיפור אין טעם להחיל מסנן "לגברים"
+        if (String(p.category||"") === "makeup") return true;
         return isMenTargetedProduct(p);
       },
 
@@ -1080,17 +1049,7 @@ function normalizeProduct(p) {
       if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
       if (p.isPeta) tags.appendChild(tag("PETA"));
       if (p.isVegan) tags.appendChild(tag("Vegan"));
-      if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
-
-      // Parent-company badge (transparency)
-        t.classList.add('tag--parent');
-        tags.appendChild(t);
-        const t = tag(label);
-        t.classList.add('tag--parent');
-        tags.appendChild(t);
-        t.classList.add('tag--parent', 'tag--parent-unknown');
-        tags.appendChild(t);
-      }
+      if (p.isIsrael) tags.appendChild(tag("אתר ישראלי")); 
 
       const offerList = document.createElement("div");
       offerList.className = "offerList";
@@ -1187,7 +1146,7 @@ function bind() {
     if (
       e.target &&
       e.target.matches(
-        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyCFNotVegan, #onlyIsrael, #onlyFreeShip, #onlyMen, #onlyIndependent, #avoidNonCFParent"
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyIsrael, #onlyFreeShip, #onlyMen, "
       )
     ) {
       scheduleRender();
@@ -1198,7 +1157,7 @@ function bind() {
     if (
       e.target &&
       e.target.matches(
-        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyCFNotVegan, #onlyIsrael, #onlyFreeShip, #onlyMen, #onlyIndependent, #avoidNonCFParent"
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyIsrael, #onlyFreeShip, #onlyMen, "
       )
     ) {
       scheduleRender();
@@ -1230,45 +1189,7 @@ function bind() {
       e.preventDefault();
       scheduleRender();
     });
-  }
-
-  // Top category chips
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".chip");
-    if (!btn || !btn.dataset.cat) return;
-    const cat = btn.dataset.cat;
-    if (!cat) return;
-    currentCat = cat;
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    chips.forEach((c) => c.classList.toggle("active", c === btn));
-    scheduleRender();
-  });
-
-  // Clear-all filters
-  clearBtn?.addEventListener("click", () => {
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    q.value = "";
-    brandSelect.value = "";
-    storeSelect.value = "";
-    sortSel.value = "price-low";
-    typeSelect.value = "";
-    onlyLB.checked = false;
-    onlyPeta.checked = false;
-    onlyVegan.checked = false;
-    if (onlyCFNotVegan) onlyCFNotVegan.checked = false;
-    onlyIsrael.checked = false;
-    onlyFreeShip.checked = false;
-    if (onlyIndependent) onlyIndependent.checked = false;
-    if (avoidNonCFParent) avoidNonCFParent.checked = false;
-    if (priceMinInput) priceMinInput.value = "";
-    if (priceMaxInput) priceMaxInput.value = "";
-    chips.forEach((c) => c.classList.remove("active"));
-    const all = chips.find((c) => c.dataset.cat === "all");
-    all && all.classList.add("active");
-    currentCat = "all";
-    scheduleRender();
-  });
-}
+  } 
 buildSelects();
   initPriceCheckedOn();
   bind();

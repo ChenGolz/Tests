@@ -303,3 +303,6 @@ function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} 
   renderHint('הזינו שתי אותיות לפחות להתחיל');
   if (ingList) renderInciAlerts('');
 })();
+
+// Notify Weglot / listeners after dynamic render
+try { window.dispatchEvent(new Event('kbwg:content-rendered')); } catch(e) {}

@@ -3819,3 +3819,18 @@ header nav ul{ gap: 10px !important; flex-wrap: wrap; }
 .pContent .pMeta{ margin-top: 0; }
 .pContent .pMetaPill{ margin-top: 0; }
 
+
+
+/* Tighten spacing between price range and store line in product cards */
+.pPriceRange{ margin-top: 4px !important; margin-bottom: 2px !important; }
+.pOfferList{ margin-top: 2px !important; }
+.pOfferRow{ margin-top: 2px !important; }
+
+/* Brand name in LTR inside Hebrew */
+.brand-name{ direction:ltr; unicode-bidi:isolate; font-weight:600; }
+
+
+
+/* Top menu spacing: keep all links visible on web */
+.siteHeader .nav{ gap: 10px !important; flex-wrap: wrap; }
+

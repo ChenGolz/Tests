@@ -100,11 +100,9 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
   ])
     .then(function (results) {
       var products = normalizeProducts(results[0]);
-      var parentMap = results[1] && typeof results[1] === 'object' ? results[1] : {};
+      var null = results[1] && typeof results[1] === 'object' ? results[1] : {};
 
-      window.PRODUCTS = products;
-      window.PARENT_MAP = parentMap;
-
+      window.PRODUCTS = products; 
       // Price transparency: use the newest updated date in the products DB
       try {
         var newest = '';
@@ -121,7 +119,7 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
       // Should be rare (Promise.all rejection) but keep UI predictable
       console.warn('[products-json-loader] Combined load failed', err);
       window.PRODUCTS = [];
-      window.PARENT_MAP = {};
+      window.__REMOVED_ = {};
       window.PRICE_CHECKED_ON = (new Date()).toISOString().slice(0, 10);
 
       // When opened via file://, browsers block fetch() due to CORS.

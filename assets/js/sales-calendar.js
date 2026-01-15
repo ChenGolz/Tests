@@ -132,3 +132,6 @@ function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} 
 
   document.addEventListener('DOMContentLoaded', render);
 })();
+
+// Notify Weglot / listeners after dynamic render
+try { window.dispatchEvent(new Event('kbwg:content-rendered')); } catch(e) {}
