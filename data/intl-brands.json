@@ -1,5 +1,141 @@
 [
   {
+  "name": "3INA",
+  "categories": ["cosmetics"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/3ina/Homepage/page/2FF5278B-09A4-41F8-B206-2BE78E70CD64",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "4EVER MAGIC COSMETICS",
+  "categories": ["cosmetics"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/4EVERMAGICCOSMETICS/page/8A51CE90-2A45-4C19-8255-0D0A03720F4D",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "786 Cosmetics",
+  "categories": ["nail polish"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/786/page/A2D16AD7-EEF1-4B4E-991E-EAA64FAF926C",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Aaryanveda",
+  "categories": ["skincare"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/s?k=Aaryanveda",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Abbott",
+  "categories": ["health"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/Abbott/page/0EE37DF5-E528-4571-8B07-D6B1C52DD134",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Aesthetica Cosmetics",
+  "categories": ["cosmetics"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/Aesthetica/page/C1F07721-1708-4EDB-81B4-2AC152FA2F4B",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "AIMEILI",
+  "categories": ["nails"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/AIMEILI/page/41F5ED65-03AA-460D-B675-F5A21E70C3B0",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "AKT London",
+  "categories": ["deodorant"],
+  "website": null,
+  "amazonUs": null,
+  "amazonUk": "https://www.amazon.co.uk/stores/Akt/page/88E14DDC-7A41-48AF-A3E6-4DF4839EE604",
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Alchimie Forever",
+  "categories": ["skincare"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/AlchimieForever/page/C8915B62-E977-463C-BEA4-B634EB80B177",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Alleyoop",
+  "categories": ["cosmetics"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/MeetAlleyoop/page/9EE15901-9AF4-46BA-9F04-3245BC42776E",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Arctic Fox Hair Color",
+  "categories": ["haircare"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/ArcticFox/page/2C25E2F4-703F-4BA0-9478-BEE427258927",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "As I Am",
+  "categories": ["haircare"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/AsIAm/page/37F0E5CE-E090-438F-82A4-6A6FC022FE32",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "Bali Body",
+  "categories": ["self-tan", "skincare"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/BaliBody/page/482FEF02-166C-4D0F-95ED-DD47E1F3DEA1",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "BARRY M",
+  "categories": ["cosmetics"],
+  "website": null,
+  "amazonUs": null,
+  "amazonUk": "https://www.amazon.co.uk/stores/BarryMBeauty/page/01254683-7BEA-4890-A148-F0C03003AE20",
+  "badges": ["PETA"],
+  "vegan": true
+},
+{
+  "name": "BYOMA",
+  "categories": ["skincare"],
+  "website": null,
+  "amazonUs": "https://www.amazon.com/stores/BYOMA/page/970B4427-10A6-445A-99C3-4E320E95EACB",
+  "amazonUk": null,
+  "badges": ["PETA"],
+  "vegan": true
+}
+
+  {
     "name": "3INA",
     "categories": [
       "makeup"
