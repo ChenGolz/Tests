@@ -1,31 +1,4 @@
 [
-{"name":"4EVER MAGIC COSMETICS","categories":["Beauty","Cosmetics"],"website":"https://4evermagiccosmetics.com/","amazonUs":"https://amzn.to/3LM0bjq","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"786 Cosmetics","categories":["Beauty","Nail Polish"],"website":"https://786cosmetics.com/","amazonUs":"https://amzn.to/45gkxrH","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"Aaryanveda","categories":["Skincare"],"website":"https://www.aaryanveda.in/","amazonUs":"https://amzn.to/4bHdADM","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"Abbott","categories":["Health","Personal Care"],"website":null,"amazonUs":"https://amzn.to/4qoqIlT","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"Aesthetica Cosmetics","categories":["Beauty","Makeup Tools","Cosmetics"],"website":"https://aesthetica.me/","amazonUs":"https://amzn.to/4qUdGfR","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"Authentic Beauty Concept","categories":["Haircare"],"website":"https://www.authenticbeautyconcept.com/","amazonUs":"https://amzn.to/4qYq7qZ","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"Bain De Terre","categories":["Haircare"],"website":null,"amazonUs":"https://amzn.to/3LOXTjs","amazonUk":null,"badges":["PETA"],"vegan":true},
-{"name":"Bali Body","categories":["Self Tan","Skincare"],"website":"https://uk.balibodyco.com/","amazonUs":"https://amzn.to/4jFXSuV","amazonUk":"https://amzn.to/3LPlGzR","badges":["PETA"],"vegan":true},
-{"name":"bBold","categories":["Self Tanning"],"website":"https://www.b-bold.co.uk/","amazonUs":null,"amazonUk":"https://amzn.to/3ZbB4to","badges":["PETA"],"vegan":true},
-{"name":"Beauty Pro","categories":["Skincare"],"website":"https://www.beautypro.com/","amazonUs":"https://amzn.to/4r1WbdL","amazonUk":"https://amzn.to/49JanBn","badges":["PETA"],"vegan":true},
-{"name":"Ben & Anna","categories":["Personal Care"],"website":"https://en.ben-anna.de/","amazonUs":"https://amzn.to/3YEijPd","amazonUk":"https://amzn.to/4qHvQlv","badges":["PETA"],"vegan":true},
-{"name":"Billie Eilish","categories":["Fragrance"],"website":null,"amazonUs":"https://amzn.to/4sJxHHw","amazonUk":null,"badges":["PETA"],"vegan":true},
-
-  {
-    "name": "365 by Whole Foods Market",
-    "categories": [
-      "marketplace"
-    ],
-    "website": "https://wholefoodsmarket.co.uk/",
-    "amazonUs": "https://amzn.to/4qaXQh1",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
   {
     "name": "3INA",
     "categories": [
@@ -38,49 +11,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "3rd + Fairfax Beauty",
-    "categories": [
-      "cosmetics"
-    ],
-    "website": "https://losangelesbrands.com/collections/3rd-fairfax-beauty",
-    "amazonUs": "https://amzn.to/4aLBUUL",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "5 SENS Inc.",
-    "categories": [
-      "fragrance"
-    ],
-    "website": "https://5sens.co/",
-    "amazonUs": "https://amzn.to/4qC2DHZ",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "7th Heaven",
-    "categories": [
-      "skincare"
-    ],
-    "website": "https://my7thheaven.com/",
-    "amazonUs": "https://amzn.to/3YX6YK1",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "82°E",
@@ -94,35 +30,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "aavrani",
-    "categories": [
-      "skincare"
-    ],
-    "website": "https://aavrani.com/",
-    "amazonUs": "https://amzn.to/3N3jIME",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Abbot Kinney Apothecary",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://www.abbotkinneyapothecary.com/",
-    "amazonUs": "https://amzn.to/44T9jJt",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "about-face",
@@ -136,7 +49,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "abyssian",
@@ -150,35 +68,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "ACURE",
-    "categories": [
-      "natural-care"
-    ],
-    "website": "https://acure.com/",
-    "amazonUs": "https://amzn.to/4ptacQv",
-    "amazonUk": "https://amzn.to/4sseGt0",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Aesop",
-    "categories": [
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/4bnJjtC",
-    "amazonUk": "https://amzn.to/4jwmpCw",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "After Inked",
@@ -193,7 +88,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "Aimeili Gel Polish",
@@ -207,7 +107,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "ציפורניים",
+    "types": [
+      "מוצרי איפור::ציפורניים"
+    ]
   },
   {
     "name": "AKT London",
@@ -221,7 +126,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לגוף",
+    "typeSub": "סבונים ודאודורנטים",
+    "types": [
+      "טיפוח לגוף::סבונים ודאודורנטים"
+    ]
   },
   {
     "name": "Alamar Cosmetics",
@@ -235,21 +145,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Alba Botanica",
-    "categories": [
-      "natural-care"
-    ],
-    "website": "https://albabotanica.com/",
-    "amazonUs": "https://amzn.to/4qcRgXe",
-    "amazonUk": "https://amzn.to/4srQR4M",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "Alchimie Forever",
@@ -263,7 +164,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "Alleyoop",
@@ -277,7 +183,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "Alpine White",
@@ -291,21 +202,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Alucia Organics",
-    "categories": [
-      "natural-skin"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/3Nyh4hU",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "Alya Skin",
@@ -319,7 +221,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "Amara Beauty",
@@ -333,7 +240,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "Andrew Fitzsimons",
@@ -347,7 +259,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "Anomaly Haircare",
@@ -361,7 +278,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "Aqualogica",
@@ -375,7 +297,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "Arbonne",
@@ -390,7 +317,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "Arches & Halos",
@@ -404,7 +336,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "עיניים",
+    "types": [
+      "מוצרי איפור::עיניים"
+    ]
   },
   {
     "name": "Arctic Fox",
@@ -418,36 +355,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "ARKIVE",
-    "categories": [
-      "hair"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/44ZEqmF",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Aromatherapy Associates",
-    "categories": [
-      "fragrance",
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/45KeCv0",
-    "amazonUk": "https://amzn.to/49KbCkL",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "As I Am",
@@ -461,7 +374,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "AspenClean",
@@ -475,7 +393,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "Astonish",
@@ -489,22 +412,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Atelier Rebul",
-    "categories": [
-      "fragrance",
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/4bjzYmE",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "ATTITUDE",
@@ -519,7 +432,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לגוף",
+    "typeSub": "קרמי גוף",
+    "types": [
+      "טיפוח לגוף::קרמי גוף"
+    ]
   },
   {
     "name": "Au Naturale",
@@ -533,7 +451,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "Aunt Fannie’s",
@@ -547,22 +470,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Aurelia Probiotic Skincare",
-    "categories": [
-      "skincare",
-      "luxury-care"
-    ],
-    "website": null,
-    "amazonUs": "https://amzn.to/49tc71g",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "Australian Glow",
@@ -576,7 +489,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "הגנה מהשמש",
+    "typeSub": "שיזוף עצמי",
+    "types": [
+      "הגנה מהשמש::שיזוף עצמי"
+    ]
   },
   {
     "name": "Avoskin",
@@ -590,7 +508,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "AvryBeauty",
@@ -604,7 +527,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "טיפוח לגוף",
+    "typeSub": "קרמי גוף",
+    "types": [
+      "טיפוח לגוף::קרמי גוף"
+    ]
   },
   {
     "name": "Axiology",
@@ -618,7 +546,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "AZURE",
@@ -632,7 +565,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "ציפורניים",
+    "types": [
+      "מוצרי איפור::ציפורניים"
+    ]
   },
   {
     "name": "b.box for kids",
@@ -646,21 +584,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Babo Botanicals",
-    "categories": [
-      "baby-child"
-    ],
-    "website": "https://babobotanicals.com/",
-    "amazonUs": "https://amzn.to/4ptF43g",
-    "amazonUk": "https://amzn.to/4qykUG8",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "Baby Magic",
@@ -674,22 +603,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Badger",
-    "categories": [
-      "sun",
-      "natural-care"
-    ],
-    "website": "https://badgerbalm.com/",
-    "amazonUs": "https://amzn.to/4jro0cx",
-    "amazonUk": "https://amzn.to/4joyLfL",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "Bali Boo",
@@ -703,7 +622,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "אחר",
+    "typeSub": "אחר",
+    "types": [
+      "אחר::אחר"
+    ]
   },
   {
     "name": "Bare Anatomy",
@@ -717,7 +641,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "BARRY M",
@@ -731,119 +660,12 @@
       "PETA ",
       "100% vegan"
     ],
-    "vegan": true
-  },
-  {
-    "name": "Desert Essence",
-    "categories": [
-      "personal-care"
-    ],
-    "website": "https://desertessence.com/",
-    "amazonUs": "https://amzn.to/4aKYm0m",
-    "amazonUk": "https://amzn.to/3L3L7gR",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Dr. Bronner's",
-    "categories": [
-      "soap"
-    ],
-    "website": "https://www.drbronner.com/",
-    "amazonUs": "https://amzn.to/3L48BCy",
-    "amazonUk": "https://amzn.to/4qDRpTd",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Hempz",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://hempz.com/",
-    "amazonUs": "https://amzn.to/4plbBIv",
-    "amazonUk": "https://amzn.to/4bkHmy7",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Maelys Cosmetics",
-    "categories": [
-      "body-care"
-    ],
-    "website": "https://www.maelyscosmetics.com/",
-    "amazonUs": "https://amzn.to/4pptuGo",
-    "amazonUk": "https://amzn.to/44Z6nLr",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Mrs. Meyer's Clean Day",
-    "categories": [
-      "cleaning"
-    ],
-    "website": "https://mrsmeyers.com/",
-    "amazonUs": "https://amzn.to/49m0wkt",
-    "amazonUk": "https://amzn.to/4q18DtW",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "ORLY",
-    "categories": [
-      "nails"
-    ],
-    "website": "https://orlybeauty.com/",
-    "amazonUs": "https://amzn.to/4swdrJC",
-    "amazonUk": "https://amzn.to/4jtdQrZ",
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Pure and Natural Pet",
-    "categories": [
-      "pet-care"
-    ],
-    "website": "https://pureandnaturalpet.com/",
-    "amazonUs": "https://amzn.to/4jq77z3",
-    "amazonUk": null,
-    "badges": [
-      "PETA ",
-      "Leaping Bunny"
-    ],
-    "vegan": false
-  },
-  {
-    "name": "Technic",
-    "categories": [
-      "cosmetics"
-    ],
-    "website": "https://techniccosmetics.com/",
-    "amazonUs": "https://amzn.to/4buETkI",
-    "amazonUk": "https://amzn.to/49AnQLK",
-    "badges": [
-      "PETA",
-      "100% vegan"
-    ],
-    "vegan": true
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
   },
   {
     "name": "Baylis & Harding",
@@ -862,6 +684,11 @@
     "priceTier": 2,
     "tags": [
       "Men"
+    ],
+    "typeGroup": "טיפוח לגוף",
+    "typeSub": "קרמי גוף",
+    "types": [
+      "טיפוח לגוף::קרמי גוף"
     ]
   },
   {
@@ -876,36 +703,12 @@
       "Leaping Bunny"
     ],
     "vegan": true,
-    "priceTier": 2
-  },
-  {
-    "name": "The Humble Co",
-    "categories": [
-      "personal-care",
-      "wellness"
-    ],
-    "website": "https://www.thehumble.co/",
-    "amazonUs": "https://amzn.to/3LHXG1w",
-    "amazonUk": "https://amzn.to/45aDZWG",
-    "badges": [
-      "PETA"
-    ],
-    "vegan": true,
-    "priceTier": 1
-  },
-  {
-    "name": "R+Co",
-    "categories": [
-      "haircare"
-    ],
-    "website": "https://www.randco.com/",
-    "amazonUs": "https://amzn.to/4jHGw0G",
-    "amazonUk": null,
-    "badges": [
-      "Leaping Bunny"
-    ],
-    "vegan": true,
-    "priceTier": 4
+    "priceTier": 2,
+    "typeGroup": "טיפוח לפנים",
+    "typeSub": "קרם פנים",
+    "types": [
+      "טיפוח לפנים::קרם פנים"
+    ]
   },
   {
     "name": "IGK",
@@ -919,7 +722,12 @@
       "Leaping Bunny"
     ],
     "vegan": true,
-    "priceTier": 5
+    "priceTier": 5,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
   },
   {
     "name": "PÜR MINERALS",
@@ -934,6 +742,69 @@
       "PETA"
     ],
     "vegan": true,
-    "priceTier": 3
+    "priceTier": 3,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
+  },
+  {
+    "name": "R+Co",
+    "categories": [
+      "haircare"
+    ],
+    "website": "https://www.randco.com/",
+    "amazonUs": "https://amzn.to/4jHGw0G",
+    "amazonUk": null,
+    "badges": [
+      "Leaping Bunny"
+    ],
+    "vegan": true,
+    "priceTier": 4,
+    "typeGroup": "עיצוב שיער",
+    "typeSub": "טיפוח ועיצוב שיער",
+    "types": [
+      "עיצוב שיער::טיפוח ועיצוב שיער"
+    ]
+  },
+  {
+    "name": "Technic",
+    "categories": [
+      "cosmetics"
+    ],
+    "website": "https://techniccosmetics.com/",
+    "amazonUs": "https://amzn.to/4buETkI",
+    "amazonUk": "https://amzn.to/49AnQLK",
+    "badges": [
+      "PETA",
+      "100% vegan"
+    ],
+    "vegan": true,
+    "typeGroup": "מוצרי איפור",
+    "typeSub": "פנים",
+    "types": [
+      "מוצרי איפור::פנים"
+    ]
+  },
+  {
+    "name": "The Humble Co",
+    "categories": [
+      "personal-care",
+      "wellness"
+    ],
+    "website": "https://www.thehumble.co/",
+    "amazonUs": "https://amzn.to/3LHXG1w",
+    "amazonUk": "https://amzn.to/45aDZWG",
+    "badges": [
+      "PETA"
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "typeGroup": "טיפוח לגוף",
+    "typeSub": "קרמי גוף",
+    "types": [
+      "טיפוח לגוף::קרמי גוף"
+    ]
   }
 ]
