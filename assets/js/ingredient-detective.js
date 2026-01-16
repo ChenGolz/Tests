@@ -1,11 +1,8 @@
-function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} } }
 (function () {
   const input = document.getElementById('qIng');
   const out = document.getElementById('out');
   const hint = document.getElementById('hint');
   const sugs = document.getElementById('sugs');
-  const ingList = document.getElementById('ingList');
-  const ingAlerts = document.getElementById('ingAlerts');
 
   if (!input || !out || !hint || !sugs) return;
 
@@ -53,15 +50,6 @@ function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} 
       .replace(/\s+/g, ' ');
   }
 
-  function escapeHtml(str) {
-    return String(str ?? '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
   function displayName(item) {
     const parts = [];
     if (item.name) parts.push(item.name);
@@ -72,60 +60,6 @@ function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} 
   function clearUI() {
     out.innerHTML = '';
     sugs.innerHTML = '';
-    if (ingAlerts) ingAlerts.innerHTML = '';
-  }
-
-  function tokenizeInci(text) {
-    const raw = String(text || '');
-    return raw
-      .split(/[\n,;]+/)
-      .map((t) => norm(t))
-      .filter(Boolean);
-  }
-
-  function renderIngredientAlerts(tokens) {
-    if (!ingAlerts) return;
-    ingAlerts.innerHTML = '';
-    if (!tokens || !tokens.length) return;
-
-    const hits = [];
-    tokens.forEach((tok) => {
-      for (const item of DB) {
-        const keys = (item.keys || []).map(norm).filter(Boolean);
-        if (keys.some((k) => k === tok)) {
-          hits.push(item);
-          break;
-        }
-      }
-    });
-
-    if (!hits.length) {
-      const d = document.createElement('div');
-      d.className = 'hintText';
-      d.textContent = 'לא זוהו דגלי רכיבים מהרשימה הידועה. (זה לא מבטיח טבעונות — תמיד כדאי לבדוק תווית)';
-      ingAlerts.appendChild(d);
-      return;
-    }
-
-    // Deduplicate by name
-    const uniq = [];
-    const seen = new Set();
-    hits.forEach((h) => {
-      const k = norm(h.name || h.he || (h.keys && h.keys[0]) || '');
-      if (!k || seen.has(k)) return;
-      seen.add(k);
-      uniq.push(h);
-    });
-
-    uniq.forEach((item) => {
-      const box = document.createElement('div');
-      const st = String(item.status || '');
-      const isAnimal = st.includes('מן החי');
-      const isAmbig = st.includes('תלוי');
-      box.className = 'ingAlertItem ' + (isAnimal ? 'orange' : (isAmbig ? 'red' : ''));
-      box.innerHTML = `<strong>${displayName(item)}</strong><div>${escapeHtml(st)}</div>${item.why ? `<div style="margin-top:4px">${escapeHtml(item.why)}</div>` : ''}`;
-      ingAlerts.appendChild(box);
-    });
   }
 
   function renderHint(text) {
@@ -219,90 +153,8 @@ function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} 
     renderSuggestions(matches);
   }
 
-  // --- INCI list scanner (paste full ingredient list) ---
-  function splitIngredients(text) {
-    return (text || '')
-      .toString()
-      .split(/[\n,;|]+/g)
-      .map((t) => t.trim())
-      .filter(Boolean);
-  }
-
-  function findByToken(token) {
-    const t = norm(token);
-    if (!t) return null;
-    for (const item of DB) {
-      const keys = (item.keys || []).map(norm).filter(Boolean);
-      if (keys.some((k) => k === t || k.includes(t) || t.includes(k))) {
-        return item;
-      }
-    }
-    return null;
-  }
-
-  function renderInciAlerts(text) {
-    if (!ingList || !ingAlerts) return;
-    const tokens = splitIngredients(text);
-    if (!tokens.length) {
-      ingAlerts.innerHTML = '';
-      return;
-    }
-
-    const hits = [];
-    for (const tok of tokens) {
-      const item = findByToken(tok);
-      if (item) hits.push({ tok, item });
-    }
-
-    if (!hits.length) {
-      ingAlerts.innerHTML = '<div class="ingAlertItem"><strong>לא נמצאו דגלים אדומים</strong><div class="muted">טיפ: עדיין כדאי לבדוק אם המותג מצהיר על מקור צמחי כשכתוב "glycerin"/"squalane" וכו׳.</div></div>';
-      return;
-    }
-
-    // Deduplicate by canonical name
-    const seen = new Set();
-    const uniq = [];
-    for (const h of hits) {
-      const key = norm(h.item.name || h.item.he || h.tok);
-      if (seen.has(key)) continue;
-      seen.add(key);
-      uniq.push(h);
-    }
-
-    ingAlerts.innerHTML = '';
-    const wrap = document.createElement('div');
-    wrap.className = 'ingAlerts';
-
-    uniq.slice(0, 20).forEach((h) => {
-      const item = h.item;
-      const status = String(item.status || '').trim();
-      const el = document.createElement('div');
-      el.className = 'ingAlertItem';
-
-      // Color code: orange = animal-derived, red = "depends source" (red flag)
-      if (status.includes('מן החי')) el.classList.add('orange');
-      else if (status.includes('תלוי')) el.classList.add('red');
-
-      el.innerHTML = '<strong>' + displayName(item) + '</strong>' +
-        (status ? ('<div class="muted">' + escapeHtml(status) + '</div>') : '') +
-        (item.why ? ('<div>' + escapeHtml(item.why) + '</div>') : '');
-      wrap.appendChild(el);
-    });
-
-    ingAlerts.appendChild(wrap);
-  }
-
   input.addEventListener('input', onInput);
-  if (ingList) {
-    ingList.addEventListener('input', function () {
-      renderInciAlerts(ingList.value);
-    });
-  }
   // Initial
   clearUI();
   renderHint('הזינו שתי אותיות לפחות להתחיל');
-  if (ingList) renderInciAlerts('');
 })();
-
-// Notify Weglot / listeners after dynamic render
-try { window.dispatchEvent(new Event('kbwg:content-rendered')); } catch(e) {}

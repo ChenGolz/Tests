@@ -60,7 +60,6 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
   }
 
   var jsonPath = resolveFromBase('data/products.json');
-  var parentPath = resolveFromBase('data/');
 
   function isFileProtocol() {
     try { return location && location.protocol === 'file:'; } catch (e) { return false; }
@@ -82,45 +81,17 @@ try { window.KBWG_PRODUCTS_BUILD = '2026-01-12-v6'; console.info('[KBWG] KBWG_PR
     ].join('');
   }
 
-  function safeFetchJson(path, fallback) {
-    return fetch(path, { cache: 'no-store' })
-      .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return res.json();
-      })
-      .catch(function (err) {
-        console.warn('[products-json-loader] Could not load ' + path, err);
-        return fallback;
-      });
-  }
-
-  Promise.all([
-    safeFetchJson(jsonPath, []),
-    safeFetchJson(parentPath, {})
-  ])
-    .then(function (results) {
-      var products = normalizeProducts(results[0]);
-      var null = results[1] && typeof results[1] === 'object' ? results[1] : {};
-
-      window.PRODUCTS = products; 
-      // Price transparency: use the newest updated date in the products DB
-      try {
-        var newest = '';
-        for (var i = 0; i < products.length; i++) {
-          var u = products[i] && products[i].updated ? String(products[i].updated) : '';
-          if (u && (!newest || Date.parse(u) > Date.parse(newest))) newest = u;
-        }
-        window.PRICE_CHECKED_ON = newest || (new Date()).toISOString().slice(0, 10);
-      } catch (e) {
-        window.PRICE_CHECKED_ON = (new Date()).toISOString().slice(0, 10);
-      }
+  fetch(jsonPath, { cache: 'no-store' })
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      window.PRODUCTS = normalizeProducts(data);
     })
     .catch(function (err) {
-      // Should be rare (Promise.all rejection) but keep UI predictable
-      console.warn('[products-json-loader] Combined load failed', err);
+      console.warn('[products-json-loader] Could not load ' + jsonPath, err);
       window.PRODUCTS = [];
-      window.__REMOVED_ = {};
-      window.PRICE_CHECKED_ON = (new Date()).toISOString().slice(0, 10);
 
       // When opened via file://, browsers block fetch() due to CORS.
       if (isFileProtocol()) {

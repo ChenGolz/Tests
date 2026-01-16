@@ -1,5 +1,191 @@
 [
   {
+    "id": "lavido-natural-soap-jasmine",
+    "brand": "Lavido",
+    "name": "סבון מוצק טבעי בניחוח יסמין. מנקה בעדינות, טבעוני ושומר על לחות העור. טיפוח נקי ואיכותי.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "soap-bar",
+    "productTypeLabel": "סבון מוצק",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "120 גרם",
+    "storeRegion": "us",
+    "priceMin": 30,
+    "priceMax": 40,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3LNY5zv",
+        "meta": "אמזון ארה״ב",
+        "price": 33,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-aromatic-body-lotion-mandarin",
+    "brand": "Lavido",
+    "name": "תחליב גוף ארומטי טבעי בניחוח מנדרינה, תפוז וברגמוט. מעניק לחות עמוקה, נספג במהירות וללא רעלים.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "250 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 120,
+    "priceMax": 140,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4sHDFZu",
+        "meta": "אמזון ארה״ב",
+        "price": 126,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-gel-facial-cleanser-100ml",
+    "brand": "Lavido",
+    "name": "ג'ל ניקוי פנים מעניק לחות. מנקה, מרענן ומשקם את עור הפנים ללא ייבוש.",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-wash",
+    "productTypeLabel": "סבון פנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "100 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 120,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4sHDn4Q",
+        "meta": "אמזון ארה״ב",
+        "price": 107,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-body-lotion-musk-coconut",
+    "brand": "Lavido",
+    "name": "תחליב גוף ארומטי טבעי בניחוח מאסק וקוקוס. פורמולה נקייה להזנת עור יבש בניחוח משכר.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "120 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 65,
+    "priceMax": 80,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49Cbfay",
+        "meta": "אמזון ארה״ב",
+        "price": 70,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-body-wash-patchouli-vanilla",
+    "brand": "Lavido",
+    "name": "סבון גוף טבעי בניחוח פצ'ולי ווניל. מנקה, מרענן ומעניק לחות מוגברת לעור במהלך הרחצה.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-wash",
+    "productTypeLabel": "סבון נוזלי",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "400 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 80,
+    "priceMax": 100,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49HPQgr",
+        "meta": "אמזון ארה״ב",
+        "price": 89,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "lavido-body-lotion-mandarin-120ml",
+    "brand": "Lavido",
+    "name": "תחליב גוף ארומטי טבעי בניחוח מנדרינה, תפוז וברגמוט. אריזה בינונית ללחות יומיומית.",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": true,
+    "size": "120 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 65,
+    "priceMax": 80,
+    "updated": "2026-01-14",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4byqJ20",
+        "meta": "אמזון ארה״ב",
+        "price": 70,
+        "freeShipOver": 180
+     }
+    ]
+  },
+  {
     "id": "axisy-mugwort-pack",
     "brand": "AXIS-Y",
     "name": "מסכת חימר לפנים לשטיפה, המסייעת לניקוי והבהרת נקבוביות, מטפלת בנקבוביות סתומות, ראשים שחורים ולבנים.\nטיפוח עור קוריאני טבעוני למראה עור חלק וזוהר (Glass Skin).",
@@ -31,8 +217,38 @@
         "meta": "אמזון ארה״ב",
         "price": 100
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
+  },
+  {
+    "id": "charlottetilbury-lip-lustre-blondie",
+    "brand": "Charlotte Tilbury Beauty",
+    "name": "גלוס לחות לשפתיים Lip Lustre – גוון Blondie",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "lip-gloss",
+    "productTypeLabel": "גלוס לשפתיים",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "4 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3MZwRX3",
+        "meta": "אמזון ארה״ב",
+        "price": 90,
+        "freeShipOver": 170
+      }
+    ]
   },
   {
     "id": "bareminerals-gen-nude-powder-blush",
@@ -63,8 +279,7 @@
         "price": 90,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "bareminerals-original-matte-loose-foundation",
@@ -95,8 +310,844 @@
         "price": 135,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
+  },
+  {
+    "id": "bellapierre-hd-smoothing-primer",
+    "brand": "Bellapierre",
+    "name": "HD Smoothing פריימר מחליק למראה חלק",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "primer",
+    "productTypeLabel": "פריימר לפנים",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "1.01 fl oz",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4suhjLg",
+        "meta": "אמזון ארה״ב",
+        "price": 140,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-mineral-blush-03oz",
+    "brand": "Bellapierre",
+    "name": "סומק מינרלי Bellapierre",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "blush",
+    "productTypeLabel": "סומק לפנים",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.3 oz",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4qDMjGN",
+        "meta": "אמזון ארה״ב",
+        "price": 105,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-mineral-bronzer-03oz",
+    "brand": "Bellapierre",
+    "name": "ברונזר מינרלי Bellapierre",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "bronzer",
+    "productTypeLabel": "ברונזר לפנים",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.3 oz",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4jowjWw",
+        "meta": "אמזון ארה״ב",
+        "price": 105,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-banana-setting-powder-014oz",
+    "brand": "Bellapierre",
+    "name": "Banana פודרה בננה לקיבוע והבהרה",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "setting-powder",
+    "productTypeLabel": "פודרה לקיבוע",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.14 oz",
+    "storeRegion": "us",
+    "priceMin": 0,
+    "priceMax": 50,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3Lp2zMR",
+        "meta": "אמזון ארה״ב",
+        "price": 50,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-get-started-kit-medium",
+    "brand": "Bellapierre",
+    "name": "Get Started Kit ערכת בסיס מינרלית (מידות בינוניות)",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "makeup-kit",
+    "productTypeLabel": "ערכת איפור בסיס",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 200,
+    "priceMax": 300,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4q751GZ",
+        "meta": "אמזון ארה״ב",
+        "price": 210,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-bb-cream-spf20-50ml",
+    "brand": "Bellapierre",
+    "name": "BB Cream SPF 20 קרם BB מינרלי",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "bb-cream",
+    "productTypeLabel": "קרם BB לפנים",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "50 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 150,
+    "priceMax": 200,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49mhCic",
+        "meta": "אמזון ארה״ב",
+        "price": 155,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-banana-setting-powder-medium-duplicate",
+    "brand": "Bellapierre",
+    "name": "Banana Setting Powder – גוון Medium",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "setting-powder",
+    "productTypeLabel": "פודרה לקיבוע",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.14 oz",
+    "storeRegion": "us",
+    "priceMin": 0,
+    "priceMax": 50,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3YT7FE2",
+        "meta": "אמזון ארה״ב",
+        "price": 50,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "bellapierre-mineral-blush-autumn-glow",
+    "brand": "Bellapierre",
+    "name": "סומק מינרלי – גוון Autumn Glow",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "productTypeKey": "blush",
+    "productTypeLabel": "סומק לפנים",
+    "isVegan": false,
+    "isPeta": false,
+    "isLB": true,
+    "vegan": false,
+    "peta": false,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.3 oz",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3N3ZPFd",
+        "meta": "אמזון ארה״ב",
+        "price": 105,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-skin-recovery-toner-190",
+    "brand": "Paula's Choice",
+    "name": "Skin Recovery טונר מרגיע לעור יבש ורגיש",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-toner",
+    "productTypeLabel": "טונר לפנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "190 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4b1fgrN",
+        "meta": "אמזון ארה״ב",
+        "price": 100,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-mandelic-lactic-exfoliant",
+    "brand": "Paula's Choice",
+    "name": "פילינג 6% מנדליק + 2% לקטיק לעור רגיש",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-exfoliant",
+    "productTypeLabel": "פילינג כימי לפנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "88 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3LiHaF5",
+        "meta": "אמזון ארה״ב",
+        "price": 130,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-resist-barrier-repair-moisturizer",
+    "brand": "Paula's Choice",
+    "name": "RESIST Barrier Repair קרם לחות משקם לפנים",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-cream",
+    "productTypeLabel": "קרם פנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "50 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3LoZP21",
+        "meta": "אמזון ארה״ב",
+        "price": 120,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-weightless-body-lotion-bha",
+    "brand": "Paula's Choice",
+    "name": "Weightless קרם גוף טיפולי 2% BHA",
+    "category": "body",
+    "categoryLabel": "גוף",
+    "productTypeKey": "body-lotion",
+    "productTypeLabel": "קרם גוף",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "210 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4sueDgG",
+        "meta": "אמזון ארה״ב",
+        "price": 110,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-2bha-liquid-exfoliant-118-30-kit",
+    "brand": "Paula's Choice",
+    "name": "סט SKIN PERFECTING 2% BHA ליקוויד (118 מ״ל + 30 מ״ל)",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-exfoliant",
+    "productTypeLabel": "פילינג כימי לפנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "118 מ״ל + 30 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 150,
+    "priceMax": 200,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4spumxk",
+        "meta": "אמזון ארה״ב",
+        "price": 155,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-2bha-liquid-exfoliant-118",
+    "brand": "Paula's Choice",
+    "name": "SKIN PERFECTING 2% BHA ליקוויד אקספוליאנט",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-exfoliant",
+    "productTypeLabel": "פילינג כימי לפנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "118 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4slX0PM",
+        "meta": "אמזון ארה״ב",
+        "price": 105,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-pro-collagen-peptide-moisturizer",
+    "brand": "Paula's Choice",
+    "name": "Pro-Collagen Peptide קרם לחות ממלא לפנים",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-cream",
+    "productTypeLabel": "קרם פנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "50 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3Naceaw",
+        "meta": "אמזון ארה״ב",
+        "price": 135,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-clinical-1-retinol-moisturizer",
+    "brand": "Paula's Choice",
+    "name": "CLINICAL קרם 1% רטינול לפנים",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-cream",
+    "productTypeLabel": "קרם פנים טיפולי",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "30 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 150,
+    "priceMax": 200,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4sfTUge",
+        "meta": "אמזון ארה״ב",
+        "price": 180,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-clinical-0-3-retinol-bakuchiol-serum",
+    "brand": "Paula's Choice",
+    "name": "CLINICAL סרום 0.3% רטינול + 2% בקוצ׳יול",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-serum",
+    "productTypeLabel": "סרום פנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "30 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 200,
+    "priceMax": 300,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49qciun",
+        "meta": "אמזון ארה״ב",
+        "price": 230,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-2bha-exfoliant-10pads",
+    "brand": "Paula's Choice",
+    "name": "SKIN PERFECTING 2% BHA פדים לניגוב",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-exfoliant",
+    "productTypeLabel": "פילינג כימי לפנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "10 פדים",
+    "storeRegion": "us",
+    "priceMin": 0,
+    "priceMax": 50,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4js97XE",
+        "meta": "אמזון ארה״ב",
+        "price": 45,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "paulaschoice-resist-balanced-cleanser",
+    "brand": "Paula's Choice",
+    "name": "RESIST Perfectly Balanced ג׳ל ניקוי לפנים",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-cleanser",
+    "productTypeLabel": "ג׳ל ניקוי לפנים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "190 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4slXxBg",
+        "meta": "אמזון ארה״ב",
+        "price": 75,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "ag-care-fast-leave-conditioner",
+    "brand": "AG Care",
+    "name": "מרכך ללא שטיפה AG Care Conditioner",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "leave-in-conditioner",
+    "productTypeLabel": "מרכך ללא שטיפה",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "237 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/45pSjKY",
+        "meta": "אמזון ארה״ב",
+        "price": 100,
+        "freeShipOver": 160
+      }
+    ]
+  },
+  {
+    "id": "ag-care-recoil-curl-activator",
+    "brand": "AG Care",
+    "name": "קרם תלתלים Re:Coil Curl Activator",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "curl-cream",
+    "productTypeLabel": "קרם תלתלים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "355 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3LcBi06",
+        "meta": "אמזון ארה״ב",
+        "price": 145,
+        "freeShipOver": 160
+      }
+    ]
+  },
+  {
+    "id": "ag-care-curl-thrive-conditioner",
+    "brand": "AG Care",
+    "name": "Curl Thrive מרכך לחות לתלתלים",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "hair-conditioner",
+    "productTypeLabel": "מרכך לשיער מתולתל",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "237 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4qzCNnZ",
+        "meta": "אמזון ארה״ב",
+        "price": 100,
+        "freeShipOver": 160
+      }
+    ]
+  },
+  {
+    "id": "ag-care-conditioning-mist-detangling-spray",
+    "brand": "AG Care",
+    "name": "ספריי מתיר קשרים Conditioning Mist",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "detangling-spray",
+    "productTypeLabel": "ספריי מתיר קשרים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "355 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3Ynjpia",
+        "meta": "אמזון ארה״ב",
+        "price": 105,
+        "freeShipOver": 165
+      }
+    ]
+  },
+  {
+    "id": "ag-care-boost-acv-conditioner",
+    "brand": "AG Care",
+    "name": "Boost מרכך חומץ תפוחים ומנגו",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "hair-conditioner",
+    "productTypeLabel": "מרכך לשיער",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "355 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/495E4xp",
+        "meta": "אמזון ארה״ב",
+        "price": 125,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "ag-care-curl-details-defining-cream",
+    "brand": "AG Care",
+    "name": "Curl Details קרם להגדרת תלתלים",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "curl-cream",
+    "productTypeLabel": "קרם תלתלים",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "178 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49mlrnN",
+        "meta": "אמזון ארה״ב",
+        "price": 90,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "ag-care-foam-weightless-volumizer",
+    "brand": "AG Care",
+    "name": "Foam מוס ווליום Weightless Volumizer",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "hair-mousse",
+    "productTypeLabel": "מוס לשיער",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "148 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4pmKQDO",
+        "meta": "אמזון ארה״ב",
+        "price": 90,
+        "freeShipOver": 175
+      }
+    ]
+  },
+  {
+    "id": "ag-care-curl-fresh-coconut-avocado-conditioner",
+    "brand": "AG Care",
+    "name": "Curl Fresh מרכך קוקוס ואבוקדו",
+    "category": "hair",
+    "categoryLabel": "שיער",
+    "productTypeKey": "hair-conditioner",
+    "productTypeLabel": "מרכך לחות לשיער מתולתל",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": false,
+    "vegan": false,
+    "peta": true,
+    "lb": false,
+    "isIsrael": false,
+    "size": "355 מ״ל",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4qCtXGe",
+        "meta": "אמזון ארה״ב",
+        "price": 125,
+        "freeShipOver": 175
+      }
+    ]
   },
   {
     "id": "ahuranewyork-perfume-balm-rose",
@@ -132,8 +1183,7 @@
         "price": 180,
         "freeShipOver": 160
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-unscented-beard-oil-2pack",
@@ -165,8 +1215,7 @@
         "price": 70,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-beard-essentials-kit-sandalwood",
@@ -198,8 +1247,7 @@
         "price": 130,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-mens-bath-body-gift-set-cedar-sage",
@@ -231,8 +1279,7 @@
         "price": 130,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-cedar-redsage-deodorant-2pack",
@@ -264,8 +1311,7 @@
         "price": 50,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-bodywash-variety-3pack",
@@ -297,8 +1343,7 @@
         "price": 100,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-beard-face-wash-2pack",
@@ -330,8 +1375,7 @@
         "price": 70,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-beard-grooming-tool-set",
@@ -363,8 +1407,7 @@
         "price": 50,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "everymanjack-cold-processed-soap-3pack",
@@ -396,8 +1439,7 @@
         "price": 80,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "rhode-peptide-lip-tints-set-4",
@@ -428,8 +1470,7 @@
         "price": 430,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "rhode-pineapple-refresh-cleanser",
@@ -460,8 +1501,7 @@
         "price": 170,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "herbivore-bakuchiol-retinol-alternative",
@@ -492,8 +1532,7 @@
         "price": 120,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "herbivore-coco-rose-body-polish",
@@ -524,8 +1563,7 @@
         "price": 90,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "herbivore-nova-serum-set",
@@ -556,8 +1594,7 @@
         "price": 330,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "aesop-exalted-eye-serum",
@@ -588,8 +1625,7 @@
         "price": 420,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "aesop-resurrection-hand-wash-500",
@@ -620,8 +1656,7 @@
         "price": 170,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "aesop-perfect-facial-hydrating-cream",
@@ -652,8 +1687,7 @@
         "price": 470,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "aesop-reverence-duet-hand-set",
@@ -684,8 +1718,7 @@
         "price": 500,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "aesop-resurrection-hand-wash-500-duplicate",
@@ -716,8 +1749,7 @@
         "price": 170,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "aesop-resurrection-reverence-hand-wash-set",
@@ -748,8 +1780,356 @@
         "price": 380,
         "freeShipOver": 180
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
+  },
+  {
+    "id": "narkis-cosmetics-vitc-serum-sample",
+    "brand": "נרקיס קוסמטיקס",
+    "name": "סרום ויטמין C להבהרה ואחידות גוון — מוצר לדוגמה",
+    "category": "face",
+    "categoryLabel": "פנים",
+    "productTypeKey": "face-serum",
+    "productTypeLabel": "סרום פנים",
+    "vegan": true,
+    "peta": false,
+    "lb": false,
+    "isVegan": true,
+    "isPeta": false,
+    "isLB": false,
+    "storeRegion": "il",
+    "isIsrael": true,
+    "size": "30 מ״ל",
+    "image": "assets/img/photos/care-products.png",
+    "priceMin": 120,
+    "priceMax": 150,
+    "updated": "2025-12-31",
+    "offers": [
+      {
+        "store": "אתר המותג",
+        "url": "https://example.com",
+        "meta": "מותג ישראלי (דוגמה)",
+        "price": 135
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-smudge-set-gel-liner-49",
+    "brand": "stila",
+    "name": "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4pZwrOV",
+        "meta": "אמזון ארה״ב",
+        "price": 80,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "stila-color-correcting-palette",
+    "brand": "stila",
+    "name": "פלטת קונסילרים Color Correcting Palette",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.45 oz",
+    "storeRegion": "us",
+    "priceMin": 150,
+    "priceMax": 200,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49miVh6",
+        "meta": "אמזון ארה״ב",
+        "price": 160,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-sheer-shimmer-liquid-lip",
+    "brand": "stila",
+    "name": "שפתון נוזלי מבריק Stay הכל Day Sheer & Shimmer Liquid Lip",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49k0da1",
+        "meta": "אמזון ארה״ב",
+        "price": 85,
+        "freeShipOver": 170
+      }
+    ]
+  },
+  {
+    "id": "stila-convertible-color-lip-cheek-cream",
+    "brand": "stila",
+    "name": "קרם דו־תכליתי לשפתיים וללחיים Convertible Color",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4q1wycF",
+        "meta": "אמזון ארה״ב",
+        "price": 90,
+        "freeShipOver": 175
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-liquid-lipstick",
+    "brand": "stila",
+    "name": "שפתון נוזלי Matt Stay הכל Day® Liquid Lipstick",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/494fUTR",
+        "meta": "אמזון ארה״ב",
+        "price": 85,
+        "freeShipOver": 175
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-waterproof-liquid-eye-liner",
+    "brand": "stila",
+    "name": "אייליינר נוזלי עמיד Stay הכל Day Waterproof Liquid Eye Liner",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4js4xJ5",
+        "meta": "אמזון ארה״ב",
+        "price": 85,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-smudge-set-gel-liner-52",
+    "brand": "stila",
+    "name": "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner (וריאציה)",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/49k0olH",
+        "meta": "אמזון ארה״ב",
+        "price": 80,
+        "freeShipOver": 180
+      }
+    ]
+  },
+  {
+    "id": "stila-magnificent-metals-glitter-glow-eye-shadow",
+    "brand": "stila",
+    "name": "צללית נוזלית מנצנצת Magnificent Metals Glitter & Glow Liquid Eye Shadow",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3Lu1var",
+        "meta": "אמזון ארה״ב",
+        "price": 90,
+        "freeShipOver": 185
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-smudge-set-gel-liner-54",
+    "brand": "stila",
+    "name": "אייליינר ג׳ל עמיד Stay הכל Day® Smudge & Set Waterproof Gel Liner (וריאציה נוספת)",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 50,
+    "priceMax": 100,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/4qHZ5nP",
+        "meta": "אמזון ארה״ב",
+        "price": 80,
+        "freeShipOver": 190
+      }
+    ]
+  },
+  {
+    "id": "stila-heavens-hue-highlighter-kitten",
+    "brand": "stila",
+    "name": "היילייטר Heaven's Hue Highlighter – גוון Kitten",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "0.35 oz",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/3MWfRkx",
+        "meta": "אמזון ארה״ב",
+        "price": 120,
+        "freeShipOver": 190
+      }
+    ]
+  },
+  {
+    "id": "stila-stay-all-day-foundation-concealer",
+    "brand": "stila",
+    "name": "מייקאפ + קונסילר Stay הכל Day Foundation & Concealer",
+    "category": "makeup",
+    "categoryLabel": "איפור",
+    "isVegan": false,
+    "isPeta": true,
+    "isLB": true,
+    "vegan": false,
+    "peta": true,
+    "lb": true,
+    "isIsrael": false,
+    "size": "",
+    "storeRegion": "us",
+    "priceMin": 100,
+    "priceMax": 150,
+    "updated": "2026-01-03",
+    "image": "",
+    "offers": [
+      {
+        "store": "Amazon",
+        "url": "https://amzn.to/45nFBwk",
+        "meta": "אמזון ארה״ב",
+        "price": 145,
+        "freeShipOver": 195
+      }
+    ]
   },
   {
     "id": "levana-beauty-mascara-sample",
@@ -779,8 +2159,7 @@
         "meta": "מותג ישראלי (דוגמה)",
         "price": 70
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "baylis-and-harding-men-body-set-the-fuzzy-duck-bergamot-hemp",
@@ -821,8 +2200,7 @@
     "categories": [
       "body",
       "mens-care"
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "grace-and-stella-face-accessory-face-pads-for-toner-essence",
@@ -858,8 +2236,7 @@
         "price": 35,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "the-humble-co-oral-care-dental-floss-picks-for-teeth",
@@ -895,8 +2272,7 @@
         "price": 55,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "r-co-shampoo-conditioner-set-atlantis-moisturizing-b5-shamp",
@@ -932,8 +2308,7 @@
         "price": 215,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "igk-conditioner-legendary-dream-hair-condition",
@@ -969,8 +2344,7 @@
         "price": 265,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   },
   {
     "id": "p-r-minerals-face-moisturizer-4-in-1-cloud-cream-hydrating",
@@ -1006,7 +2380,6 @@
         "price": 105,
         "freeShipOver": 170
       }
-    ],
-    "isCrueltyFreeCertified": true
+    ]
   }
 ]

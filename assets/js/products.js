@@ -17,9 +17,13 @@
 
   const onlyLB = qs("#onlyLB");
   const onlyPeta = qs("#onlyPeta");
-const onlyIsrael = qs("#onlyIsrael");
+  const onlyVegan = qs("#onlyVegan");
+  const onlyIsrael = qs("#onlyIsrael");
   const onlyMen = qs("#onlyMen");
   const onlyFreeShip = qs("#onlyFreeShip");
+
+  const chips = Array.from(document.querySelectorAll(".chip"));
+  let currentCat = "all";
 
   function escapeHtml(str) {
     return String(str ?? "")
@@ -167,8 +171,10 @@ function normalizeProduct(p) {
       console.warn("[products] Removed duplicates:", removed);
     }
     return out;
-  } 
-  });
+  }
+
+
+  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct));
 
   function unique(arr) {
     return Array.from(new Set(arr))
@@ -200,14 +206,7 @@ function normalizeProduct(p) {
     body: "גוף",
     makeup: "איפור",
     fragrance: "בישום",
-    "mens-care": "גברים",
-    baby: "תינוקות",
-    health: "בריאות",
-    home: "בית",
-    pets: "חיות",
-    office: "משרד",
-    art: "אמנות",
-    tech: "טכנולוגיה"
+    "mens-care": "גברים"
   };
 
   function getPrimaryCategoryKey(p) {
@@ -581,64 +580,6 @@ function normalizeProduct(p) {
     return original;
   }
 
-  // Price-per-unit transparency
-  // Supports: 120 גרם, 500ml, 12 fl oz, 4oz, 1 ליטר
-  function parseSizeToUnit(rawSize) {
-    const s = String(rawSize || '').trim();
-    if (!s) return null;
-    const lower = s.toLowerCase().replace(/,/g, '.');
-
-    // grams
-    const gMatch = lower.match(/(\d+(?:\.\d+)?)\s*(g|גרם)/);
-    if (gMatch) {
-      const v = parseFloat(gMatch[1]);
-      if (Number.isFinite(v) && v > 0) return { kind: 'g', value: v };
-    }
-
-    // milliliters
-    const mlMatch = lower.match(/(\d+(?:\.\d+)?)\s*(ml|מ\"ל|מ״ל)/);
-    if (mlMatch) {
-      const v = parseFloat(mlMatch[1]);
-      if (Number.isFinite(v) && v > 0) return { kind: 'ml', value: v };
-    }
-
-    // liters
-    const lMatch = lower.match(/(\d+(?:\.\d+)?)\s*(l|liter|litre|ליטר)/);
-    if (lMatch) {
-      const v = parseFloat(lMatch[1]);
-      if (Number.isFinite(v) && v > 0) return { kind: 'ml', value: v * 1000 };
-    }
-
-    // fluid ounces / ounces
-    const ozMatch = lower.match(/(\d+(?:\.\d+)?)\s*(fl\.?\s*)?oz/);
-    if (ozMatch) {
-      const v = parseFloat(ozMatch[1]);
-      if (Number.isFinite(v) && v > 0) return { kind: 'ml', value: v * 29.5735 };
-    }
-
-    return null;
-  }
-
-  function formatPricePer100(p) {
-    const unit = parseSizeToUnit(p.size);
-    const range = getProductPriceRange(p);
-    if (!unit || !range) return '';
-    const minPrice = range[0];
-    if (!Number.isFinite(minPrice) || minPrice <= 0) return '';
-
-    if (unit.kind === 'ml') {
-      const per100 = (minPrice / unit.value) * 100;
-      if (!Number.isFinite(per100)) return '';
-      return `₪${Math.round(per100)} ל-100 מ״ל`;
-    }
-    if (unit.kind === 'g') {
-      const per100 = (minPrice / unit.value) * 100;
-      if (!Number.isFinite(per100)) return '';
-      return `₪${Math.round(per100)} ל-100 גרם`;
-    }
-    return '';
-  }
-
   function getProductPriceRange(p) {
     // Collect all numeric price hints: explicit range + offer prices
     const prices = [];
@@ -800,7 +741,7 @@ function normalizeProduct(p) {
 
     const predicates = [
       // פילטר קטגוריות עליונות (chips)
-      () =>  === "all" || getCats(p).includes(normCat()),
+      () => currentCat === "all" || getCats(p).includes(normCat(currentCat)),
 
       // מותג
       () => !brand || p.brand === brand,
@@ -820,13 +761,13 @@ function normalizeProduct(p) {
 
       // Approvals
       () => !onlyLB?.checked || p.isLB,
-      () => !onlyPeta?.checked || p.isPeta, 
-      () => !onlyIsrael?.checked || p.isIsrael, 
+      () => !onlyPeta?.checked || p.isPeta,
+      () => !onlyVegan?.checked || p.isVegan,
+      () => !onlyIsrael?.checked || p.isIsrael,
       // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
       () => {
         if (!onlyMen?.checked) return true;
-        // באיפור אין טעם להחיל מסנן "לגברים"
-        if (String(p.category||"") === "makeup") return true;
+        if (currentCat === "makeup") return true;
         return isMenTargetedProduct(p);
       },
 
@@ -950,15 +891,6 @@ function normalizeProduct(p) {
     renderRaf = requestAnimationFrame(render);
   }
 
-  function initPriceCheckedOn() {
-    const el = document.getElementById('priceCheckedOn');
-    if (!el) return;
-    const v = (window.PRICE_CHECKED_ON || '').toString();
-    el.textContent = v || '—';
-    el.setAttribute('data-wg-notranslate', 'true');
-    el.classList.add('wg-notranslate');
-  }
-
   function render() {
     if (!grid) return;
 
@@ -1049,7 +981,7 @@ function normalizeProduct(p) {
       if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
       if (p.isPeta) tags.appendChild(tag("PETA"));
       if (p.isVegan) tags.appendChild(tag("Vegan"));
-      if (p.isIsrael) tags.appendChild(tag("אתר ישראלי")); 
+      if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
 
       const offerList = document.createElement("div");
       offerList.className = "offerList";
@@ -1081,15 +1013,6 @@ function normalizeProduct(p) {
       content.appendChild(header);
       content.appendChild(tags);
 
-      // Hidden animal-ingredient education (product-level)
-      if (!p.isVegan) {
-        const why = Array.isArray(p.nonVeganReasons) ? p.nonVeganReasons.filter(Boolean).join(' · ') : (p.nonVeganReason || '');
-        const alert = document.createElement('div');
-        alert.className = 'pAlert pAlert--animal';
-        alert.textContent = why ? `לא טבעוני: ${why}` : 'לא טבעוני (ייתכן רכיב מן החי)';
-        content.appendChild(alert);
-      }
-
       const priceRange = getProductPriceRange(p);
       if (priceRange) {
         const [minPrice, maxPrice] = priceRange;
@@ -1104,20 +1027,6 @@ function normalizeProduct(p) {
       }
 
       content.appendChild(offerList);
-
-      // Real-world performance testing (optional per product)
-      if (p.testResults) {
-        const d = document.createElement('details');
-        d.className = 'pTests';
-        const s = document.createElement('summary');
-        s.textContent = 'תוצאות מבחן אמיתי';
-        const body = document.createElement('div');
-        body.className = 'pTestsBody';
-        body.textContent = String(p.testResults);
-        d.appendChild(s);
-        d.appendChild(body);
-        content.appendChild(d);
-      }
 
       card.appendChild(media);
       card.appendChild(content);
@@ -1146,7 +1055,7 @@ function bind() {
     if (
       e.target &&
       e.target.matches(
-        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyIsrael, #onlyFreeShip, #onlyMen, "
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #onlyMen"
       )
     ) {
       scheduleRender();
@@ -1157,7 +1066,7 @@ function bind() {
     if (
       e.target &&
       e.target.matches(
-        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyIsrael, #onlyFreeShip, #onlyMen, "
+        "#q, #brandSelect, #storeSelect, #typeSelect, #sort, #onlyLB, #onlyPeta, #onlyVegan, #onlyIsrael, #onlyFreeShip, #onlyMen"
       )
     ) {
       scheduleRender();
@@ -1172,9 +1081,6 @@ function bind() {
         // we will let the change event or the button trigger
         scheduleRender();
       });
-
-  // Ensure Weglot sees dynamic content
-  weglotRefresh();
     });
   }
   if (priceMaxInput) {
@@ -1189,11 +1095,43 @@ function bind() {
       e.preventDefault();
       scheduleRender();
     });
-  } 
+  }
+
+  // Top category chips
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn || !btn.dataset.cat) return;
+    const cat = btn.dataset.cat;
+    if (!cat) return;
+    currentCat = cat;
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    chips.forEach((c) => c.classList.toggle("active", c === btn));
+    scheduleRender();
+  });
+
+  // Clear-all filters
+  clearBtn?.addEventListener("click", () => {
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    q.value = "";
+    brandSelect.value = "";
+    storeSelect.value = "";
+    sortSel.value = "price-low";
+    typeSelect.value = "";
+    onlyLB.checked = false;
+    onlyPeta.checked = false;
+    onlyVegan.checked = false;
+    onlyIsrael.checked = false;
+    onlyFreeShip.checked = false;
+    if (priceMinInput) priceMinInput.value = "";
+    if (priceMaxInput) priceMaxInput.value = "";
+    chips.forEach((c) => c.classList.remove("active"));
+    const all = chips.find((c) => c.dataset.cat === "all");
+    all && all.classList.add("active");
+    currentCat = "all";
+    scheduleRender();
+  });
+}
 buildSelects();
-  initPriceCheckedOn();
   bind();
   render();
 })();
-
-function weglotRefresh(){ if(window.Weglot){ try{ Weglot.refresh(); }catch(e){} } }

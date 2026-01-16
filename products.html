@@ -22,7 +22,6 @@
 </a>
 <nav aria-label="ניווט ראשי" class="nav">
 <a class="" href="todays-top-deals.html">מומלצי היום</a>
-<a class="" href="vegan-pharmacy.html">חבילות לישראל</a>
 <a class="" href="products.html">מוצרים</a>
 <a class="" href="shopping-calendar.html">סיילים</a>
 <a class="" href="israeli-brands.html">תוצרת הארץ</a>
@@ -35,7 +34,6 @@
 </div>
 </header>
 <main id="main">
-<div class="notice vegan-only-notice">במאגר מוצגים רק מוצרים 100% טבעוניים עם אישור קרואלטי-פרי מוכר (PETA / Leaping Bunny).</div>
 <section class="hero product-hero heroSmall">
 <img alt="" aria-hidden="true" class="decorPhoto decorCL" src="assets/img/photos/dog-field.jpg"/>
 <div class="wrap heroInner">
@@ -78,24 +76,6 @@
     </p>
 </div>
 </section>
-
-<div class="contentCard" style="margin-top:12px">
-  <p class="muted" style="margin:0">
-    <strong>שקיפות מחירים:</strong> המחירים כאן הם הערכה לפי מידע שהיה זמין בעת עדכון המאגר.
-    <span data-wg-notranslate="true" class="wg-notranslate">מחיר נבדק בתאריך: <span id="priceCheckedOn">—</span></span>.
-    המחירים באמזון יכולים להשתנות בכל רגע (כולל קופונים/מסים/משלוח) והמחיר הסופי מופיע רק ב־Checkout.
-  </p>
-</div>
-
-<div class="noticeRow" id="priceNotice" aria-label="הבהרת מחירים">
-  <div class="noticeCard">
-    <strong>שקיפות מחירים:</strong>
-    המחירים המוצגים הם אינדיקציה בלבד.
-    <span class="muted">מחיר נבדק באתר בתאריך <span id="priceCheckedOn">—</span></span>.
-    <br/>
-    באמזון מחירים יכולים להשתנות, והמחיר הסופי (כולל משלוח ומיסים) יופיע תמיד בעמוד התשלום.
-  </div>
-</div>
 </div>
 <div class="productsLayout">
 <div class="filterPanel__collapseArea">
@@ -105,15 +85,69 @@
 <input aria-label="חיפוש מוצרים" autocomplete="off" id="q" placeholder="מה בא לך לחפש היום? (מותג, מוצר...)" type="search"/>
 <button aria-hidden="true" class="search-btn" type="button">🔍</button>
 </div>
-
+<div aria-label="קטגוריות" class="chips-scroll-container">
+<div class="chipsRow">
+<button class="chip active" data-cat="all" type="button">הכל</button>
+<button class="chip" data-cat="face" type="button">טיפוח פנים</button>
+<button class="chip" data-cat="hair" type="button">שיער</button>
+<button class="chip" data-cat="body" type="button">גוף ורחצה</button>
+<button class="chip" data-cat="makeup" type="button">איפור</button>
+<button class="chip" data-cat="fragrance" type="button">בישום</button>
+        <button class="chip" data-cat="mens-care">גברים</button>
+<button class="chip" data-cat="baby" type="button">תינוקות</button>
+<button class="chip" data-cat="health" type="button">בריאות</button>
+</div>
 </div>
 <div class="filters-actions">
 <!-- שורת כפתורי סינון מהיר (תמיד גלויה) -->
 <div aria-label="מסננים מהירים" class="toggles-row">
-
-  <div class="price-range-hint">שקיפות חברת-אם: משתמש במידע מאגר פנימי (ייתכן "לא ידוע" עד להשלמה).</div>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyLB" type="checkbox"/> Leaping Bunny</label>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyPeta" type="checkbox"/> PETA</label>
+<label class="check-pill" data-wg-notranslate="true"><input id="onlyVegan" type="checkbox"/> Vegan Only</label>
+<label class="check-pill highlight"><input id="onlyIsrael" type="checkbox"/> 🇮🇱 אתרים ישראליים</label>
+<label class="check-pill"><input id="onlyMen" type="checkbox"/> טיפוח לגבר</label>
 </div>
-
+<!-- סינונים מתקדמים בקולפס -->
+<details aria-label="סינונים נוספים" class="more-filters">
+<summary>סינונים נוספים</summary>
+<div class="more-filters-inner">
+<div class="select-group">
+<select class="select minimal" id="brandSelect">
+<option value="">כל המותגים</option>
+</select>
+<select class="select minimal" id="storeSelect">
+<option value="">כל החנויות</option>
+</select>
+<select class="select minimal" id="sort">
+<option selected="" value="price-low">הכי זול</option>
+<option value="updated">הכי חדשים</option>
+<option value="brand-az">לפי שם מותג</option>
+<option value="name-az">לפי שם מוצר</option>
+</select>
+<!-- סוג מוצר (קרם פנים, סרום, קרם גוף וכו׳) -->
+<select class="select minimal" id="typeSelect">
+<option value="">כל סוגי המוצרים</option>
+</select>
+</div>
+<div aria-label="טווח מחירים" class="price-range-row">
+<span class="filter-label">טווח מחירים (₪)</span>
+<div class="price-range-inputs">
+<label>מינימום
+                  <input id="priceMin" inputmode="numeric" min="0" step="1" type="number"/>
+</label>
+<label>מקסימום
+                  <input id="priceMax" inputmode="numeric" min="0" step="1" type="number"/>
+</label>
+<button class="btn-secondary" id="priceApplyBtn" type="button">עדכון</button>
+</div>
+<div class="price-range-hint">השאירי ריק כדי לא להגביל מחיר מסוים</div>
+</div>
+<div class="free-ship-row">
+<label class="check-pill highlight">
+<input id="onlyFreeShip" type="checkbox"/>
+                רק מוצרים עם משלוח חינם מעל סכום מסוים
+              </label>
+</div>
 </div>
 </details>
 <div class="status-bar">
