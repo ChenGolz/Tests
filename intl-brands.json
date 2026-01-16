@@ -1,0 +1,635 @@
+[
+  {
+    "name": "3INA",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://3ina.com/",
+    "amazonUs": "https://amzn.to/45RlSVZ",
+    "amazonUk": "https://amzn.to/4beYt4D",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "82°E",
+    "categories": [
+      "face"
+    ],
+    "website": "https://82e.com/",
+    "amazonUs": "https://www.amazon.com/s?k=82%C2%B0E+skincare",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "about-face",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://aboutface.com/",
+    "amazonUs": "https://amzn.to/3NqbgqK",
+    "amazonUk": "https://www.amazon.co.uk/s?k=about-face+makeup",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "abyssian",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://abyssianhaircare.com/",
+    "amazonUs": "https://www.amazon.com/s?k=abyssian+hair",
+    "amazonUk": "https://www.amazon.co.uk/s?k=abyssian+hair",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 4,
+    "priceTag": "$$$$"
+  },
+  {
+    "name": "After Inked",
+    "categories": [
+      "body"
+    ],
+    "website": "https://afterinked.com/",
+    "amazonUs": "https://amzn.to/4qjNMCs",
+    "amazonUk": "https://amzn.to/49jePHZ",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Aimeili Gel Polish",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://www.aimeili.us/",
+    "amazonUs": "https://amzn.to/4pEKEjt",
+    "amazonUk": "https://amzn.to/49SfWys",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "AKT London",
+    "categories": [
+      "body"
+    ],
+    "website": "https://www.aktlondon.com/",
+    "amazonUs": "https://amzn.to/45DggP4",
+    "amazonUk": "https://amzn.to/4qKIzmJ",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Alamar Cosmetics",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://alamarcosmetics.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alamar+Cosmetics",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Alchimie Forever",
+    "categories": [
+      "face"
+    ],
+    "website": "https://alchimie-forever.com/",
+    "amazonUs": "https://amzn.to/49zJu2z",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Alchimie+Forever",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 4,
+    "priceTag": "$$$$"
+  },
+  {
+    "name": "Alleyoop",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://meetalleyoop.com/",
+    "amazonUs": "https://amzn.to/4pETgpX",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Alpine White",
+    "categories": [
+      "body"
+    ],
+    "website": "https://alpinewhite.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alpine+White",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Alpine+White",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Alya Skin",
+    "categories": [
+      "face"
+    ],
+    "website": "https://www.alyaskin.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Alya+Skin",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Alya+Skin",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "Amara Beauty",
+    "categories": [
+      "face"
+    ],
+    "website": "https://amarabeauty.com/",
+    "amazonUs": "https://amzn.to/4qO6YIf",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Amara+Beauty",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Andrew Fitzsimons",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://andrewfitzsimons.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Andrew+Fitzsimons+Hair",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Andrew+Fitzsimons",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Anomaly Haircare",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://www.anomalyhaircare.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Anomaly+Haircare",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Aqualogica",
+    "categories": [
+      "face"
+    ],
+    "website": "https://aqualogica.in/",
+    "amazonUs": "https://www.amazon.com/s?k=Aqualogica",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Arbonne",
+    "categories": [
+      "body"
+    ],
+    "website": "https://www.arbonne.com/",
+    "amazonUs": "https://amzn.to/4qHmci0",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Arbonne",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "Arches & Halos",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://archesandhalos.com/",
+    "amazonUs": "https://amzn.to/4jBmO6B",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Arctic Fox",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://arcticfoxhaircolor.com/",
+    "amazonUs": "https://amzn.to/4bsLKLp",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Arctic+Fox+Hair+Color",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "As I Am",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://asiamnaturally.com/",
+    "amazonUs": "https://amzn.to/4jMFErx",
+    "amazonUk": "https://amzn.to/3NFbIl0",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "AspenClean",
+    "categories": [
+      "body"
+    ],
+    "website": "https://www.aspenclean.com/",
+    "amazonUs": "https://amzn.to/4aWnmSq",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "Astonish",
+    "categories": [
+      "body"
+    ],
+    "website": "https://astonish.co.uk/",
+    "amazonUs": "https://amzn.to/3NGZMPJ",
+    "amazonUk": "https://amzn.to/4qpAhBg",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "ATTITUDE",
+    "categories": [
+      "body"
+    ],
+    "website": "https://attitudeliving.com/",
+    "amazonUs": "https://amzn.to/4sDjqMG",
+    "amazonUk": "https://amzn.to/4qOZMLQ",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Au Naturale",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://www.aunaturalecosmetics.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Au+Naturale+Cosmetics",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "Aunt Fannie’s",
+    "categories": [
+      "body"
+    ],
+    "website": "https://auntfannies.com/",
+    "amazonUs": "https://amzn.to/4qNlPTb",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Australian Glow",
+    "categories": [
+      "body"
+    ],
+    "website": "https://australianglow.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Australian+Glow",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Australian+Glow",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Avoskin",
+    "categories": [
+      "face"
+    ],
+    "website": "https://www.avoskinbeauty.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Avoskin",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "AvryBeauty",
+    "categories": [
+      "body"
+    ],
+    "website": "https://www.avrybeauty.com/",
+    "amazonUs": "https://amzn.to/4pwAIrZ",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Axiology",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://axiologybeauty.com/",
+    "amazonUs": "https://amzn.to/454L2jJ",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Axiology",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "AZURE",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://azurecosmetics.com/",
+    "amazonUs": "https://amzn.to/4bu7czG",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Azure+Skincare",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "b.box for kids",
+    "categories": [
+      "body"
+    ],
+    "website": "https://bbox.com.au/",
+    "amazonUs": "https://amzn.to/49OL69U",
+    "amazonUk": "https://amzn.to/457ad5h",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Baby Magic",
+    "categories": [
+      "body"
+    ],
+    "website": "https://babymagic.com/",
+    "amazonUs": "https://amzn.to/4pziW7u",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Bali Boo",
+    "categories": [
+      "body"
+    ],
+    "website": "https://bali-boo.com/",
+    "amazonUs": "https://www.amazon.com/s?k=Bali+Boo",
+    "amazonUk": "https://www.amazon.co.uk/s?k=Bali+Boo",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "Bare Anatomy",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://bareanatomy.in/",
+    "amazonUs": "https://amzn.to/4sDFxm0",
+    "amazonUk": null,
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "BARRY M",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://barrym.com/",
+    "amazonUs": "https://amzn.to/49j214h",
+    "amazonUk": "https://amzn.to/4qPED47",
+    "badges": [
+      "PETA "
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "Baylis & Harding",
+    "categories": [
+      "body"
+    ],
+    "website": "https://baylisandharding.com/",
+    "amazonUs": "https://amzn.to/4qTwHiu",
+    "amazonUk": "https://amzn.to/4sGMNxE",
+    "badges": [
+      "PETA"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "tags": [
+      "Men"
+    ],
+    "priceTag": "$$"
+  },
+  {
+    "name": "grace & stella",
+    "categories": [
+      "face"
+    ],
+    "website": "https://www.graceandstella.com/",
+    "amazonUs": "https://amzn.to/4pPQPkQ",
+    "amazonUk": "https://amzn.to/4b0FN8C",
+    "badges": [
+      "Leaping Bunny"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  },
+  {
+    "name": "IGK",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://www.igkhair.com/",
+    "amazonUs": "https://amzn.to/49KTSEW",
+    "amazonUk": null,
+    "badges": [
+      "Leaping Bunny"
+    ],
+    "vegan": true,
+    "priceTier": 4,
+    "priceTag": "$$$$"
+  },
+  {
+    "name": "PÜR MINERALS",
+    "categories": [
+      "makeup"
+    ],
+    "website": null,
+    "amazonUs": "https://amzn.to/4sFb1bx",
+    "amazonUk": null,
+    "badges": [
+      "PETA"
+    ],
+    "vegan": true,
+    "priceTier": 3,
+    "priceTag": "$$$"
+  },
+  {
+    "name": "R+Co",
+    "categories": [
+      "hair"
+    ],
+    "website": "https://www.randco.com/",
+    "amazonUs": "https://amzn.to/4jHGw0G",
+    "amazonUk": null,
+    "badges": [
+      "Leaping Bunny"
+    ],
+    "vegan": true,
+    "priceTier": 4,
+    "priceTag": "$$$$"
+  },
+  {
+    "name": "Technic",
+    "categories": [
+      "makeup"
+    ],
+    "website": "https://techniccosmetics.com/",
+    "amazonUs": "https://amzn.to/4buETkI",
+    "amazonUk": "https://amzn.to/49AnQLK",
+    "badges": [
+      "PETA"
+    ],
+    "vegan": true,
+    "priceTier": 1,
+    "priceTag": "$"
+  },
+  {
+    "name": "The Humble Co",
+    "categories": [
+      "body"
+    ],
+    "website": "https://www.thehumble.co/",
+    "amazonUs": "https://amzn.to/3LHXG1w",
+    "amazonUk": "https://amzn.to/45aDZWG",
+    "badges": [
+      "PETA"
+    ],
+    "vegan": true,
+    "priceTier": 2,
+    "priceTag": "$$"
+  }
+]
