@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>באנדלים למשלוח חינם | Cruelty Free</title>
+    <meta
+      name="description"
+      content="באנדלים מומלצים של מוצרים טבעוניים וללא ניסויים בבעלי חיים כדי להגיע למשלוח חינם באמזון (מעל $49). החליפי מוצרים בכל באנ..."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=2026-01-14-v12" />
+    <link rel="icon" type="image/png" href="assets/img/logo.png" />
+
+    <style>
+      /* Page-only styles (kept scoped) */
+      .bundleHero .heroCopy p { max-width: 62ch; margin: 0.6rem auto 0; }
+      .bundleGrid { display: grid; gap: 14px; grid-template-columns: repeat(12, 1fr); }
+      .bundleCard { grid-column: span 6; }
+      @media (max-width: 980px) { .bundleCard { grid-column: span 12; } }
+
+      .bundleCard .bundleTop { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+      .bundleTitle { font-size: 1.05rem; font-weight: 700; margin: 0; }
+      .bundleSubtitle { margin: 6px 0 0; opacity: .85; font-size: .95rem; }
+      .bundleMeta { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
+      .bundleMeta .tag { background: rgba(0,0,0,.06); padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
+      .bundleCta { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top: 14px; }
+      .bundlePrice { font-weight: 800; font-size: 1.15rem; }
+      .bundleBtn { display:inline-flex; align-items:center; gap:8px; border:0; border-radius: 999px; padding: 10px 14px; font-weight: 700; cursor:pointer; background: #111; color:#fff; }
+      .bundleBtn:focus { outline: 3px solid rgba(0,0,0,.25); outline-offset: 2px; }
+
+      /* Modal */
+      .modalOverlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); display:none; z-index: 9999; }
+      .modalOverlay.isOpen { display:block; }
+      .bundleModal { position: fixed; inset: 0; display:none; z-index: 10000; }
+      .bundleModal.isOpen { display:flex; align-items:center; justify-content:center; padding: 16px; }
+      .bundleModalPanel { width: min(1100px, 100%); max-height: min(86vh, 920px); background:#fff; border-radius: 18px; overflow:hidden; box-shadow: 0 24px 80px rgba(0,0,0,.35); display:grid; grid-template-columns: 380px 1fr; }
+      @media (max-width: 900px) {
+        .bundleModal.isOpen { align-items:flex-end; padding: 0; }
+        .bundleModalPanel { grid-template-columns: 1fr; border-radius: 18px 18px 0 0; max-height: 92vh; }
+      }
+      .modalHeader { display:flex; align-items:center; justify-content:space-between; gap: 10px; padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,.08); }
+      .modalHeader h2 { margin:0; font-size: 1.05rem; }
+      .modalClose { border:0; background: rgba(0,0,0,.06); border-radius: 12px; padding: 8px 10px; cursor:pointer; }
+      .modalBody { display:grid; grid-template-columns: inherit; min-height: 0; }
+      .modalLeft, .modalRight { min-height:0; overflow:auto; }
+      .modalLeft { padding: 12px 14px; border-left: 1px solid rgba(0,0,0,.08); }
+      @media (max-width: 900px) { .modalLeft { border-left:0; border-top: 1px solid rgba(0,0,0,.08); } }
+      .modalRight { padding: 12px 14px; }
+
+      .bundleItems { display:flex; flex-direction:column; gap: 10px; }
+      .bundleItem { display:grid; grid-template-columns: 62px 1fr; gap: 10px; padding: 10px; border-radius: 14px; background: rgba(0,0,0,.035); }
+      .bundleItem img { width:62px; height:62px; object-fit: cover; border-radius: 12px; background: rgba(0,0,0,.06); }
+      .bundleItemName { font-weight: 700; margin: 0; font-size: .95rem; line-height: 1.2; }
+      .bundleItemMeta { margin-top: 6px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+      .miniTag { font-size:.78rem; background: rgba(0,0,0,.06); padding: 4px 8px; border-radius: 999px; }
+      .miniBtn { margin-inline-start:auto; border:0; background:#111; color:#fff; border-radius: 999px; padding: 7px 10px; font-weight:700; cursor:pointer; }
+      .miniBtn.secondary { background: rgba(0,0,0,.08); color:#111; }
+      .bundleItem.isActive { outline: 3px solid rgba(0,0,0,.18); }
+
+      .pickerTop { display:flex; flex-wrap:wrap; gap: 10px; align-items:center; }
+      .pickerTop input[type="search"] { flex: 1 1 220px; border: 1px solid rgba(0,0,0,.18); border-radius: 999px; padding: 10px 12px; }
+      .pickerTop select { border: 1px solid rgba(0,0,0,.18); border-radius: 999px; padding: 10px 12px; background:#fff; }
+      .pickerChips { display:flex; gap:8px; flex-wrap:wrap; margin-top: 10px; }
+      .pickerChip { border: 1px solid rgba(0,0,0,.14); background:#fff; border-radius: 999px; padding: 7px 10px; cursor:pointer; font-weight:600; }
+      .pickerChip.active { background:#111; color:#fff; border-color:#111; }
+
+      .pickerGrid { display:grid; gap: 12px; grid-template-columns: repeat(12, 1fr); margin-top: 12px; }
+      .pickCard { grid-column: span 6; background: rgba(0,0,0,.035); border-radius: 16px; padding: 10px; display:grid; grid-template-columns: 64px 1fr; gap:10px; cursor:pointer; }
+      .pickCard:hover { background: rgba(0,0,0,.06); }
+      .pickCard img { width:64px; height:64px; border-radius: 12px; object-fit: cover; background: rgba(0,0,0,.06); }
+      .pickName { margin:0; font-weight: 700; font-size: .92rem; line-height: 1.2; }
+      .pickMeta { margin-top:6px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+      .pickPrice { font-weight: 800; }
+      @media (max-width: 650px) { .pickCard { grid-column: span 12; } }
+
+      .summaryBox { background: rgba(0,0,0,.035); border-radius: 16px; padding: 12px; margin-top: 12px; }
+      .summaryRow { display:flex; justify-content:space-between; gap: 10px; align-items:center; }
+      .summaryRow strong { font-size: 1.05rem; }
+      .noteTiny { margin-top: 8px; font-size: .85rem; opacity: .85; line-height: 1.35; }
+      .shopRow { display:flex; gap: 10px; margin-top: 10px; flex-wrap:wrap; }
+      .shopLink { display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius: 999px; padding: 10px 12px; text-decoration:none; font-weight: 800; }
+      .shopLink.primary { background:#111; color:#fff; }
+      .shopLink.ghost { background: rgba(0,0,0,.06); color:#111; }
+    </style>
+  </head>
+
+  <body class="page-bundles">
+    <header class="siteHeader" id="siteHeader">
+      <div class="wrap headerRow">
+        <a class="logo" href="index.html" aria-label="בית">
+          <img class="logoImg" src="assets/img/logo.png" alt="Cruelty Free" width="40" height="40" />
+          <span class="logoText">Cruelty Free</span>
+        </a>
+        <nav class="nav" aria-label="ניווט ראשי">
+          <a href="todays-top-deals.html">מומלצי היום</a>
+          <a href="products.html">מוצרים</a>
+          <a class="active" href="bundles.html">באנדלים $49+</a>
+          <a href="shopping-calendar.html">סיילים</a>
+          <a href="israeli-brands.html">תוצרת הארץ</a>
+          <a href="recommended-brands.html">מותגים בינלאומים</a>
+          <a href="ingredient-detective.html">רכיבים</a>
+          <a href="learn.html">מידע</a>
+          <a href="about.html">אודות</a>
+          <a href="contact.html">צור קשר</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero heroSmall bundleHero">
+        <img class="decorPhoto decorCL" src="assets/img/photos/dog-field.jpg" alt="" aria-hidden="true" />
+        <div class="wrap heroInner">
+          <div class="heroCopy center-text">
+            <h1>באנדלים למשלוח חינם באמזון 🇺🇸</h1>
+            <p>
+              משלוח חינם לישראל באמזון ארה״ב לרוב מתחיל מ־<strong>$49+</strong>. כאן תמצאי באנדלים מומלצים (Vegan בלבד) —
+              ובכל באנ... תוכלי להחליף כל פריט בעזרת פילטרים.
+            </p>
+            <div class="badgeRow center-badges">
+              <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🌿</span> Vegan Only</div>
+              <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🛒</span> Amazon US</div>
+              <div class="trust-badge"><span class="icon" aria-hidden="true">✨</span> החלפה חכמה</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="wrap">
+          <div class="contentCard">
+            <div class="bundleGrid" id="bundleGrid" aria-live="polite"></div>
+            <p class="noteTiny" style="margin-top:12px">
+              * המחירים באתר הם הערכה לצורך בניית סל. המחיר הסופי (כולל משלוח ומיסים) נקבע בקופה של אמזון.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modalOverlay" id="bundleOverlay" aria-hidden="true"></div>
+    <section class="bundleModal" id="bundleModal" role="dialog" aria-modal="true" aria-labelledby="bundleModalTitle" aria-hidden="true">
+      <div class="bundleModalPanel" role="document">
+        <div class="modalHeader">
+          <h2 id="bundleModalTitle">באנדל</h2>
+          <button class="modalClose" type="button" id="bundleCloseBtn" aria-label="סגירה">✕</button>
+        </div>
+        <div class="modalBody">
+          <div class="modalRight">
+            <div class="bundleItems" id="bundleItems"></div>
+            <div class="summaryBox">
+              <div class="summaryRow"><span>סכום ביניים (הערכה)</span> <strong id="bundleSubtotal">$0</strong></div>
+              <div class="summaryRow" style="margin-top:8px"><span>להשלמה ל־$49</span> <strong id="bundleToFree">$0</strong></div>
+              <div class="noteTiny">כדי לבחור חלופה: לחצי על “החליפי” ליד פריט, ואז בחרי מוצר חדש מהרשימה משמאל.</div>
+              <div class="shopRow">
+                <a class="shopLink primary" id="shopAllBtn" href="#" target="_blank" rel="noopener">פתחי אמזון (חיפוש)</a>
+                <a class="shopLink ghost" href="amazon-info.html">מדריך אמזון</a>
+              </div>
+            </div>
+          </div>
+          <div class="modalLeft">
+            <div class="pickerTop">
+              <input id="pickQ" type="search" placeholder="חיפוש מוצר להחלפה…" autocomplete="off" />
+              <select id="pickCat" aria-label="קטגוריה">
+                <option value="">כל הקטגוריות</option>
+                <option value="face">טיפוח פנים</option>
+                <option value="hair">שיער</option>
+                <option value="body">גוף ורחצה</option>
+                <option value="makeup">איפור</option>
+                <option value="fragrance">בישום</option>
+                <option value="mens-care">גברים</option>
+                <option value="health">בריאות</option>
+                <option value="baby">תינוקות</option>
+              </select>
+              <select id="pickTier" aria-label="רמת מחיר">
+                <option value="">כל רמות המחיר</option>
+                <option value="1">$</option>
+                <option value="2">$$</option>
+                <option value="3">$$$</option>
+                <option value="4">$$$$</option>
+                <option value="5">$$$$$</option>
+              </select>
+            </div>
+            <div class="pickerChips" aria-label="פילטרים מהירים">
+              <button type="button" class="pickerChip" data-chip="peta">PETA</button>
+              <button type="button" class="pickerChip" data-chip="lb">Leaping Bunny</button>
+              <button type="button" class="pickerChip active" data-chip="us">Amazon US</button>
+            </div>
+            <div class="pickerGrid" id="pickerGrid" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="assets/js/price-tier.js?v=2026-01-14"></script>
+    <script src="assets/js/bundles.js?v=2026-01-18"></script>
+  </body>
+</html>

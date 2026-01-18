@@ -1,0 +1,46 @@
+[
+  {
+    "id": "bundle-men-starter",
+    "title": "ערכת גברים – להתחלה מהירה",
+    "subtitle": "סט בסיסי לגבר + עוד פריט/החלפה כדי להגיע בקלות ל־$49",
+    "tags": ["Amazon US", "Vegan", "PETA"],
+    "items": [
+      "everymanjack-beard-face-wash-2pack",
+      "everymanjack-cedar-redsage-deodorant-2pack",
+      "everymanjack-cold-processed-soap-3pack"
+    ]
+  },
+  {
+    "id": "bundle-body-glow",
+    "title": "גוף – ריח וניקיון",
+    "subtitle": "דואג/ת לגוף? הבאנדל הזה מעולה כדי להשלים הזמנה ולחסוך משלוח",
+    "tags": ["Amazon US", "Vegan"],
+    "items": [
+      "herbivore-coco-rose-body-polish",
+      "everymanjack-bodywash-variety-3pack",
+      "the-humble-co-oral-care-dental-floss-picks-for-teeth"
+    ]
+  },
+  {
+    "id": "bundle-hair-repair",
+    "title": "שיער – לחות ותיקון",
+    "subtitle": "לשיער יבש/פגום – אפשר להחליף כל פריט עם פילטרים",
+    "tags": ["Amazon US", "Vegan", "Leaping Bunny"],
+    "items": [
+      "r-co-shampoo-conditioner-set-atlantis-moisturizing-b5-shamp",
+      "igk-conditioner-legendary-dream-hair-condition",
+      "everymanjack-unscented-beard-oil-2pack"
+    ]
+  },
+  {
+    "id": "bundle-makeup-base",
+    "title": "איפור – בסיס מושלם",
+    "subtitle": "באנדל איפור (קליקים להחלפה) – ולסגור את $49",
+    "tags": ["Amazon US", "Vegan", "PETA"],
+    "items": [
+      "bareminerals-gen-nude-powder-blush",
+      "bareminerals-original-matte-loose-foundation",
+      "grace-and-stella-face-accessory-face-pads-for-toner-essence"
+    ]
+  }
+]
