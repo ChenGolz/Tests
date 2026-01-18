@@ -17,10 +17,8 @@
 
   const onlyLB = qs("#onlyLB");
   const onlyPeta = qs("#onlyPeta");
-  // Policy: the site lists only Vegan + Cruelty‑Free products.
-  // We keep a defensive reference in case older HTML still has the checkbox.
-  const onlyVegan = qs("#onlyVegan");
-  const onlyIsrael = qs("#onlyIsrael");
+  const onlyVegan = null;
+const onlyIsrael = qs("#onlyIsrael");
   const onlyMen = qs("#onlyMen");
   const onlyFreeShip = qs("#onlyFreeShip");
 
@@ -753,8 +751,6 @@ function normalizeProduct(p) {
       // Approvals
       () => !onlyLB?.checked || p.isLB,
       () => !onlyPeta?.checked || p.isPeta,
-      // Vegan filter removed (all products are already Vegan-only)
-      () => true,
       () => !onlyIsrael?.checked || p.isIsrael,
       // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
       () => {
@@ -1111,8 +1107,7 @@ function bind() {
     typeSelect.value = "";
     onlyLB.checked = false;
     onlyPeta.checked = false;
-    if (onlyVegan) onlyVegan.checked = false;
-    onlyIsrael.checked = false;
+onlyIsrael.checked = false;
     onlyFreeShip.checked = false;
     if (priceMinInput) priceMinInput.value = "";
     if (priceMaxInput) priceMaxInput.value = "";

@@ -155,7 +155,54 @@
     return String(s || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  var state = {
+  
+  // FX: USD -> ILS (client-side fetch, with fallback)
+  var FX = { rate: null, updatedAt: null };
+  function formatILS(n){
+    var v = Math.round(toNumber(n) * 100) / 100;
+    try{ return '₪' + v.toLocaleString('he-IL', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }catch(e){ return '₪' + v.toFixed(2); }
+  }
+  function setFxNote(msg){
+    var el = document.getElementById('fxNote');
+    if (el) el.textContent = msg || '';
+  }
+  function updateIlsOut(){
+    var input = document.getElementById('usdInput');
+    var out = document.getElementById('ilsOut');
+    if (!input || !out) return;
+    var usd = toNumber(input.value);
+    if (!FX.rate){ out.textContent = '₪—'; return; }
+    out.textContent = formatILS(usd * FX.rate);
+  }
+  function bindFxInput(){
+    var input = document.getElementById('usdInput');
+    if (!input) return;
+    input.addEventListener('input', updateIlsOut);
+  }
+  function loadFxRate(){
+    // exchangerate.host is usually keyless. If it fails, fall back to stored rate.
+    var stored = null;
+    try{ stored = JSON.parse(localStorage.getItem('kbwg_fx_usd_ils') || 'null'); }catch(e){ stored = null; }
+    if (stored && stored.rate){ FX.rate = stored.rate; FX.updatedAt = stored.updatedAt || null; setFxNote('שער אחרון: ' + (stored.rate.toFixed ? stored.rate.toFixed(3) : stored.rate)); updateIlsOut(); }
+
+    fetch('https://api.exchangerate.host/latest?base=USD&symbols=ILS', { cache: 'no-store' })
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(data){
+        var rate = data && data.rates ? toNumber(data.rates.ILS) : 0;
+        if (rate > 0){
+          FX.rate = rate;
+          FX.updatedAt = (data && data.date) ? data.date : new Date().toISOString();
+          try{ localStorage.setItem('kbwg_fx_usd_ils', JSON.stringify({ rate: rate, updatedAt: FX.updatedAt })); }catch(e){}
+          setFxNote('שער USD/ILS: ' + rate.toFixed(3));
+          updateIlsOut();
+        }else{ setFxNote('לא ניתן לטעון שער.'); }
+      })
+      .catch(function(){
+        if (!FX.rate) setFxNote('לא ניתן לטעון שער כרגע.');
+      });
+  }
+
+var state = {
     products: [],
     productsById: {},
     bundles: [],
@@ -300,6 +347,8 @@
 
     var subtotal = bundleSubtotal(b);
     $('#bundleSubtotal').textContent = formatUSD(subtotal);
+    var usdInput = document.getElementById('usdInput');
+    if (usdInput){ usdInput.value = (Math.round(subtotal*100)/100).toFixed(2); updateIlsOut(); }
     $('#bundleToFree').textContent = formatUSD(Math.max(0, FREE_SHIP_USD - subtotal));
     $('#shopAllBtn').href = amazonSearchUrl(b);
 
