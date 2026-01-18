@@ -16,20 +16,49 @@
 
     <style>
       /* Page-only styles (kept scoped) */
+      :root{
+        --b-accent1: rgba(42,91,154,.75);
+        --b-accent2: rgba(16,185,129,.70);
+        --b-soft: rgba(15,23,42,.06);
+      }
+
       .bundleHero .heroCopy p { max-width: 62ch; margin: 0.6rem auto 0; }
       .bundleGrid { display: grid; gap: 14px; grid-template-columns: repeat(12, 1fr); }
       .bundleCard { grid-column: span 6; }
       @media (max-width: 980px) { .bundleCard { grid-column: span 12; } }
 
-      .bundleCard .bundleTop { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+      .bundleCard{
+        border: 1px solid rgba(42,91,154,.14);
+        background: linear-gradient(180deg, rgba(42,91,154,.06), rgba(16,185,129,.05) 46%, #fff 86%);
+        box-shadow: 0 14px 36px rgba(15,23,42,.08);
+        overflow:hidden;
+      }
+      .bundleCard::before{
+        content:"";
+        position:absolute;
+        inset:0 0 auto 0;
+        height:7px;
+        background: linear-gradient(90deg, var(--b-accent1), var(--b-accent2));
+        opacity:.35;
+        pointer-events:none;
+      }
+      .bundleCard .bundleTop { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; position:relative; }
       .bundleTitle { font-size: 1.05rem; font-weight: 700; margin: 0; }
       .bundleSubtitle { margin: 6px 0 0; opacity: .85; font-size: .95rem; }
       .bundleMeta { display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px; }
-      .bundleMeta .tag { background: rgba(0,0,0,.06); padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
+      .bundleMeta .tag { background: rgba(255,255,255,.74); border: 1px solid rgba(15,23,42,.10); padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
       .bundleCta { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top: 14px; }
       .bundlePrice { font-weight: 800; font-size: 1.15rem; }
-      .bundleBtn { display:inline-flex; align-items:center; gap:8px; border:0; border-radius: 999px; padding: 10px 14px; font-weight: 700; cursor:pointer; background: #111; color:#fff; }
-      .bundleBtn:focus { outline: 3px solid rgba(0,0,0,.25); outline-offset: 2px; }
+      .bundleBtn {
+        display:inline-flex; align-items:center; gap:8px;
+        border:0; border-radius: 999px; padding: 10px 14px;
+        font-weight: 800; cursor:pointer;
+        background: linear-gradient(90deg, var(--b-accent1), var(--b-accent2));
+        color:#fff;
+        box-shadow: 0 10px 22px rgba(42,91,154,.18);
+      }
+      .bundleBtn:hover{ transform: translateY(-1px); }
+      .bundleBtn:focus { outline: 3px solid rgba(42,91,154,.25); outline-offset: 2px; }
 
       /* Modal */
       .modalOverlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); display:none; z-index: 9999; }
@@ -41,14 +70,21 @@
         .bundleModal.isOpen { align-items:flex-end; padding: 0; }
         .bundleModalPanel { grid-template-columns: 1fr; border-radius: 18px 18px 0 0; max-height: 92vh; }
       }
-      .modalHeader { display:flex; align-items:center; justify-content:space-between; gap: 10px; padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,.08); }
+      .modalHeader { display:flex; align-items:center; justify-content:space-between; gap: 10px; padding: 14px 16px; border-bottom: 1px solid rgba(0,0,0,.08); background: linear-gradient(90deg, rgba(42,91,154,.06), rgba(16,185,129,.06)); }
       .modalHeader h2 { margin:0; font-size: 1.05rem; }
-      .modalClose { border:0; background: rgba(0,0,0,.06); border-radius: 12px; padding: 8px 10px; cursor:pointer; }
+      .modalClose { border:0; background: rgba(0,0,0,.06); border-radius: 999px; width: 40px; height: 40px; display:grid; place-items:center; cursor:pointer; font-size: 18px; }
       .modalBody { display:grid; grid-template-columns: inherit; min-height: 0; }
-      .modalLeft, .modalRight { min-height:0; overflow:auto; }
+      .modalLeft, .modalRight { min-height:0; }
       .modalLeft { padding: 12px 14px; border-left: 1px solid rgba(0,0,0,.08); }
       @media (max-width: 900px) { .modalLeft { border-left:0; border-top: 1px solid rgba(0,0,0,.08); } }
       .modalRight { padding: 12px 14px; }
+
+      /* Ensure picker is scrollable (fix on mobile + small screens) */
+      .modalLeft{ display:flex; flex-direction:column; overflow:hidden; }
+      .modalRight{ overflow:auto; }
+      .pickerGrid{ overflow:auto; flex: 1 1 auto; min-height: 0; padding-bottom: 6px; }
+      .pickerTop{ flex: 0 0 auto; }
+      .pickerChips{ flex: 0 0 auto; }
 
       .bundleItems { display:flex; flex-direction:column; gap: 10px; }
       .bundleItem { display:grid; grid-template-columns: 62px 1fr; gap: 10px; padding: 10px; border-radius: 14px; background: rgba(0,0,0,.035); }
@@ -97,7 +133,7 @@
         <nav class="nav" aria-label="ניווט ראשי">
           <a href="todays-top-deals.html">מומלצי היום</a>
           <a href="products.html">מוצרים</a>
-          <a class="active" href="bundles.html">באנדלים $49+</a>
+          <a class="active" href="bundles.html">באנדלים</a>
           <a href="shopping-calendar.html">סיילים</a>
           <a href="israeli-brands.html">תוצרת הארץ</a>
           <a href="recommended-brands.html">מותגים בינלאומים</a>
@@ -116,11 +152,11 @@
           <div class="heroCopy center-text">
             <h1>באנדלים למשלוח חינם באמזון 🇺🇸</h1>
             <p>
-              משלוח חינם לישראל באמזון ארה״ב לרוב מתחיל מ־<strong>$49+</strong>. כאן תמצאי באנדלים מומלצים (Vegan בלבד) —
-              ובכל באנ... תוכלי להחליף כל פריט בעזרת פילטרים.
+              באמזון ארה״ב משלוח חינם לישראל בדרך כלל מתחיל מ־<strong>$49+</strong>. כאן תמצאי באנדלים מומלצים של מוצרים
+              <strong>טבעוניים וללא ניסויים בבעלי חיים</strong> — ובפופ־אפ של כל באנ‏דל אפשר להחליף כל פריט בקלות עם פילטרים חכמים.
             </p>
             <div class="badgeRow center-badges">
-              <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🌿</span> Vegan Only</div>
+              <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🌿</span> Vegan &amp; Cruelty-Free</div>
               <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🛒</span> Amazon US</div>
               <div class="trust-badge"><span class="icon" aria-hidden="true">✨</span> החלפה חכמה</div>
             </div>
@@ -171,8 +207,8 @@
                 <option value="makeup">איפור</option>
                 <option value="fragrance">בישום</option>
                 <option value="mens-care">גברים</option>
-                <option value="health">בריאות</option>
                 <option value="baby">תינוקות</option>
+                <option value="health">בריאות</option>
               </select>
               <select id="pickTier" aria-label="רמת מחיר">
                 <option value="">כל רמות המחיר</option>
@@ -196,5 +232,34 @@
 
     <script src="assets/js/price-tier.js?v=2026-01-14"></script>
     <script src="assets/js/bundles.js?v=2026-01-18"></script>
+    <footer class="siteFooter">
+      <div class="wrap">
+        <div class="footerQuotes" aria-label="ציטוטים">
+          <span class="quotePill">חמלה היא דרך חיים</span><span class="quotePill">חיה ותן לחיות</span><span class="quotePill">חמלה היא האופנה הכי יפה</span><span class="quotePill">היו טובים לכל היצורים</span>
+        </div>
+        <p class="muted">
+          גילוי נאות והגבלת אחריות: באתר מופיעים קישורי שותפים, המאפשרים לקיום האתר, וברכישה דרך קישור כזה ייתכן שנקבל עמלה ללא עלות נוספת עבורך.
+          התוכן מסופק “כמות שהוא” לצורכי מידע בלבד, וייתכנו טעויות/חוסרים/עיכובים בעדכון סטטוסים או אישורים של מותגים.
+          איננו נושאים באחריות לכל נזק, הפסד או הוצאה (ישירים או עקיפים) הנובעים מהשימוש באתר או מהסתמכות על המידע.
+          אם ידוע לך על שינוי/טעות — נשמח לקבל עדכון.
+        </p>
+      </div>
+    </footer>
+
+    <script defer src="assets/js/site.js?v=2026-01-14-v12"></script>
+
+    <!-- Weglot helper: refresh translations after dynamic content renders -->
+    <script>
+    (function(){
+      function wgRefresh(){
+        try{ if (window.Weglot && typeof Weglot.refresh === 'function') Weglot.refresh(); }catch(e){}
+      }
+      document.addEventListener('DOMContentLoaded', function(){ setTimeout(wgRefresh, 80); });
+      window.addEventListener('kbwg:content-rendered', function(){ setTimeout(wgRefresh, 80); });
+      var t=null;
+      var mo=new MutationObserver(function(){ clearTimeout(t); t=setTimeout(wgRefresh, 250); });
+      mo.observe(document.documentElement, { childList:true, subtree:true });
+    })();
+    </script>
   </body>
 </html>

@@ -85,61 +85,103 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
   var PT = (window.KBWGPriceTier || {});
 
-  var CAT_LABELS_INTL = {
-    'baby-child': 'תינוקות וילדים',
-    'body-care': 'טיפוח הגוף',
-    'deodorant': 'דאודורנט',
-    'skincare': 'טיפוח עור',
-    'cleaning': 'ניקיון',
-    'cosmetics': 'קוסמטיקה',
-    'curly-hair': 'שיער מתולתל',
-    'eyes': 'עיניים',
-    'hair-color': 'צבע לשיער',
-    'haircare': 'טיפוח שיער',
-    'luxury-care': 'טיפוח יוקרתי',
-    'mens-care': 'טיפוח לגברים',
-    'nails': 'ציפורניים',
-    'natural-beauty': 'יופי טבעי',
-    'natural-care': 'טיפוח טבעי',
-    'natural-skin': 'טיפוח עור טבעי',
-    'paper': 'נייר',
-    'wipes': 'מגבונים',
-    'pet-care': 'טיפוח לחיות מחמד',
-    'soap': 'סבון',
-    'soap-bars': 'סבון מוצק',
-    'sun': 'הגנה מהשמש',
-    'tanning': 'שיזוף',
-    'tattoo-care': 'טיפול בקעקועים',
-    'wellness': 'וולנס'
+  // Unified categories – must match the Products page filters.
+  var CAT_LABELS = {
+    face: 'טיפוח פנים',
+    hair: 'שיער',
+    body: 'גוף ורחצה',
+    makeup: 'איפור',
+    fragrance: 'בישום',
+    'mens-care': 'גברים',
+    baby: 'תינוקות',
+    health: 'בריאות'
+  };
+
+  // Map legacy/varied categories from JSON into the unified set.
+  var INTL_TO_UNIFIED = {
+    skincare: 'face',
+    'natural-skin': 'face',
+    eyes: 'face',
+
+    haircare: 'hair',
+    'curly-hair': 'hair',
+    'hair-color': 'hair',
+
+    'body-care': 'body',
+    deodorant: 'body',
+    soap: 'body',
+    'soap-bars': 'body',
+    sun: 'body',
+    tanning: 'body',
+    'tattoo-care': 'body',
+
+    cosmetics: 'makeup',
+    'makeup tools': 'makeup',
+    'makeup tools ': 'makeup',
+    nails: 'makeup',
+
+    fragrance: 'fragrance',
+
+    'mens-care': 'mens-care',
+
+    'baby-child': 'baby',
+
+    wellness: 'health',
+    health: 'health',
+    'personal care': 'health',
+    'personal-care': 'health',
+    cleaning: 'health',
+    paper: 'health',
+    wipes: 'health',
+    'pet-care': 'health'
   };
 
   var CAT_PRICE_TIER = {
-    'paper': 1,
-    'wipes': 1,
-    'cleaning': 1,
-    'soap': 2,
-    'soap-bars': 2,
-    'baby-child': 2,
-    'deodorant': 2,
-    'body-care': 3,
-    'skincare': 3,
-    'cosmetics': 3,
-    'haircare': 3,
-    'curly-hair': 3,
-    'eyes': 3,
-    'hair-color': 3,
+    face: 3,
+    hair: 3,
+    body: 3,
+    makeup: 3,
+    fragrance: 4,
     'mens-care': 3,
-    'nails': 3,
-    'natural-beauty': 3,
-    'natural-care': 3,
-    'natural-skin': 3,
-    'pet-care': 3,
-    'sun': 3,
-    'tanning': 3,
-    'tattoo-care': 3,
-    'wellness': 4,
-    'luxury-care': 5
+    baby: 2,
+    health: 2
   };
+
+  function toUnifiedCat(pageKind, raw) {
+    var k = String(raw || '').trim();
+    if (!k) return '';
+
+    // Already unified?
+    if (CAT_LABELS[k]) return k;
+
+    var lower = k.toLowerCase().trim();
+    if (CAT_LABELS[lower]) return lower;
+
+    if (pageKind === 'intl') {
+      return INTL_TO_UNIFIED[lower] || '';
+    }
+
+    // Israel page categories are Hebrew labels; map by keywords.
+    var he = k;
+    if (he.indexOf('פנים') !== -1 || he.indexOf('עור') !== -1) return 'face';
+    if (he.indexOf('שיער') !== -1) return 'hair';
+    if (he.indexOf('גוף') !== -1 || he.indexOf('רחצה') !== -1 || he.indexOf('סבון') !== -1 || he.indexOf('דאוד') !== -1) return 'body';
+    if (he.indexOf('איפור') !== -1 || he.indexOf('ציפור') !== -1) return 'makeup';
+    if (he.indexOf('בישום') !== -1 || he.indexOf('בושם') !== -1 || he.indexOf('בושמי') !== -1) return 'fragrance';
+    if (he.indexOf('גבר') !== -1) return 'mens-care';
+    if (he.indexOf('תינוק') !== -1 || he.indexOf('ילד') !== -1) return 'baby';
+    if (he.indexOf('בריאות') !== -1 || he.indexOf('שיניים') !== -1 || he.indexOf('היגיינ') !== -1 || he.indexOf('וולנס') !== -1) return 'health';
+    return '';
+  }
+
+  function normalizeCats(pageKind, cats) {
+    var out = [];
+    (cats || []).forEach(function (c) {
+      var u = toUnifiedCat(pageKind, c);
+      if (u) out.push(u);
+    });
+    return uniq(out);
+  }
 
   function norm(s) {
     return String(s || '').toLowerCase().trim();
@@ -201,14 +243,10 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     return s[0].toUpperCase();
   }
 
-  function labelForCategories(pageKind, cats) {
+  function labelForCategories(cats) {
     if (!cats || !cats.length) return '';
-    if (pageKind === 'intl') {
-      var labels = cats.map(function (k) { return CAT_LABELS_INTL[k] || k; });
-      return labels.join(' / ');
-    }
-    // israel: cats are already labels
-    return cats.join(' / ');
+    var labels = cats.map(function (k) { return CAT_LABELS[k] || k; });
+    return labels.join(' / ');
   }
 
   function buildPriceSelect(selectEl) {
@@ -241,40 +279,34 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
   }
 
 
-  function buildCategorySelectIfEmpty(selectEl, brands, pageKind) {
+  function buildCategorySelectIfEmpty(selectEl) {
     if (!selectEl) return;
-    // Intl page already contains a curated list in HTML.
-    if (pageKind === 'intl') return;
-    if (selectEl.options && selectEl.options.length > 0) return;
 
-    var cats = [];
-    brands.forEach(function (b) {
-      (b.categories || []).forEach(function (c) {
-        cats.push(c);
-      });
-    });
-    cats = uniq(cats).sort(function (a, b) {
-      return String(a).localeCompare(String(b), 'he');
-    });
+    // Rebuild deterministically to avoid duplicates.
+    var prev = String(selectEl.value || '');
+    selectEl.innerHTML = '';
 
     var all = document.createElement('option');
     all.value = '';
     all.textContent = 'כל הקטגוריות';
     selectEl.appendChild(all);
 
-    cats.forEach(function (c) {
+    ['face','hair','body','makeup','fragrance','mens-care','baby','health'].forEach(function (k) {
       var op = document.createElement('option');
-      op.value = c;
-      op.textContent = c;
+      op.value = k;
+      op.textContent = CAT_LABELS[k];
       selectEl.appendChild(op);
     });
+
+    selectEl.value = prev;
+    if (String(selectEl.value || '') !== prev) selectEl.value = '';
   }
 
   function createBrandCard(brand, pageKind) {
     var article = document.createElement('article');
     article.className = 'brandCard';
 
-    var cats = Array.isArray(brand.categories) ? brand.categories.slice() : [];
+    var cats = normalizeCats(pageKind, Array.isArray(brand.categories) ? brand.categories.slice() : []);
     var tier = Number(brand.priceTier);
     if (!(tier >= 1 && tier <= 5)) {
       tier = pageKind === 'intl' ? inferTierFromCategories(cats) : inferTierIsrael(cats);
@@ -336,7 +368,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
     var catsInline = document.createElement('div');
     catsInline.className = 'brandCatsInline';
-    catsInline.textContent = labelForCategories(pageKind, cats);
+    catsInline.textContent = labelForCategories(cats);
 
     titleBlock.appendChild(nameLink);
     if (catsInline.textContent) titleBlock.appendChild(catsInline);
@@ -423,7 +455,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     var searchInput = document.getElementById('brandSearch');
     var categorySelect = document.getElementById('brandCategoryFilter');
     var priceSelect = document.getElementById('brandPriceFilter');
-    var veganInput = document.getElementById('brandVeganOnly');
     var countEl = document.querySelector('[data-brands-count]');
 
     buildPriceSelect(priceSelect);
@@ -461,9 +492,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
           if (t > state.priceTier) ok = false;
         }
 
-        if (ok && state.veganOnly) {
-          if (it.el.getAttribute('data-vegan') !== '1') ok = false;
-        }
 
         it.el.toggleAttribute('hidden', !ok);
         it.el.setAttribute('aria-hidden', ok ? 'false' : 'true');
@@ -477,7 +505,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       state.q = searchInput ? norm(searchInput.value) : '';
       state.cat = categorySelect ? String(categorySelect.value || '').trim() : '';
       state.priceTier = priceSelect ? Number(priceSelect.value || '') : 0;
-      state.veganOnly = veganInput ? Boolean(veganInput.checked) : false;
+      // Vegan-only filter removed (all brands on the site are Vegan + Cruelty‑Free)
     }
 
     function bind(state) {
@@ -489,7 +517,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       if (searchInput) searchInput.addEventListener('input', handler);
       if (categorySelect) categorySelect.addEventListener('change', handler);
       if (priceSelect) priceSelect.addEventListener('change', handler);
-      if (veganInput) veganInput.addEventListener('change', handler);
 
       // initial
       handler();
@@ -548,18 +575,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
           grid.appendChild(res.el);
         });
 
-        // Hide vegan checkbox if none
-        try {
-          if (veganInput) {
-            var anyVegan = items.some(function (it) { return it.el.getAttribute('data-vegan') === '1'; });
-            if (!anyVegan) {
-              var wrap = veganInput.closest('.brandsVeganControl');
-              if (wrap) wrap.style.display = 'none';
-            }
-          }
-        } catch (e) {}
-
-        var state = { items: items, q: '', cat: '', priceTier: 0, veganOnly: false };
+        var state = { items: items, q: '', cat: '', priceTier: 0 };
         bind(state);
       })
       .catch(function (err) {
