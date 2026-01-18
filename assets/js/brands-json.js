@@ -243,8 +243,30 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     return s[0].toUpperCase();
   }
 
-  function labelForCategories(cats) {
-    if (!cats || !cats.length) return '';
+  function normalizeCats(raw) {
+    if (!raw) return [];
+    if (Array.isArray(raw)) return raw.map(function (x) { return String(x || '').trim(); }).filter(Boolean);
+    if (typeof raw === 'string') {
+      // Allow comma / slash separated strings.
+      return raw.split(/[,/]/g).map(function (x) { return String(x || '').trim(); }).filter(Boolean);
+    }
+    // Handle objects like {a:true, b:true}
+    if (typeof raw === 'object') {
+      return Object.keys(raw).map(function (k) { return String(k || '').trim(); }).filter(Boolean);
+    }
+    return [String(raw).trim()].filter(Boolean);
+  }
+
+  // Accept either labelForCategories(cats) or labelForCategories(kind, cats)
+  // (older calls in the codebase pass a pageKind as first argument).
+  function labelForCategories(kindOrCats, maybeCats) {
+    var cats = Array.isArray(kindOrCats) || typeof kindOrCats !== 'string'
+      ? kindOrCats
+      : maybeCats;
+
+    cats = normalizeCats(cats);
+    if (!cats.length) return '';
+
     var labels = cats.map(function (k) { return CAT_LABELS[k] || k; });
     return labels.join(' / ');
   }
