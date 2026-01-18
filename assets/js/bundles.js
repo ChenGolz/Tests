@@ -208,7 +208,8 @@ var state = {
     bundles: [],
     activeBundle: null,
     activeSlotIndex: 0,
-    picker: { q: '', cat: '', tier: '', chips: { peta: false, lb: false, us: true } }
+    // Picker filters: search + price tier + chips (category dropdown removed)
+    picker: { q: '', tier: '', chips: { peta: false, lb: false, us: true } }
   };
 
   function buildIndex(products) {
@@ -291,11 +292,9 @@ var state = {
     $('#bundleModalTitle').textContent = b.title;
     // reset picker
     state.picker.q = '';
-    state.picker.cat = '';
     state.picker.tier = '';
     state.picker.chips = { peta: false, lb: false, us: true };
     $('#pickQ').value = '';
-    $('#pickCat').value = '';
     $('#pickTier').value = '';
     $all('.pickerChip').forEach(function (c) {
       var key = c.getAttribute('data-chip');
@@ -327,7 +326,7 @@ var state = {
           '<div class="bundleItemMeta">' +
             '<span class="miniTag">' + formatUSD(price) + '</span>' +
             (p.isPeta ? '<span class="miniTag">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag">Leaping Bunny</span>' : '') +
+            (p.isLB ? '<span class="miniTag">ליפינג באני</span>' : '') +
             '<button type="button" class="miniBtn" data-action="replace" data-slot="' + idx + '">החליפי</button>' +
             (p.affiliateLink ? '<a class="miniBtn secondary" href="' + safeText(p.affiliateLink) + '" target="_blank" rel="noopener">מוצר</a>' : '') +
           '</div>' +
@@ -362,11 +361,6 @@ var state = {
     if (state.picker.chips.us && p.storeRegion && p.storeRegion !== 'us') return false;
     if (state.picker.chips.peta && !p.isPeta) return false;
     if (state.picker.chips.lb && !p.isLB) return false;
-
-    // Category
-    if (state.picker.cat) {
-      if (String(p.category || '') !== String(state.picker.cat)) return false;
-    }
 
     // Tier
     if (state.picker.tier) {
@@ -426,7 +420,7 @@ var state = {
           '<div class="pickMeta">' +
             '<span class="pickPrice">' + formatUSD(price) + '</span>' +
             (p.isPeta ? '<span class="miniTag">PETA</span>' : '') +
-            (p.isLB ? '<span class="miniTag">Leaping Bunny</span>' : '') +
+            (p.isLB ? '<span class="miniTag">ליפינג באני</span>' : '') +
           '</div>' +
         '</div>';
       card.addEventListener('click', function () { replaceActiveSlot(p.id); });
@@ -493,17 +487,10 @@ var state = {
 
   function wirePickerControls() {
     var q = $('#pickQ');
-    var cat = $('#pickCat');
     var tier = $('#pickTier');
     if (q) {
       q.addEventListener('input', function () {
         state.picker.q = q.value || '';
-        renderPicker();
-      });
-    }
-    if (cat) {
-      cat.addEventListener('change', function () {
-        state.picker.cat = cat.value || '';
         renderPicker();
       });
     }

@@ -238,13 +238,22 @@ function normalizeProduct(p) {
     // אפשרות לסמן מפורשות בדאטה בעתיד
     if (p.isMen) return true;
 
+    // 1) קטגוריות/טייפים שמסומנים לגבר
+    const cat = String(p.category || "").toLowerCase();
+    const typeKey = String(p.productTypeKey || "").toLowerCase();
+    if (cat === "mens-care" || typeKey.startsWith("men-") || typeKey.includes("mens")) return true;
+
+    // 2) שם מוצר
     const name = p.name || "";
     const lower = name.toLowerCase();
+    const hebMenRegex = /גבר|גברים|לגבר|לגברים/;
+    const enMenRegex = /(men's|for men|for him|mens|pour homme|groom)/i;
+    if (hebMenRegex.test(name) || enMenRegex.test(lower)) return true;
 
-    const hebMenRegex = /גבר|גברים/;
-    const enMenRegex = /(men's|for men|for him|pour homme)/i;
-
-    return hebMenRegex.test(name) || enMenRegex.test(lower);
+    // 3) שם מותג (למשל Every Man Jack)
+    const brand = String(p.brand || "").toLowerCase();
+    const brandMenRegex = /(\bmen\b|\bman\b|mens|groom|shave|beard)/i;
+    return brandMenRegex.test(brand);
   }
 
   function getTypeGroupLabel(p) {
@@ -755,7 +764,6 @@ function normalizeProduct(p) {
       // מוצרים המיועדים לגברים (לא תקף בקטגוריית איפור)
       () => {
         if (!onlyMen?.checked) return true;
-        if (currentCat === "makeup") return true;
         return isMenTargetedProduct(p);
       },
 
@@ -951,7 +959,7 @@ function normalizeProduct(p) {
       const approvals = [];
       if (p.isPeta) approvals.push("PETA");
       if (p.isVegan) approvals.push("Vegan");
-      if (p.isLB) approvals.push("Leaping Bunny");
+      if (p.isLB) approvals.push("ליפינג באני");
 
       const bestOffer = getOfferWithMinFreeShip(p);
       if (bestOffer) {
@@ -966,9 +974,9 @@ function normalizeProduct(p) {
 
       const tags = document.createElement("div");
       tags.className = "tags";
-      if (p.isLB) tags.appendChild(tag("Leaping Bunny / CFI"));
-      if (p.isPeta) tags.appendChild(tag("PETA"));
-      if (p.isVegan) tags.appendChild(tag("Vegan"));
+      if (p.isLB) tags.appendChild(tag("ליפינג באני (CFI)"));
+      if (p.isPeta) tags.appendChild(tag("מאושר PETA"));
+      if (p.isVegan) tags.appendChild(tag("טבעוני"));
       if (p.isIsrael) tags.appendChild(tag("אתר ישראלי"));
 
       const offerList = document.createElement("div");

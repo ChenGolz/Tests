@@ -85,9 +85,9 @@
       .shopLink.ghost { background: rgba(0,0,0,.06); color:#111; }
     
       /* Bundles page: navy header (like other pages feel) */
-      body.page-bundles .siteHeader{ background: linear-gradient(135deg, #203a63, #132747); border-bottom: 1px solid rgba(255,255,255,.12); }
-      body.page-bundles .siteHeader .logoText{ color:#fff; }
-      body.page-bundles .siteHeader .nav a{ color: rgba(255,255,255,.92); }
+      body.page-bundles .siteHeader{ background: linear-gradient(135deg, #203a63, #132747) !important; border-bottom: 1px solid rgba(255,255,255,.12) !important; }
+      body.page-bundles .siteHeader .logoText{ color:#fff !important; }
+      body.page-bundles .siteHeader .nav a{ color: rgba(255,255,255,.92) !important; }
       body.page-bundles .siteHeader .nav a:hover{ background: rgba(255,255,255,.10); }
       body.page-bundles .siteHeader .nav a.active{ background: rgba(255,255,255,.14); color:#fff; border-color: rgba(255,255,255,.18); }
 
@@ -145,8 +145,8 @@
               משלוח חינם לישראל באמזון ארה״ב לרוב מתחיל ב־<strong>$49+</strong>. כאן תמצאי באנדלים מומלצים של מוצרים טבעוניים בלבד — ובכל באנדל תוכלי להחליף כל פריט בעזרת פילטרים חכמים כדי לבנות סל שמתאים לך.
             </p>
             <div class="badgeRow center-badges">
-              <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🌿</span> Vegan Only</div>
-              <div class="trust-badge" data-wg-notranslate="true"><span class="icon" aria-hidden="true">🛒</span> Amazon US</div>
+              <div class="trust-badge" ><span class="icon" aria-hidden="true">🌿</span> Vegan Only</div>
+              <div class="trust-badge" ><span class="icon" aria-hidden="true">🛒</span> Amazon US</div>
               <div class="trust-badge"><span class="icon" aria-hidden="true">✨</span> החלפה חכמה</div>
             </div>
           </div>
@@ -229,17 +229,6 @@
           <div class="modalLeft">
             <div class="pickerTop">
               <input id="pickQ" type="search" placeholder="חיפוש מוצר להחלפה…" autocomplete="off" />
-              <select id="pickCat" aria-label="קטגוריה">
-                <option value="">כל הקטגוריות</option>
-                <option value="face">טיפוח פנים</option>
-                <option value="hair">שיער</option>
-                <option value="body">גוף ורחצה</option>
-                <option value="makeup">איפור</option>
-                <option value="fragrance">בישום</option>
-                <option value="mens-care">גברים</option>
-                <option value="baby">תינוקות</option>
-                <option value="health">בריאות</option>
-              </select>
               <select id="pickTier" aria-label="רמת מחיר">
                 <option value="">כל רמות המחיר</option>
                 <option value="1">$</option>
@@ -251,7 +240,7 @@
             </div>
             <div class="pickerChips" aria-label="פילטרים מהירים">
               <button type="button" class="pickerChip" data-chip="peta">PETA</button>
-              <button type="button" class="pickerChip" data-chip="lb">Leaping Bunny</button>
+              <button type="button" class="pickerChip" data-chip="lb">ליפינג באני</button>
               <button type="button" class="pickerChip active" data-chip="us">Amazon US</button>
             </div>
             <div class="pickerGrid" id="pickerGrid" aria-live="polite"></div>

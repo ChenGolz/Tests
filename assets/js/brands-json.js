@@ -695,6 +695,8 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
 
     var nameLink = document.createElement('a');
     nameLink.className = 'brandName';
+    // Brand names should remain as-is (Weglot should not translate them)
+    nameLink.setAttribute('data-wg-notranslate', 'true');
     nameLink.textContent = brand.name || '';
     nameLink.href = brand.website || targetUrl || '#';
     nameLink.target = '_blank';
@@ -746,7 +748,12 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       var t = String(b || '').toLowerCase();
       return t.indexOf('peta') !== -1 || t.indexOf('leaping') !== -1 || t.indexOf('cruelty') !== -1;
     });
-    if (prog) addBadge(prog, 'brandBadge--approved');
+    if (prog) {
+      var progLabel = String(prog || '');
+      if (/leaping\s*bunny/i.test(progLabel)) progLabel = 'ליפינג באני';
+      else if (/peta/i.test(progLabel) && progLabel.indexOf('מאושר') === -1) progLabel = 'מאושר PETA';
+      addBadge(progLabel, 'brandBadge--approved');
+    }
     if (vegan) addBadge('טבעוני', 'brandBadge--vegan');
 
     // Links row
@@ -765,9 +772,9 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
       links.appendChild(a);
     }
 
-    addLink('Website', brand.website || null, 'brandLink--site');
-    addLink('Amazon UK', brand.amazonUk || null, 'brandLink--amazon');
-    addLink('Amazon US', brand.amazonUs || null, 'brandLink--amazon');
+    addLink('אתר המותג', brand.website || null, 'brandLink--site');
+    addLink('אמזון UK', brand.amazonUk || null, 'brandLink--amazon');
+    addLink('אמזון US', brand.amazonUs || null, 'brandLink--amazon');
 
     top.appendChild(header);
     if (badgesWrap.childNodes.length) top.appendChild(badgesWrap);
@@ -891,7 +898,7 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
         products = Array.isArray(products) ? products : [];
         var idx = buildTypesIndexFromProducts(products);
         // Build dropdown like the Products page.
-        buildTypeSelect(categorySelect, idx.groupsByType);
+        buildTypeSelect(categorySelect, products);
 
         brands = Array.isArray(brands) ? brands : [];
 
