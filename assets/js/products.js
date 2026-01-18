@@ -174,7 +174,10 @@ function normalizeProduct(p) {
   }
 
 
-  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct));
+  // Source of truth: data/products.json (loaded by products-json-loader.js)
+  // Policy: show only Vegan-labeled products.
+  const data = dedupeProducts((window.PRODUCTS || []).map(normalizeProduct))
+    .filter((p) => Boolean(p && p.isVegan));
 
   function unique(arr) {
     return Array.from(new Set(arr))
@@ -581,51 +584,37 @@ function normalizeProduct(p) {
   }
 
   function getProductPriceRange(p) {
-    // Collect all numeric price hints: explicit range + offer prices
-    const prices = [];
+    // Return the *real* min/max range (no bucketing).
+    // Priority:
+    // 1) explicit priceMin/priceMax on product
+    // 2) min/max of offer prices
+    // 3) null if unknown
 
-    if (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) {
-      prices.push(p.priceMin);
-    }
-    if (typeof p?.priceMax === "number" && !Number.isNaN(p.priceMax)) {
-      prices.push(p.priceMax);
+    const minExplicit = (typeof p?.priceMin === "number" && Number.isFinite(p.priceMin)) ? p.priceMin : null;
+    const maxExplicit = (typeof p?.priceMax === "number" && Number.isFinite(p.priceMax)) ? p.priceMax : null;
+
+    // If explicit range exists, use it (and normalize if only one side exists)
+    if (minExplicit != null || maxExplicit != null) {
+      const min = minExplicit != null ? minExplicit : maxExplicit;
+      const max = maxExplicit != null ? maxExplicit : minExplicit;
+      const a = Math.round(Math.min(min, max));
+      const b = Math.round(Math.max(min, max));
+      return [a, b];
     }
 
+    // Otherwise, compute from offer prices
+    const offerPrices = [];
     if (Array.isArray(p?.offers)) {
       p.offers.forEach((o) => {
-        const v = typeof o.price === "number" ? o.price : null;
-        if (v != null && !Number.isNaN(v)) {
-          prices.push(v);
-        }
+        const v = typeof o?.price === "number" ? o.price : null;
+        if (v != null && Number.isFinite(v)) offerPrices.push(v);
       });
     }
 
-    if (!prices.length) return null;
-
-    // Use priceMin when available (more stable for bucketing); fallback to avg of hints
-    const avg = prices.reduce((sum, v) => sum + v, 0) / prices.length;
-    const hint = (typeof p?.priceMin === "number" && !Number.isNaN(p.priceMin)) ? p.priceMin : avg;
-    const basePrice = Math.max(0, Math.round(hint));
-
-    let bucketMin;
-    let bucketMax;
-
-    // Buckets:
-    // 0–50, 50–100, 100–200, 200–300, 300–400, 400–500, ...
-    if (basePrice <= 50) {
-      bucketMin = 0;
-      bucketMax = 50;
-    } else if (basePrice <= 100) {
-      bucketMin = 50;
-      bucketMax = 100;
-    } else {
-      const span = 100;
-      const idx = Math.floor((basePrice - 100) / span);
-      bucketMin = 100 + idx * span;
-      bucketMax = bucketMin + span;
-    }
-
-    return [bucketMin, bucketMax];
+    if (!offerPrices.length) return null;
+    const min = Math.round(Math.min.apply(null, offerPrices));
+    const max = Math.round(Math.max.apply(null, offerPrices));
+    return [min, max];
   }
 
   function getStoreDisplayName(p, o) {

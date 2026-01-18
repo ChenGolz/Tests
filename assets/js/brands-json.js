@@ -113,19 +113,6 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     'wellness': 'וולנס'
   };
 
-  // Full category taxonomy (group + sub-category) as used on Products page (Hebrew)
-  var TYPE_GROUPS_INTL = {
-    "מוצרי איפור": ["פנים", "שפתיים", "עיניים", "ציפורניים", "אביזרי איפור", "סטים ומארזים"],
-    "טיפוח לפנים": ["קרם פנים", "סרום", "ניקוי ואיזון", "פילינג ומסכות", "עיניים ושפתיים", "סטים ומארזים"],
-    "טיפוח לגוף": ["קרמי גוף", "קרמי ידיים", "קרמי רגליים", "פילינגים", "סבונים ודאודורנטים", "סטים ומארזים"],
-    "עיצוב שיער": ["שמפו", "מרכך", "מסכה לשיער", "טיפוח ועיצוב שיער"],
-    "הגנה מהשמש": ["הגנה לפנים", "הגנה לגוף", "שיזוף עצמי"],
-    "בשמים": ["בשמים לנשים", "בושם לגבר"],
-    "הלבנה וטיפוח השיניים": ["הלבנה וטיפוח השיניים"],
-    "טיפוח לגבר": ["טיפוח לגבר"],
-    "אחר": ["אחר"]
-  };
-
   var CAT_PRICE_TIER = {
     'paper': 1,
     'wipes': 1,
@@ -214,84 +201,14 @@ function __kbwgResolveFromSiteBase(relPath, scriptName) {
     return s[0].toUpperCase();
   }
 
-  
-
-  function mapLegacyCatsToType(cats) {
-    var set = {};
-    (cats || []).forEach(function (c) { set[norm(c)] = 1; });
-
-    function has(k) { return !!set[norm(k)]; }
-
-    // Prioritize specific signals
-    if (has('nails')) return 'מוצרי איפור::ציפורניים';
-    if (has('eyes')) return 'מוצרי איפור::עיניים';
-    if (has('cosmetics')) return 'מוצרי איפור::פנים';
-
-    // Hair
-    if (has('hair-color') || has('haircare') || has('curly-hair')) return 'עיצוב שיער::טיפוח ועיצוב שיער';
-
-    // Sun / tan
-    if (has('tanning')) return 'הגנה מהשמש::שיזוף עצמי';
-    if (has('sun')) return 'הגנה מהשמש::הגנה לגוף';
-
-    // Oral
-    if (has('oral')) return 'הלבנה וטיפוח השיניים::הלבנה וטיפוח השיניים';
-
-    // Men's
-    if (has('mens-care')) return 'טיפוח לגבר::טיפוח לגבר';
-
-    // Body & personal
-    if (has('deodorant') || has('soap') || has('soap-bars')) return 'טיפוח לגוף::סבונים ודאודורנטים';
-    if (has('tattoo-care')) return 'טיפוח לגוף::קרמי גוף';
-    if (has('body-care')) return 'טיפוח לגוף::קרמי גוף';
-
-    // Face / skincare
-    if (has('skincare') || has('natural-skin') || has('luxury-care')) return 'טיפוח לפנים::קרם פנים';
-
-    // Fallback
-    if (cats && cats.length) return 'אחר::אחר';
-    return '';
-  }
-
-function labelForCategories(pageKind, cats) {
+  function labelForCategories(pageKind, cats) {
     if (!cats || !cats.length) return '';
     if (pageKind === 'intl') {
-      // Support either legacy category keys or new 'Group::Sub' type strings
-      var labels = cats.map(function (k) {
-        if (String(k).indexOf('::') !== -1) {
-          var parts = String(k).split('::');
-          return parts[0] + ' / ' + (parts[1] || '');
-        }
-        return CAT_LABELS_INTL[k] || k;
-      });
+      var labels = cats.map(function (k) { return CAT_LABELS_INTL[k] || k; });
       return labels.join(' / ');
     }
     // israel: cats are already labels
     return cats.join(' / ');
-  }
-
-  function normalizeTypes(brand) {
-    var types = Array.isArray(brand.types) ? brand.types.slice() : [];
-    if (!types.length && brand.typeGroup && brand.typeSub) {
-      types = [String(brand.typeGroup) + '::' + String(brand.typeSub)];
-    }
-    // Fallback: if someone put group/sub in categories
-    if (!types.length && Array.isArray(brand.categories)) {
-      types = brand.categories.filter(function (c) { return String(c).indexOf('::') !== -1; });
-    }
-    // Dedup
-    var seen = {};
-    types = types.map(function (t) { return String(t || '').trim(); }).filter(Boolean).filter(function (t) { if (seen[t]) return false; seen[t] = 1; return true; });
-    return types;
-  }
-
-  function labelForTypes(types) {
-    if (!types || !types.length) return '';
-    return types.map(function (t) {
-      var parts = String(t).split('::');
-      if (parts.length >= 2) return parts[0] + ' \u00b7 ' + parts[1];
-      return String(t);
-    }).join(' / ');
   }
 
   function buildPriceSelect(selectEl) {
@@ -326,31 +243,10 @@ function labelForCategories(pageKind, cats) {
 
   function buildCategorySelectIfEmpty(selectEl, brands, pageKind) {
     if (!selectEl) return;
+    // Intl page already contains a curated list in HTML.
+    if (pageKind === 'intl') return;
     if (selectEl.options && selectEl.options.length > 0) return;
 
-    // Intl: use the same group + sub-category taxonomy as the Products page
-    if (pageKind === 'intl') {
-      var all = document.createElement('option');
-      all.value = '';
-      all.textContent = 'כל הקטגוריות';
-      selectEl.appendChild(all);
-
-      Object.keys(TYPE_GROUPS_INTL).forEach(function (groupName) {
-        var subs = TYPE_GROUPS_INTL[groupName] || [];
-        var og = document.createElement('optgroup');
-        og.label = groupName;
-        subs.forEach(function (sub) {
-          var op = document.createElement('option');
-          op.value = groupName + '::' + sub;
-          op.textContent = sub;
-          og.appendChild(op);
-        });
-        selectEl.appendChild(og);
-      });
-      return;
-    }
-
-    // Israel (legacy): keep simple list
     var cats = [];
     brands.forEach(function (b) {
       (b.categories || []).forEach(function (c) {
@@ -361,16 +257,16 @@ function labelForCategories(pageKind, cats) {
       return String(a).localeCompare(String(b), 'he');
     });
 
-    var all2 = document.createElement('option');
-    all2.value = '';
-    all2.textContent = 'כל הקטגוריות';
-    selectEl.appendChild(all2);
+    var all = document.createElement('option');
+    all.value = '';
+    all.textContent = 'כל הקטגוריות';
+    selectEl.appendChild(all);
 
     cats.forEach(function (c) {
-      var op2 = document.createElement('option');
-      op2.value = c;
-      op2.textContent = c;
-      selectEl.appendChild(op2);
+      var op = document.createElement('option');
+      op.value = c;
+      op.textContent = c;
+      selectEl.appendChild(op);
     });
   }
 
@@ -378,17 +274,13 @@ function labelForCategories(pageKind, cats) {
     var article = document.createElement('article');
     article.className = 'brandCard';
 
-
     var cats = Array.isArray(brand.categories) ? brand.categories.slice() : [];
-    var types = normalizeTypes(brand);
-
     var tier = Number(brand.priceTier);
     if (!(tier >= 1 && tier <= 5)) {
       tier = pageKind === 'intl' ? inferTierFromCategories(cats) : inferTierIsrael(cats);
     }
 
     article.setAttribute('data-price-tier', String(tier));
-    if (types.length) article.setAttribute('data-types', types.join(','));
     if (cats.length) article.setAttribute('data-categories', cats.join(','));
 
     var badges = Array.isArray(brand.badges) ? brand.badges.slice() : [];
@@ -444,28 +336,10 @@ function labelForCategories(pageKind, cats) {
 
     var catsInline = document.createElement('div');
     catsInline.className = 'brandCatsInline';
-
-    // Category tags (Hebrew)
-    function addCatTag(txt) {
-      if (!txt) return;
-      var s = document.createElement('span');
-      s.className = 'brandCatTag';
-      s.textContent = txt;
-      catsInline.appendChild(s);
-    }
-
-    if (pageKind === 'intl' && types.length) {
-      // Show up to 2 tags: group + sub
-      var parts = String(types[0]).split('::');
-      addCatTag(parts[0]);
-      addCatTag(parts[1]);
-    } else {
-      var lbl = labelForCategories(pageKind, cats);
-      if (lbl) addCatTag(lbl);
-    }
+    catsInline.textContent = labelForCategories(pageKind, cats);
 
     titleBlock.appendChild(nameLink);
-    if (catsInline.childNodes.length) titleBlock.appendChild(catsInline);
+    if (catsInline.textContent) titleBlock.appendChild(catsInline);
 
     header.appendChild(logo);
     header.appendChild(titleBlock);
@@ -525,8 +399,7 @@ function labelForCategories(pageKind, cats) {
     article.appendChild(top);
 
     // חיפוש haystack for filtering
-    var typeText = (pageKind === 'intl') ? (types || []).map(typeLabel).join(' ') : labelForCategories(pageKind, cats);
-    var hay = [brand.name, typeText].concat(badges).join(' ');
+    var hay = [brand.name, labelForCategories(pageKind, cats)].concat(badges).join(' ');
     article.setAttribute('data-search', hay);
 
     // Filtering attributes
@@ -575,15 +448,10 @@ function labelForCategories(pageKind, cats) {
         }
 
         if (ok && state.cat) {
-          var want = String(state.cat || '');
-          // Intl uses group::sub values
-          if (want.indexOf('::') !== -1) {
-            var typesStr = it.el.getAttribute('data-types') || '';
-            var types = typesStr.split(',').map(function (x) { return x.trim(); }).filter(Boolean);
-            if (types.indexOf(want) === -1) ok = false;
-          } else {
-            var cats = (it.el.getAttribute('data-categories') || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
-            if (cats.indexOf(want) === -1) ok = false;
+          var cats = (it.el.getAttribute('data-categories') || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+          if (cats.indexOf(state.cat) === -1) {
+            // Israel uses label as category; in that case data-categories is label too.
+            ok = false;
           }
         }
 
@@ -644,6 +512,17 @@ function labelForCategories(pageKind, cats) {
           out.badges = Array.isArray(out.badges) ? out.badges.filter(Boolean) : [];
           return out;
         }).filter(function (b) { return b.name; });
+
+        // Policy: show only Vegan-labeled brands.
+        // Primary signal: boolean `vegan` in JSON. Fallback: a badge that contains "Vegan".
+        brands = brands.filter(function (b) {
+          if (b && b.vegan === true) return true;
+          try {
+            return Array.isArray(b.badges) && b.badges.some(function (x) {
+              return String(x || '').toLowerCase().indexOf('vegan') !== -1;
+            });
+          } catch (e) { return false; }
+        });
 
         // Build category select (israel)
         buildCategorySelectIfEmpty(categorySelect, brands, pageKind);
